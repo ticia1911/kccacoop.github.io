@@ -1,0 +1,2495 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <title>KCCA Sacco - Growing and Saving Together</title>
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Template CSS Style link -->
+    <link rel="stylesheet" href="assets/css/style-starter.css">
+</head>
+
+<body>
+    <!-- header -->
+    <header id="site-header" class="fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="index.html">
+                    <img id="logo" src="assets/images/banner.png" 
+                         data-light="assets/images/banner.png" 
+                         data-dark="assets/images/banner-dark.png" 
+                         alt="Workup Logo" 
+                         style="height: 70px;">
+                  </a>                  
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                       <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="services.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Products <i class="fas fa-caret-down ms-1"></i>
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+    <li><a class="dropdown-item" href="savings.html">Savings</a></li>
+    <li><a class="dropdown-item" href="creditfacilities.html">Credit Facilities</a></li>
+    <li><a class="dropdown-item" href="assetfinancing.html">Asset Financing</a></li>
+  </ul>
+</li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="membership.html">Membership</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="resources.html">Resources</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a href="https://finhazi.com/login" class="btn btn-style btn-danger rounded-pill px-3 py-1 border-2 fw-bold text-white">
+                                Login <i class="fas fa-sign-in-alt text-white"></i>
+                            </a>
+                        </li>
+                          
+                    </ul>
+                </div>
+                
+                <!-- toggle switch for light and dark theme -->
+                <div class="cont-ser-position">
+                    <nav class="navigation">
+                        <div class="theme-switch-wrapper">
+                            <label class="theme-switch" for="checkbox">
+                                <input type="checkbox" id="checkbox">
+                                <div class="mode-container">
+                                    <i class="gg-sun"></i>
+                                    <i class="gg-moon"></i>
+                                </div>
+                            </label>
+                        </div>
+                    </nav>
+                </div>
+                <!-- //toggle switch for light and dark theme -->        
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                      const checkbox = document.getElementById("checkbox");
+                      const logo = document.getElementById("logo");
+                  
+                      function updateLogo() {
+                        const isDark = checkbox.checked;
+                        logo.src = isDark ? logo.dataset.dark : logo.dataset.light;
+                      }
+                  
+                      // Update on load
+                      updateLogo();
+                  
+                      // Update when toggled
+                      checkbox.addEventListener("change", updateLogo);
+                    });
+                  </script>
+                          
+            </nav>
+        </div>
+    </header>
+    <!-- //header -->
+
+<div class="slider">
+    <!-- Slide 1: Become a Member -->
+    <div class="slide current">
+        <div class="bg-layer" style="background-image: url('assets/images/membership-bg.jpg');">
+            <div class="content">
+                <h6>Membership Made Easy</h6>
+                <h3>Become a Member</h3>
+                <p class="my-3">Join our SACCO and take control of your financial future</p>
+                <a href="membership.html" class="btn btn-style btn-danger mt-2">Join Now</a>
+             
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2: How to Borrow -->
+    <div class="slide">
+        <div class="bg-layer" style="background-image: url('assets/images/loans-bg.jpg');">
+            <div class="content">
+                <h6>Need a Loan?</h6>
+                <h3>How to Borrow</h3>
+                <p class="my-3">Discover our simple borrowing process and flexible credit terms</p>
+                <a href="loans.html" class="btn btn-style btn-danger mt-2">Apply for a Loan</a>
+              
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Save With Us -->
+    <div class="slide">
+        <div class="bg-layer" style="background-image: url('assets/images/savings-bg.jpg');">
+            <div class="content">
+                <h6>Smart Saving Starts Here</h6>
+                <h3>Save With Us</h3>
+                <p class="my-3">Secure your future with high-yield savings plans</p>
+                <a href="savings.html" class="btn btn-style btn-danger mt-2">Start Saving</a>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Asset Financing -->
+    <div class="slide">
+        <div class="bg-layer" style="background-image: url('assets/images/assets-bg.jpg');">
+            <div class="content">
+                <h6>Finance Your Future</h6>
+                <h3>Asset Financing</h3>
+                <p class="my-3">Get support to acquire land, vehicles, or equipment affordably</p>
+                <a href="asset-financing.html" class="btn btn-style btn-danger mt-2">Get Started</a>
+            
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Navigation Buttons -->
+<div class="buttons">
+    <button id="prev"><i class="fas fa-arrow-left"></i></button>
+    <button id="next"><i class="fas fa-arrow-right"></i></button>
+</div>
+<!-- //banner section -->
+
+
+<!-- Why Choose Us Section -->
+<section class="w3l-about py-5" id="about">
+    <div class="container py-lg-3 py-md-2 py-2 theme-container">
+        <div class="title-main mb-4 text-left">
+            <h5 class="small-title mb-2 text-danger">Why Choose Us</h5>
+            <h3 class="title-style text-dark mb-3">KCCA Staff Multipurpose Cooperative Society</h3>
+            <p class="text-muted mb-0">
+                KCCA Staff Multipurpose Cooperative Society is a member-owned financial institution founded by Kampala Capital City Authority (KCCA) staff to empower members through savings, affordable credit, and financial growth.
+            </p>
+        </div>
+        <div class="row align-items-center">
+            <!-- Left: Benefits with Integrated Stats -->
+            <div class="col-lg-6 pe-lg-4">
+                <div class="why-choose-list mt-3">
+                    <div class="why-choose-item">
+                        <div class="icon">
+                            <i class="fas fa-users" aria-hidden="true"></i>
+                        </div>
+                        <div class="content">
+                            <h4>Member-Owned Community</h4>
+                            <p>Since 2013, we've grown from 398 to 1,252 members, all with equal ownership in our democratic cooperative.</p>
+                            <div class="stat-inline">
+                                <span class="counter" data-target="1252" aria-label="1252 active members">0</span>
+                                <span class="stat-text"> Active Members</span>
+                                <span class="stat-note">10% growth from 2022</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="why-choose-item">
+                        <div class="icon">
+                            <i class="fas fa-chart-line" aria-hidden="true"></i>
+                        </div>
+                        <div class="content">
+                            <h4>Financial Stability</h4>
+                            <p>Our UGX 17.4 billion in assets ensures stability, backed by regulatory oversight.</p>
+                            <div class="stat-inline">
+                                <span class="counter" data-target="17.4" aria-label="17.4 billion UGX in assets">0</span>
+                                <span class="stat-text"> Billion UGX Assets</span>
+                                <span class="stat-note">6.1% growth</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="why-choose-item">
+                        <div class="icon">
+                            <i class="fas fa-piggy-bank" aria-hidden="true"></i>
+                        </div>
+                        <div class="content">
+                            <h4>Rewarding Savings</h4>
+                            <p>We offer high-return savings, managing UGX 13.4 billion, accessible via online banking.</p>
+                            <div class="stat-inline">
+                                <span class="counter" data-target="13.4" aria-label="13.4 billion UGX in savings">0</span>
+                                <span class="stat-text"> Billion UGX Savings</span>
+                                <span class="stat-note">11% interest paid</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="why-choose-item">
+                        <div class="icon">
+                            <i class="fas fa-hand-holding-usd" aria-hidden="true"></i>
+                        </div>
+                        <div class="content">
+                            <h4>Affordable Loans</h4>
+                            <p>We provide emergency and development loans, with a UGX 16.1 billion portfolio for staff.</p>
+                            <div class="stat-inline">
+                                <span class="counter" data-target="16.1" aria-label="16.1 billion UGX loan portfolio">0</span>
+                                <span class="stat-text"> Billion UGX Loans</span>
+                                <span class="stat-note">95% of assets</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right: Image with Bigger Badge -->
+            <div class="col-lg-6 mt-lg-0 mt-4 position-relative">
+                <img src="assets/images/img1.jpg" alt="KCCA Cooperative Team" class="img-fluid radius-image">
+                <div class="years-badge">
+                    <span class="number">12+</span>
+                    <span class="text">Years</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CSS -->
+<style>
+/* Light theme */
+/* Light theme */
+.w3l-about .why-choose-item .stat-inline {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.w3l-about .why-choose-item .stat-inline .counter {
+    font-size: 1.3rem;
+    font-weight: 700; /* Keep numbers bold */
+    color: #000; /* Black for numbers */
+    margin-right: 0.2rem;
+}
+
+.w3l-about .why-choose-item .stat-inline .stat-text {
+    font-size: 1.1rem;
+    font-weight: 400; /* Remove bold from text */
+    color: #555; /* Grey for text */
+    margin-right: 0.4rem;
+}
+
+.w3l-about .why-choose-item .stat-inline .stat-note {
+    font-size: 0.8rem;
+    font-weight: 400; /* Ensure stat-note is not bold */
+    color: #555;
+}
+
+/* Dark mode */
+.theme-container.dark-mode .w3l-about .why-choose-item .stat-inline {
+    color: #a0a0a0;
+}
+
+.theme-container.dark-mode .w3l-about .why-choose-item .stat-inline .counter {
+    font-weight: 700; /* Keep numbers bold */
+    color: #fff; /* White for numbers in dark mode */
+}
+
+.theme-container.dark-mode .w3l-about .why-choose-item .stat-inline .stat-text {
+    font-weight: 400; /* Remove bold from text */
+    color: #a0a0a0; /* Grey for text in dark mode */
+}
+
+.theme-container.dark-mode .w3l-about .why-choose-item .stat-inline .stat-note {
+    font-weight: 400; /* Ensure stat-note is not bold */
+    color: #a0a0a0;
+}
+
+/* Fallback for body dark mode */
+body.dark-mode .w3l-about .why-choose-item .stat-inline {
+    color: #a0a0a0;
+}
+
+body.dark-mode .w3l-about .why-choose-item .stat-inline .counter {
+    font-weight: 700; /* Keep numbers bold */
+    color: #fff; /* White for numbers in dark mode */
+}
+
+body.dark-mode .w3l-about .why-choose-item .stat-inline .stat-text {
+    font-weight: 400; /* Remove bold from text */
+    color: #a0a0a0; /* Grey for text in dark mode */
+}
+
+body.dark-mode .w3l-about .why-choose-item .stat-inline .stat-note {
+    font-weight: 400; /* Ensure stat-note is not bold */
+    color: #a0a0a0;
+}
+
+.w3l-about {
+    background-color: #fff;
+    color: #000;
+}
+
+.w3l-about .title-main.text-left {
+    padding: 0 15px;
+    text-align: left !important;
+}
+
+.w3l-about .small-title {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #d9232d;
+}
+
+.w3l-about .title-style {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #000;
+}
+
+.w3l-about .text-muted {
+    color: #555 !important;
+}
+
+.w3l-about .why-choose-item {
+    display: flex;
+    margin-bottom: 1.2rem;
+    padding: 1.2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border-left: 4px solid #d9232d;
+}
+
+.w3l-about .why-choose-item:hover {
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+.w3l-about .why-choose-item .icon {
+    width: 50px;
+    height: 50px;
+    background-color: #d9232d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.2rem;
+    flex-shrink: 0;
+}
+
+.w3l-about .why-choose-item .icon i {
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+.w3l-about .why-choose-item .content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+    color: #d9232d;
+    text-align: left;
+}
+
+.w3l-about .why-choose-item .content p {
+    color: #555;
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+.w3l-about .why-choose-item .stat-inline {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.w3l-about .why-choose-item .stat-inline .counter {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.w3l-about .why-choose-item .stat-inline .stat-note {
+    font-size: 0.8rem;
+    color: #555;
+    margin-left: 0.4rem;
+}
+
+.w3l-about .img-fluid.radius-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.w3l-about .position-relative::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.w3l-about .years-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #d9232d;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.w3l-about .years-badge:hover {
+    transform: scale(1.05);
+}
+
+.w3l-about .years-badge .number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+}
+
+.w3l-about .years-badge .text {
+    font-size: 0.7rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+
+/* Dark mode */
+.theme-container.dark-mode .w3l-about {
+    background-color: #000;
+    color: #fff;
+}
+
+.theme-container.dark-mode .w3l-about .title-main .small-title {
+    color: #ff4d4d;
+}
+
+.theme-container.dark-mode .w3l-about .title-main .title-style {
+    color: #fff;
+}
+
+.theme-container.dark-mode .w3l-about .title-main .text-muted {
+    color: #a0a0a0 !important;
+}
+
+.theme-container.dark-mode .w3l-about .why-choose-item {
+    background-color: #1a1a1a;
+    border-left-color: #ff4d4d;
+}
+
+.theme-container.dark-mode .w3l-about .why-choose-item:hover {
+    background-color: #333;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.theme-container.dark-mode .w3l-about .why-choose-item .icon {
+    background-color: #ff4d4d;
+}
+
+.theme-container.dark-mode .w3l-about .why-choose-item .icon i {
+    color: #fff;
+}
+
+.theme-container.dark-mode .w3l-about .why-choose-item .content h4 {
+    color: #ff4d4d;
+}
+
+.theme-container.dark-mode .w3l-about .why-choose-item .content p {
+    color: #b0b0b0;
+}
+
+.theme-container.dark-mode .w3l-about .why-choose-item .stat-inline {
+    color: #ff4d4d;
+}
+
+.theme-container.dark-mode .w3l-about .why-choose-item .stat-inline .counter {
+    color: #fff;
+}
+
+.theme-container.dark-mode .w3l-about .why-choose-item .stat-inline .stat-note {
+    color: #a0a0a0;
+}
+/* Update these dark mode sections in your CSS */
+
+/* Theme container dark mode */
+.theme-container.dark-mode .w3l-about .title-main .title-style {
+    color: #fff !important; /* Force white color */
+}
+
+/* Body fallback dark mode */
+body.dark-mode .w3l-about .title-main .title-style {
+    color: #fff !important; /* Force white color */
+}
+.theme-container.dark-mode .w3l-about .years-badge {
+    background-color: #ff4d4d;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.theme-container.dark-mode .w3l-about .years-badge .number,
+.theme-container.dark-mode .w3l-about .years-badge .text {
+    color: #fff;
+}
+
+.theme-container.dark-mode .w3l-about .position-relative::before {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Fallback for body dark mode */
+body.dark-mode .w3l-about {
+    background-color: #000;
+    color: #fff;
+}
+
+body.dark-mode .w3l-about .title-main .small-title {
+    color: #ff4d4d;
+}
+
+body.dark-mode .w3l-about .title-main .title-style {
+    color: #fff;
+}
+
+body.dark-mode .w3l-about .title-main .text-muted {
+    color: #a0a0a0 !important;
+}
+
+body.dark-mode .w3l-about .why-choose-item {
+    background-color: #1a1a1a;
+    border-left-color: #ff4d4d;
+}
+
+body.dark-mode .w3l-about .why-choose-item:hover {
+    background-color: #333;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .w3l-about .why-choose-item .icon {
+    background-color: #ff4d4d;
+}
+
+body.dark-mode .w3l-about .why-choose-item .icon i {
+    color: #fff;
+}
+
+body.dark-mode .w3l-about .why-choose-item .content h4 {
+    color: #ff4d4d;
+}
+
+body.dark-mode .w3l-about .why-choose-item .content p {
+    color: #b0b0b0;
+}
+
+body.dark-mode .w3l-about .why-choose-item .stat-inline {
+    color: #ff4d4d;
+}
+
+body.dark-mode .w3l-about .why-choose-item .stat-inline .counter {
+    color: #fff;
+}
+
+body.dark-mode .w3l-about .why-choose-item .stat-inline .stat-note {
+    color: #a0a0a0;
+}
+
+body.dark-mode .w3l-about .years-badge {
+    background-color: #ff4d4d;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .w3l-about .years-badge .number,
+body.dark-mode .w3l-about .years-badge .text {
+    color: #fff;
+}
+
+body.dark-mode .w3l-about .position-relative::before {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .w3l-about .why-choose-item {
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
+
+    .w3l-about .why-choose-item .icon {
+        margin-right: 0;
+        margin-bottom: 0.8rem;
+    }
+
+    .w3l-about .years-badge {
+        width: 80px;
+        height: 80px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .w3l-about .years-badge .number {
+        font-size: 1.5rem;
+    }
+
+    .w3l-about .years-badge .text {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .w3l-about .title-main .title-style {
+        font-size: 1.8rem;
+    }
+
+    .w3l-about .why-choose-item .stat-inline .counter {
+        font-size: 1.2rem;
+    }
+
+    .w3l-about .why-choose-item .stat-inline .stat-note {
+        font-size: 0.75rem;
+    }
+
+    .w3l-about .img-fluid.radius-image {
+        max-height: 280px;
+        object-fit: cover;
+    }
+}
+</style>
+
+<!-- JavaScript -->
+<script>
+    // Theme switch functionality
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    const currentTheme = localStorage.getItem('theme');
+    const themeContainers = document.querySelectorAll('.theme-container');
+    const logo = document.getElementById('logo');
+
+    function switchTheme(e) {
+        if (e.target.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            document.body.classList.add('dark-mode');
+            themeContainers.forEach(container => {
+                container.classList.add('dark-mode');
+            });
+            if (logo) {
+                logo.src = logo.dataset.dark;
+            }
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+            document.body.classList.remove('dark-mode');
+            themeContainers.forEach(container => {
+                container.classList.remove('dark-mode');
+            });
+            if (logo) {
+                logo.src = logo.dataset.light;
+            }
+        }
+    }
+
+    // Initialize theme
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        if (currentTheme === 'dark') {
+            toggleSwitch.checked = true;
+            document.body.classList.add('dark-mode');
+            themeContainers.forEach(container => {
+                container.classList.add('dark-mode');
+            });
+            if (logo) {
+                logo.src = logo.dataset.dark;
+            }
+        }
+    }
+
+    toggleSwitch.addEventListener('change', switchTheme, false);
+
+    // Move to top button
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("movetop").style.display = "block";
+        } else {
+            document.getElementById("movetop").style.display = "none";
+        }
+    }
+
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
+    // Counter animation
+    document.addEventListener("DOMContentLoaded", () => {
+        const counters = document.querySelectorAll('.counter');
+
+        const animateCounter = (counter, index) => {
+            const target = parseFloat(counter.getAttribute('data-target'));
+            let current = 0;
+            const duration = 2000;
+            const startTime = performance.now();
+            const isDecimal = target % 1 !== 0;
+
+            const updateCounter = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const value = target * progress;
+
+                counter.innerText = isDecimal
+                    ? value.toFixed(1)
+                    : Math.floor(value).toLocaleString('en-US');
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                }
+            };
+
+            setTimeout(() => requestAnimationFrame(updateCounter), index * 150);
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    counters.forEach((counter, index) => animateCounter(counter, index));
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        observer.observe(document.getElementById('about'));
+    });
+</script>
+
+<!-- Products & Services Section -->
+<section class="products-services py-5" id="products-services">
+    <div class="container py-lg-4 py-md-3 py-2">
+        <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:700px;">
+            <h5 class="small-title mb-2">Our Offerings</h5>
+            <h3 class="title-style">Products & Services</h3>
+            <p class="mt-3">We provide comprehensive financial solutions tailored for KCCA staff needs</p>
+        </div>
+
+        <!-- Products Tabs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="nav nav-tabs products-tabs" id="productsTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="savings-tab" data-bs-toggle="tab" data-bs-target="#savings" type="button" role="tab">Savings</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="credit-tab" data-bs-toggle="tab" data-bs-target="#credit" type="button" role="tab">Credit Facilities</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="assets-tab" data-bs-toggle="tab" data-bs-target="#assets" type="button" role="tab">Asset Financing</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="productsTabContent">
+                    <!-- Savings Products -->
+                    <div class="tab-pane fade show active" id="savings" role="tabpanel">
+                        <div class="row mt-4">
+                            <div class="col-md-6 col-lg-3 mb-4">
+                                <div class="product-card">
+                                    <div class="product-icon bg-primary">
+                                        <i class="fas fa-user-friends"></i>
+                                    </div>
+                                    <h4>Member Savings</h4>
+                                    <p>Regular savings account with competitive interest rates and flexible withdrawal options</p>
+                                    <div class="product-rate">
+                                        <span class="rate">Annual</span>
+                                        <span class="label">Interest</span>
+                                    </div>
+                                    <a href="#" class="btn btn-outline-blue rounded-pill px-4 mt-3">Learn More</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3 mb-4">
+                                <div class="product-card">
+                                    <div class="product-icon bg-success">
+                                        <i class="fas fa-child"></i>
+                                    </div>
+                                    <h4>Toto Savings</h4>
+                                    <p>Special savings plan for children's education with bonus interest upon maturity</p>
+                                    <div class="product-rate">
+                                        <span class="rate">Annual</span>
+                                        <span class="label">Interest</span>
+                                    </div>
+                                    <a href="#" class="btn btn-outline-success rounded-pill px-4 mt-3">Learn More</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3 mb-4">
+                                <div class="product-card">
+                                    <div class="product-icon bg-warning">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <h4>Group Savings</h4>
+                                    <p>Collective savings for groups with enhanced benefits and shared dividends</p>
+                                    <div class="product-rate">
+                                        <span class="rate">Annual</span>
+                                        <span class="label">Interest</span>
+                                    </div>
+                                    <a href="#" class="btn btn-outline-warning rounded-pill px-4 mt-3">Learn More</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3 mb-4">
+                                <div class="product-card">
+                                    <div class="product-icon bg-info">
+                                        <i class="fas fa-calendar-alt"></i>
+                                    </div>
+                                    <h4>Fixed Deposits</h4>
+                                    <p>Higher yield savings with fixed terms and guaranteed returns</p>
+                                    <div class="product-rates">
+                                        <div class="rate-item">
+                                            <span>9%</span> for 3 months
+                                        </div>
+                                        <div class="rate-item">
+                                            <span>10%</span> for 6 months
+                                        </div>
+                                        <div class="rate-item">
+                                            <span>12%</span> for 12 months
+                                        </div>
+                                    </div>
+                                    <a href="#" class="btn btn-outline-info rounded-pill px-4 mt-3">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Credit Facilities -->
+                    <div class="tab-pane fade" id="credit" role="tabpanel">
+                        <div class="d-flex flex-wrap justify-content-between mt-4">
+                            <div class="product-card-wrapper mb-4">
+                                <div class="product-card">
+                                    <div class="product-icon bg-danger">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                    <h4>Main Loan</h4>
+                                    <p>General purpose loan for various needs with flexible repayment terms</p>
+                                    <div class="product-rate">
+                                        <span class="rate">14% p.a.</span>
+                                        <span class="label">Interest</span>                
+                                    </div>
+                                    <a href="#" class="btn btn-outline-danger rounded-pill btn-inline mt-3">Apply Now</a>
+                                </div>
+                            </div>
+                            <div class="product-card-wrapper mb-4">
+                                <div class="product-card">
+                                    <div class="product-icon bg-secondary">
+                                        <i class="fas fa-ambulance"></i>
+                                    </div>
+                                    <h4>Emergency Loan</h4>
+                                    <p>Quick access funds for urgent needs with fast approval process</p>
+                                    <div class="product-rate">
+                                        <span class="rate">16% p.a.</span>
+                                        <span class="label">Interest</span>                 
+                                    </div>
+                                    <a href="#" class="btn btn-outline-secondary rounded-pill btn-inline mt-3">Apply Now</a>
+                                </div>
+                            </div>
+                            <div class="product-card-wrapper mb-4">
+                                <div class="product-card">
+                                    <div class="product-icon bg-success">
+                                        <i class="fas fa-map-marked-alt"></i>
+                                    </div>
+                                    <h4>Land Loan</h4>
+                                    <p>Special facility for secure land purchase and development projects</p>
+                                    <div class="product-rate">
+                                        <span class="rate">13% p.a.</span>
+                                        <span class="label">Interest</span>                
+                                    </div>
+                                    <a href="#" class="btn btn-outline-success rounded-pill btn-inline mt-3">Apply Now</a>
+                                </div>
+                            </div>
+                            <div class="product-card-wrapper mb-4">
+                                <div class="product-card">
+                                    <div class="product-icon bg-primary">
+                                        <i class="fas fa-hammer"></i>
+                                    </div>
+                                    <h4>Development Loan</h4>
+                                    <p>For home improvement, construction and property development</p>
+                                    <div class="product-rate">
+                                        <span class="rate">12.5% p.a.</span>
+                                        <span class="label">Interest</span>                
+                                    </div>
+                                    <a href="#" class="btn btn-outline-blue rounded-pill btn-inline mt-3">Apply Now</a>
+                                </div>
+                            </div>
+                            <div class="product-card-wrapper mb-4">
+                                <div class="product-card">
+                                    <div class="product-icon bg-info">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <h4>School Fees Loan</h4>
+                                    <p>Education financing with flexible repayment aligned to school terms</p>
+                                    <div class="product-rate">
+                                        <span class="rate">13% p.a.</span>
+                                        <span class="label">Interest</span>                
+                                    </div>
+                                    <a href="#" class="btn btn-outline-info rounded-pill btn-inline mt-3">Apply Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Asset Financing -->
+                    <div class="tab-pane fade" id="assets" role="tabpanel">
+                        <div class="row mt-4">
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="product-card">
+                                    <div class="product-icon bg-warning">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                    <h4>Vehicle Financing</h4>
+                                    <p>Car and motorcycle loans with favorable terms and insurance packages</p>
+                                    <div class="product-rate">
+                                        <span class="rate">14% p.a.</span>
+                                        <span class="label">Interest</span>
+                                    </div>
+                                    <div class="button-container">
+                                        <a href="#" class="btn btn-outline-warning rounded-pill px-4 mt-3">Get Started</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="product-card">
+                                    <div class="product-icon bg-primary">
+                                        <i class="fas fa-tools"></i>
+                                    </div>
+                                    <h4>Equipment Financing</h4>
+                                    <p>Funding for business equipment and tools with flexible repayment</p>
+                                    <div class="product-rate">
+                                        <span class="rate">14% p.a.</span>
+                                        <span class="label">Interest</span>
+                                    </div>
+                                    <div class="button-container">
+                                        <a href="#" class="btn btn-outline-blue rounded-pill px-4 mt-3">Get Started</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="product-card">
+                                    <div class="product-icon bg-success">
+                                        <i class="fas fa-building"></i>
+                                    </div>
+                                    <h4>Property Financing</h4>
+                                    <p>Mortgage solutions for residential and commercial properties</p>
+                                    <div class="product-rate">
+                                        <span class="rate">14% p.a.</span>
+                                        <span class="label">Interest</span>
+                                    </div>
+                                    <div class="button-container">
+                                        <a href="#" class="btn btn-outline-success rounded-pill px-4 mt-3">Get Started</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Products & Services Section */
+.product-card-wrapper {
+    flex: 0 0 19%;
+    max-width: 19%;
+    margin-right: 1%;
+}
+
+@media (max-width: 992px) {
+    .product-card-wrapper {
+        flex: 0 0 48%;
+        max-width: 48%;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .product-card-wrapper {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+.products-services {
+    background-color: #f8f9fa;
+}
+
+.products-tabs {
+    border-bottom: 2px solid #dee2e6;
+    justify-content: center;
+}
+
+.products-tabs .nav-link {
+    color: #495057;
+    font-weight: 600;
+    border: none;
+    padding: 12px 25px;
+    margin: 0 5px;
+    border-radius: 4px 4px 0 0;
+    transition: all 0.3s ease;
+}
+
+.products-tabs .nav-link.active {
+    color: #d9232d;
+    background-color: transparent;
+    border-bottom: 3px solid #d9232d;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 25px;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.product-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 24px;
+}
+
+.product-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.product-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.product-rate {
+    background: #f8f9fa;
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.product-rate .rate {
+    font-weight: 700;
+    color: #d9232d;
+    font-size: 1.1rem;
+}
+
+.product-rate .label {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.product-rates .rate-item {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.product-rates .rate-item span {
+    font-weight: 700;
+    color: #d9232d;
+}
+
+.service-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    background: #d9232d;
+    color: white;
+    font-size: 28px;
+}
+
+.service-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.service-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.service-features li {
+    padding: 5px 0;
+    position: relative;
+    padding-left: 25px;
+    color: #555;
+}
+
+.service-features li:before {
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: #d9232d;
+}
+
+/* Button Styling */
+.btn-outline-blue {
+    color: #005DAA;
+    border-color: #005DAA;
+}
+
+.btn-outline-blue:hover {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+/* Dark Mode Styles */
+.dark-mode .products-services {
+    background-color: #121212;
+}
+
+.dark-mode .products-tabs {
+    border-bottom-color: #333;
+}
+
+.dark-mode .products-tabs .nav-link {
+    color: #aaa;
+}
+
+.dark-mode .products-tabs .nav-link.active {
+    color: #ff4d4d;
+    border-bottom-color: #ff4d4d;
+}
+
+.dark-mode .product-card,
+.dark-mode .service-card {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+.dark-mode .product-card h4,
+.dark-mode .service-card h4 {
+    color: #eee;
+}
+
+.dark-mode .product-card p,
+.dark-mode .service-card p {
+    color: #bbb;
+}
+
+.dark-mode .product-rate {
+    background-color: #252525;
+}
+
+.dark-mode .product-rate .rate {
+    color: #ff4d4d;
+}
+
+.dark-mode .product-rate .label {
+    color: #999;
+}
+
+.dark-mode .product-rates .rate-item span {
+    color: #ff4d4d;
+}
+
+.dark-mode .service-icon {
+    background-color: #ff4d4d;
+}
+
+.dark-mode .service-features li {
+    color: #bbb;
+}
+
+.dark-mode .btn-outline-blue {
+    color: #4a9fe0;
+    border-color: #4a9fe0;
+}
+
+.dark-mode .btn-outline-blue:hover {
+    background-color: #2ecc71;
+    color: white;
+    border-color: #2ecc71;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .products-tabs .nav-link {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .product-card,
+    .service-card {
+        padding: 20px;
+    }
+}
+</style>
+
+<script>
+// Initialize Bootstrap tabs
+document.addEventListener('DOMContentLoaded', function() {
+    const tabElms = document.querySelectorAll('button[data-bs-toggle="tab"]');
+    tabElms.forEach(tabEl => {
+        tabEl.addEventListener('click', function (e) {
+            e.preventDefault();
+            const tab = new bootstrap.Tab(this);
+            tab.show();
+        });
+    });
+});
+</script>
+
+    <!-- SACCO Impact Section with BG Images -->
+<div class="w3l-homeblock3 py-5">
+    <div class="container py-lg-5 py-md-4 py-2">
+        <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:700px;">
+            <h5 class="small-title mb-2">Our Impact</h5>
+            <h3 class="title-style">Supporting KCCA Staff to Realize Their Dreams</h3>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="top-pic1">
+                    <div class="card-body blog-details">
+                        <span class="meta-value">Membership</span>
+                        <a href="#membership" class="blog-desc">1,252+ Empowered Members (10% growth)
+                        </a>
+                        <a href="membership.html" class="btn btn-style-primary btn-style text-white mt-4">Join Us
+                            <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
+                <div class="top-pic2">
+                    <div class="card-body blog-details">
+                        <span class="meta-value">Loans</span>
+                        <a href="#loans" class="blog-desc">UGX 16.1B Loan Portfolio (13.8% growth)
+                        </a>
+                        <a href="loans.html" class="btn btn-style-primary btn-style text-white mt-4">Apply Now
+                            <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
+                <div class="top-pic3">
+                    <div class="card-body blog-details">
+                        <span class="meta-value">Savings</span>
+                        <a href="#savings" class="blog-desc">UGX 13.3B Member Savings
+                        </a>
+                        <a href="savings.html" class="btn btn-style-primary btn-style text-white mt-4">Save With Us
+                            <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //SACCO Impact Section -->
+
+<!-- KCCA SACCO Testimonials Section -->
+<section class="w3l-index4 py-5" id="testimonials" style="color: white;">
+    <div class="container py-md-5 py-4">
+        <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:700px;">
+            <h5 class="small-title mb-2">Member Experiences</h5>
+            <h3 class="title-style">How We've Made a Difference</h3>
+        </div>
+        <div class="content-slider text-center py-4">
+            <div class="row">
+                <!-- Testimonial 1 -->
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="testimonial-card p-4 h-100">
+                        <img src="assets/images/testi2.jpg" class="img-fluid rounded-circle mb-3" 
+                             alt="KCCA staff member" style="width: 100px; height: 100px; object-fit: cover;"/>
+                        <blockquote class="quote"><q>The asset financing product helped me acquire a vehicle for my family at discounted rates through our SACCO partnerships.</q></blockquote>
+                        <div class="source mt-3">- James O., KCCA Engineering</div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="testimonial-card p-4 h-100">
+                        <img src="assets/images/testi3.jpg" class="img-fluid rounded-circle mb-3" 
+                             alt="KCCA staff member" style="width: 100px; height: 100px; object-fit: cover;"/>
+                        <blockquote class="quote"><q>I've benefited from both the 11% interest on my savings and 10% dividend payout - this dual benefit is unmatched elsewhere.</q></blockquote>
+                        <div class="source mt-3">- Proscovia N., KCCA Administration</div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="col-md-4">
+                    <div class="testimonial-card p-4 h-100">
+                        <img src="assets/images/testi2.jpg" class="img-fluid rounded-circle mb-3" 
+                             alt="KCCA staff member" style="width: 100px; height: 100px; object-fit: cover;"/>
+                        <blockquote class="quote"><q>The transition to multipurpose cooperative has brought us more products and services to meet our evolving needs.</q></blockquote>
+                        <div class="source mt-3">- Edgar B., KCCA Planning Department</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //KCCA SACCO Testimonials Section -->
+
+<style>
+    /* Scoped styles that only affect this section */
+    #testimonials .title-style,
+    #testimonials .quote,
+    #testimonials .source {
+        color: white;
+    }
+    
+    #testimonials .testimonial-card {
+        background: rgba(255,255,255,0.1);
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+    
+    #testimonials .testimonial-card:hover {
+        transform: translateY(-5px);
+    }
+</style>
+
+<!-- SACCO News Section -->
+<div class="w3l-blog-block-5 py-5" id="news">
+    <div class="container py-md-5 py-4">
+        <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:700px;">
+            <h5 class="small-title mb-2">Latest Updates</h5>
+            <h3 class="title-style">KCCA Multipurpose Cooperative Society News & Announcements</h3>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="blog-card-single">
+                    <div class="grids5-info">
+                        <a href="resources.html#financials"><img src="assets/images/blog.png" alt="Financials" /></a>
+                        <div class="blog-info">
+                            <h4><a href="news.html#financials">Audited Financial Statements</a></h4>
+                            <p>Review the audited financial statements for the year ending 2023 for transparency and accountability.</p>
+                            <div class="d-flex align-items-center justify-content-between mt-4">
+                                <span class="small ms-2">Finance Department</span>
+                                <p class="date-text"><i class="far fa-calendar-alt me-1"></i>May 10, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
+                <div class="blog-card-single">
+                    <div class="grids5-info">
+                        <a href="news.html#newsletter"><img src="assets/images/blog4.jpg" alt="Newsletter" /></a>
+                        <div class="blog-info">
+                            <h4><a href="resources.html#newsletter">Newsletter Issue 2025 Available</a></h4>
+                            <p>Catch up on our milestones, member success stories, and upcoming initiatives in our latest newsletter.</p>
+                            <div class="d-flex align-items-center justify-content-between mt-4">
+                                <span class="small ms-2">Communications Team</span>
+                                <p class="date-text"><i class="far fa-calendar-alt me-1"></i>May 5, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
+                <div class="blog-card-single">
+                    <div class="grids5-info">
+                        <a href="news.html#annualreport"><img src="assets/images/blog5.jpg" alt="Annual Report" /></a>
+                        <div class="blog-info">
+                            <h4><a href="resources.html#annualreport">Annual Report 2023 Published</a></h4>
+                            <p>Access insights into our performance, achievements, and strategic direction outlined in the 2023 annual report.</p>
+                            <div class="d-flex align-items-center justify-content-between mt-4">
+                                <span class="small ms-2">Board Secretariat</span>
+                                <p class="date-text"><i class="far fa-calendar-alt me-1"></i>Apr 30, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- //SACCO News Section -->
+
+<!-- Services Section -->
+<section class="services-section py-5" id="services">
+    <div class="container py-lg-4 py-md-3 py-2">
+        <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:700px;">
+            <h5 class="small-title mb-2">Convenient Services</h5>
+            <h3 class="title-style">Banking Made Simple</h3>
+            <p class="mt-3 text-muted">Access your funds anytime through our flexible banking channels.</p>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <!-- Deposit Services -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="service-card border-primary">
+                    <div class="service-icon bg-primary">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h4 class="service-title text-primary">Deposit Funds</h4>
+                    <p class="service-description">Deposit options through our banking partners.</p>
+                    <ul class="service-features">
+                        <li>DFCU Bank branches</li>
+                        <li>Stanbic FlexiPay</li>
+                        <li>Direct bank transfers</li>
+                    </ul>
+                    <div class="button-container">
+                        <a href="#" class="btn btn-outline-blue rounded-pill px-4 mt-3">Deposit Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Withdrawal Services -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="service-card border-danger">
+                    <div class="service-icon bg-danger">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h4 class="service-title text-danger">Withdraw Funds</h4>
+                    <p class="service-description">Multiple convenient withdrawal options</p>
+                    <ul class="service-features">
+                        <li>Mobile Money (MTN/Airtel)</li>
+                        <li>Cash at our offices</li>
+                        <li>Agent banking network</li>
+                    </ul>
+                    <div class="button-container">
+                        <a href="#" class="btn btn-outline-danger rounded-pill px-4 mt-3">Withdraw Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Digital Banking -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="service-card border-green">
+                    <div class="service-icon bg-green">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4 class="service-title text-green">Digital Banking</h4>
+                    <p class="service-description">Manage your account anytime, anywhere</p>
+                    <ul class="service-features">
+                        <li>24/7 account access</li>
+                        <li>Loan applications</li>
+                        <li>Transaction history</li>
+                    </ul>
+                    <div class="button-container">
+                        <a href="#" class="btn btn-outline-green rounded-pill px-4 mt-3">Access Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Service Card Styling */
+    .service-card {
+        height: 100%;
+        padding: 30px;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        background: white;
+        border: 1px solid; /* Thinner border */
+        box-shadow: none;
+    }
+    
+    .service-card:hover {
+        transform: translateY(-3px); /* More subtle lift */
+    }
+    
+    .service-icon {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 28px;
+    }
+    
+    .service-title {
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+    
+    .service-description {
+        color: #666;
+        margin-bottom: 20px;
+    }
+    
+    .service-features {
+        text-align: left;
+        padding-left: 20px;
+        color: #555;
+        margin-bottom: 25px;
+    }
+    
+    .service-features li {
+        margin-bottom: 8px;
+        position: relative;
+    }
+    
+    .service-features li:before {
+        content: "•";
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+    }
+    
+    /* Color-specific styles */
+    .border-primary {
+        border-color: #005DAA !important;
+    }
+    .border-primary .service-features li:before {
+        color: #005DAA;
+    }
+    
+    .border-danger {
+        border-color: #C8102E !important;
+    }
+    .border-danger .service-features li:before {
+        color: #C8102E;
+    }
+    
+    .border-green {
+        border-color: #28a745 !important;
+    }
+    .border-green .service-features li:before {
+        color: #28a745;
+    }
+    
+    .bg-green {
+        background-color: #28a745 !important;
+    }
+    
+    .text-green {
+        color: #28a745 !important;
+    }
+    
+    .button-container {
+        text-align: center;
+    }
+    
+    /* Button Styling */
+    .btn-outline-blue {
+        color: #005DAA;
+        border-color: #005DAA;
+    }
+    .btn-outline-blue:hover {
+        background-color: #005DAA;
+        color: white;
+    }
+    
+    .btn-outline-danger {
+        color: #C8102E;
+        border-color: #C8102E;
+    }
+    .btn-outline-danger:hover {
+        background-color: #C8102E;
+        color: white;
+    }
+    
+    .btn-outline-green {
+        color: #28a745;
+        border-color: #28a745;
+    }
+    .btn-outline-green:hover {
+        background-color: #28a745;
+        color: white;
+    }
+</style>
+
+<!-- Partners Section -->
+<section class="partners-section py-5" id="partners">
+    <div class="container py-lg-5 py-md-4 py-3">
+        <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:800px;">
+            <h5 class="small-title mb-2">Our Trusted Partners</h5>
+            <h3 class="title-style">Strategic Collaborations</h3>
+            <p class="mt-3 text-muted">We collaborate with top brands to deliver exclusive benefits to KCCA Multipurpose Cooperative Society members.</p>
+        </div>
+        
+        <div class="row justify-content-center align-items-stretch mt-5">
+            <!-- GEEPAS Partner -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="partner-card text-center p-4">
+                    <div class="partner-logo mb-4">
+                        <img src="assets/images/geepas.jpg" 
+                             data-light-src="assets/images/geepas.png"
+                             data-dark-src="assets/images/geepas-dark.png"
+                             alt="GEEPAS Logo" class="img-fluid partner-logo-img" style="max-height: 90px;">
+                    </div>
+                    <h4 class="mb-3">GEEPAS</h4>
+                    <p class="text-muted">Exclusive discounts on home appliances and electronics for members.</p>
+                    <div class="partner-benefits">
+                        <ul class="text-left">
+                            <li>15% off all electronics</li>
+                            <li>Special financing options</li>
+                            <li>Extended warranties</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn btn-outline-primary mt-auto">View Offers</a>
+                </div>
+            </div>
+            
+            <!-- Mantra Uganda Limited Partner -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="partner-card text-center p-4">
+                    <div class="partner-logo mb-4">
+                        <img src="assets/images/mantra.jpg" 
+                             data-light-src="assets/images/mantra.png"
+                             data-dark-src="assets/images/mantra-dark.png"
+                             alt="Mantra Uganda Limited Logo" class="img-fluid partner-logo-img" style="max-height: 90px;">
+                    </div>
+                    <h4 class="mb-3">Mantra Uganda Limited</h4>
+                    <p class="text-muted">Special deals on office equipment and business solutions.</p>
+                    <div class="partner-benefits">
+                        <ul class="text-left">
+                            <li>20% off first purchase</li>
+                            <li>Free delivery in Kampala</li>
+                            <li>Priority customer service</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn btn-outline-primary mt-auto">Explore Services</a>
+                </div>
+            </div>
+            
+            <!-- Diamond Stars Limited Partner -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="partner-card text-center p-4">
+                    <div class="partner-logo mb-4">
+                        <img src="assets/images/diamondstars.png" 
+                             data-light-src="assets/images/diamondstars.png"
+                             data-dark-src="assets/images/diamondstars-dark.png"
+                             alt="Diamond Stars Limited Logo" class="img-fluid partner-logo-img" style="max-height: 90px;">
+                    </div>
+                    <h4 class="mb-3">Diamond Stars Limited</h4>
+                    <p class="text-muted">Preferred rates on construction materials and building services.</p>
+                    <div class="partner-benefits">
+                        <ul class="text-left">
+                            <li>10% discount on materials</li>
+                            <li>Free project consultation</li>
+                            <li>Quality assurance</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn btn-outline-primary mt-auto">Learn More</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <p class="mb-3">Interested in becoming a partner?</p>
+            <a href="#" class="btn btn-primary px-5 py-2">Partner With Us</a>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Partners Section Styling */
+.partners-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.partners-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.partners-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.partners-section .title-main .small-title {
+    color: #C8102E;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.partners-section .title-style {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    position: relative;
+    display: inline-block;
+}
+
+.partners-section .title-style::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, #C8102E, #005DAA);
+    border-radius: 2px;
+}
+
+.partners-section .text-muted {
+    color: #5c6b73 !important;
+    font-size: 1rem;
+}
+
+/* Partner Cards */
+.partner-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.partner-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.partner-logo {
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f3f5;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.partner-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.partner-card:hover .partner-logo img {
+    transform: scale(1.05);
+}
+
+.partner-card h4 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.partner-benefits ul {
+    list-style: none;
+    padding-left: 1.8rem;
+}
+
+.partner-benefits li {
+    position: relative;
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.partner-benefits li::before {
+    content: '\f058';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #C8102E;
+    position: absolute;
+    left: -1.8rem;
+    top: 2px;
+}
+
+.btn-outline-primary {
+    border-color: #C8102E;
+    color: #C8102E;
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.btn-outline-primary:hover {
+    background-color: #28a745;
+    color: #fff;
+    border-color: #28a745;
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background-color: #C8102E;
+    border-color: #C8102E;
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 10px 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Dark Mode */
+.theme-container.dark-mode .partners-section,
+body.dark-mode .partners-section {
+    background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+}
+
+.theme-container.dark-mode .partners-section::before,
+body.dark-mode .partners-section::before {
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+}
+
+.theme-container.dark-mode .partners-section .small-title,
+body.dark-mode .partners-section .small-title {
+    color: #E63946 !important;
+}
+
+.theme-container.dark-mode .partners-section .title-style,
+body.dark-mode .partners-section .title-style {
+    color: #fff !important;
+}
+
+.theme-container.dark-mode .partners-section .title-style::after,
+body.dark-mode .partners-section .title-style::after {
+    background: linear-gradient(to right, #E63946, #4a9fe0);
+}
+
+.theme-container.dark-mode .partners-section .text-muted,
+body.dark-mode .partners-section .text-muted {
+    color: #a0a0a0 !important;
+}
+
+.theme-container.dark-mode .partner-card,
+body.dark-mode .partner-card {
+    background: linear-gradient(145deg, #2d2d2d 0%, #252525 100%);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.theme-container.dark-mode .partner-card:hover,
+body.dark-mode .partner-card:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.theme-container.dark-mode .partner-card h4,
+body.dark-mode .partner-card h4 {
+    color: #fff !important;
+}
+
+.theme-container.dark-mode .partner-card p,
+body.dark-mode .partner-card p {
+    color: #a0a0a0 !important;
+}
+
+.theme-container.dark-mode .partner-benefits li,
+body.dark-mode .partner-benefits li {
+    color: #b0b0b0 !important;
+}
+
+.theme-container.dark-mode .partner-benefits li::before,
+body.dark-mode .partner-benefits li::before {
+    color: #E63946 !important;
+}
+
+.theme-container.dark-mode .partner-logo,
+body.dark-mode .partner-logo {
+    background: #333;
+}
+
+.theme-container.dark-mode .btn-outline-primary,
+body.dark-mode .btn-outline-primary {
+    border-color: #E63946;
+    color: #E63946 !important;
+}
+
+.theme-container.dark-mode .btn-outline-primary:hover,
+body.dark-mode .btn-outline-primary:hover {
+    background-color: #2ecc71;
+    color: #fff !important;
+    border-color: #2ecc71;
+}
+
+.theme-container.dark-mode .btn-primary,
+body.dark-mode .btn-primary {
+    background-color: #E63946;
+    border-color: #E63946;
+}
+
+.theme-container.dark-mode .btn-primary:hover,
+body.dark-mode .btn-primary:hover {
+    background-color: #2ecc71;
+    border-color: #2ecc71;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .partners-section .title-style {
+        font-size: 1.9rem;
+    }
+    
+    .partner-card {
+        padding: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .partner-logo {
+        height: 90px;
+    }
+}
+
+@media (max-width: 576px) {
+    .partners-section .title-style {
+        font-size: 1.7rem;
+    }
+    
+    .partner-card h4 {
+        font-size: 1.3rem;
+    }
+    
+    .partner-benefits li {
+        font-size: 0.9rem;
+    }
+    
+    .btn-primary {
+        padding: 8px 20px;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Check for dark mode preference
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    updatePartnerLogos(currentTheme);
+
+    // Listen for theme changes
+    const themeSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    if (themeSwitch) {
+        themeSwitch.addEventListener('change', function(e) {
+            const theme = e.target.checked ? 'dark' : 'light';
+            updatePartnerLogos(theme);
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        });
+    }
+
+    // Function to update partner logos based on theme
+    function updatePartnerLogos(theme) {
+        const logoImages = document.querySelectorAll('.partner-logo-img');
+        logoImages.forEach(img => {
+            const newSrc = theme === 'dark' ? img.dataset.darkSrc : img.dataset.lightSrc;
+            if (newSrc) {
+                img.src = newSrc;
+            }
+        });
+    }
+
+    // Fallback for theme changes from other switches
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.attributeName === 'data-theme') {
+                const theme = document.documentElement.getAttribute('data-theme') || 'light';
+                updatePartnerLogos(theme);
+            }
+        });
+    });
+    observer.observe(document.documentElement, { attributes: true });
+});
+</script>
+
+<!-- KCCA SACCO Footer -->
+<footer class="kcca-footer">
+    <div class="footer-top py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- About Column -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about">
+                        <h5 class="footer-title">About KCCA Cooperative</h5>
+                        <p class="mt-3">KCCA Staff Multipurpose Cooperative Society Limited has been providing exceptional financial services to Kampala Capital City Authority employees since 2012. We empower our members through affordable credit, savings products, and investment opportunities.</p>
+                        <div class="social-links mt-4">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h5 class="footer-title">Quick Links</h5>
+                        <ul class="mt-3">
+                            <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Home</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right me-2"></i>About Us</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Products</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Membership</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Resources</a></li>
+                             <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Contact us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Updates Column -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-updates">
+                        <h5 class="footer-title">Recent Updates</h5>
+                        <div class="update-items mt-3">
+                            <div class="update-item mb-3">
+                                <div class="update-meta">
+                                    <span class="update-category">Board</span>
+                                    <span class="update-date">- Nov 21 -</span>
+                                </div>
+                                <a href="#" class="update-title">2024 Loan Interest Rates Announcement</a>
+                            </div>
+                            <div class="update-item">
+                                <div class="update-meta">
+                                    <span class="update-category">Management</span>
+                                    <span class="update-date">- Nov 15 -</span>
+                                </div>
+                                <a href="#" class="update-title">AGM 2023 Minutes Now Available</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Column -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-contact">
+                        <h5 class="footer-title">Contact Us</h5>
+                        <div class="contact-info mt-3">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>KCCA Headquarters, City Hall, Kampala</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <a href="tel:+256414123456">+256 312 900999</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:info@kccasacco.co.ug">cooperativeinfo@kcca.co.ug</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Mon-Fri: 8:30AM - 5PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 KCCA Staff SACCO. All rights reserved | Reg. No. CDS/2012/1234</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="payment-methods">
+                        <span class="me-2">We accept:</span>
+                         <img src="assets/images/dfcu.png" alt="DFCU Bank" width="60">
+                         <img src="assets/images/flexipay.png" alt="FlexiPay" width="60">
+                        <img src="assets/images/airtel.png" alt="Airtel Money" width="60">
+                        <img src="assets/images/mtn.png" alt="MTN Mobile Money" width="60">
+                       
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+.kcca-footer {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+.footer-top {
+    background-color: #000;
+    border-top: 4px solid #fff;
+}
+
+.footer-title {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.footer-title:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background: #fff;
+}
+
+.footer-about p {
+    color: #e0e0e0;
+    opacity: 0.9;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    opacity: 0.9;
+}
+
+.footer-links a:hover {
+    color: #fff;
+    opacity: 1;
+    transform: translateX(5px);
+    text-decoration: underline;
+}
+
+.footer-links i {
+    color: #fff;
+    font-size: 0.7rem;
+    opacity: 0.7;
+}
+
+.update-items {
+    border-top: 1px solid #333;
+    padding-top: 0.5rem;
+}
+
+.update-item {
+    border-bottom: 1px solid #333;
+    padding: 0.8rem 0;
+}
+
+.update-meta {
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-bottom: 0.3rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.update-title {
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    display: block;
+    transition: all 0.2s ease;
+}
+
+.update-title:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    gap: 0.8rem;
+}
+
+.contact-item i {
+    color: #fff;
+    margin-top: 3px;
+    min-width: 16px;
+    opacity: 0.8;
+}
+
+.contact-item span, 
+.contact-item a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.contact-item a:hover {
+    color: #fff;
+    text-decoration: underline;
+    opacity: 1;
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.social-icon:hover {
+    background: #fff;
+    color: #000;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    background-color: #111;
+    color: #fff;
+    font-size: 0.9rem;
+    border-top: 1px solid #333;
+}
+
+.payment-methods {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.payment-methods img {
+    filter: none !important;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+
+.payment-methods img:hover {
+    opacity: 1;
+}
+
+@media (max-width: 767px) {
+    .footer-title {
+        margin-top: 1.5rem;
+    }
+    
+    .footer-links a {
+        padding: 0.4rem 0;
+    }
+    
+    .footer-bottom .row > div {
+        text-align: center !important;
+        margin-bottom: 0.5rem;
+    }
+    
+    .payment-methods {
+        justify-content: center;
+    }
+}
+</style>
+
+ <!-- Js scripts -->
+    <!-- move top -->
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+        <span class="fas fa-level-up-alt" aria-hidden="true"></span>
+    </button>
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("movetop").style.display = "block";
+            } else {
+                document.getElementById("movetop").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <!-- //move top -->
+
+    <!-- common jquery plugin -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <!-- //common jquery plugin -->
+
+    <!-- banner slider -->
+    <script>
+        const slides = document.querySelectorAll(".slide");
+        const nextButton = document.getElementById("next");
+        const prevButton = document.getElementById("prev");
+        const auto = true;
+        const intervalTime = 5000;
+        let slideInterval;
+
+        const nextSlide = () => {
+            const current = document.querySelector(".current");
+            current.classList.remove("current");
+            if (current.nextElementSibling) {
+                current.nextElementSibling.classList.add("current");
+            } else {
+                slides[0].classList.add("current");
+            }
+        };
+
+        const prevSlide = () => {
+            const current = document.querySelector(".current");
+            current.classList.remove("current");
+            if (current.previousElementSibling) {
+                current.previousElementSibling.classList.add("current");
+            } else {
+                slides[slides.length - 1].classList.add("current");
+            }
+        };
+
+        nextButton.addEventListener("click", () => {
+            nextSlide();
+            if (auto) {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, intervalTime);
+            }
+        });
+        prevButton.addEventListener("click", () => {
+            prevSlide();
+            if (auto) {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, intervalTime);
+            }
+        });
+
+        if (auto) {
+            slideInterval = setInterval(nextSlide, intervalTime);
+        }
+    </script>
+    <!-- //banner slider -->
+
+    <!-- theme switch js (light and dark)-->
+    <script src="assets/js/theme-change.js"></script>
+    <!-- //theme switch js (light and dark)-->
+
+    <!-- MENU-JS -->
+    <script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
+
+        //Main navigation Active Class Add Remove
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+    </script>
+    <!-- //MENU-JS -->
+
+    <!-- disable body scroll which navbar is in active -->
+    <script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+    </script>
+    <!-- //disable body scroll which navbar is in active -->
+
+    <!-- bootstrap -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- //bootstrap -->
+    <!-- //Js scripts -->
+</body>
+
+</html>
