@@ -1,0 +1,311 @@
+/* KCCA SACCO Color System
+ * A systematic approach to color management using CSS custom properties
+ * Following a clear hierarchy and role-based assignments
+ */
+
+:root {
+    /* ============================
+     * 1. COLOR FOUNDATIONS
+     * ============================ */
+    
+    /* Core Brand Colors */
+    --kcca-red: #F22233;
+    --kcca-green: #2E7D32;
+    
+    /* Color Spectrum - Red */
+    --red-100: #FFE8E8;
+    --red-200: #FFB8B8;
+    --red-300: #FF8A8A;
+    --red-400: #FF5C5C;
+    --red-500: var(--kcca-red);
+    --red-600: #960B22;
+    --red-700: #6B0818;
+    
+    /* Color Spectrum - Green */
+    --green-50: #E8F5E9;  /* Lightest - for subtle backgrounds */
+    --green-100: #C8E6C9; /* Very light - for hover states */
+    --green-200: #A5D6A7; /* Light - for inactive states */
+    --green-300: #81C784; /* Medium light - for secondary elements */
+    --green-400: #66BB6A; /* Medium - for supporting elements */
+    --green-500: #2E7D32; /* KCCA Brand Green - primary color */
+    --green-600: #2E7D32; /* Darker - for hover states */
+    --green-700: #1B5E20; /* Dark - for active states */
+    --green-800: #1B5E20; /* Very dark - for text on light backgrounds */
+    --green-900: #0A280A; /* Darkest - for special cases */
+    
+    /* Semantic Green Usage */
+    --success-light: var(--green-100);
+    --success-main: var(--kcca-green);
+    --success-dark: var(--green-700);
+    --success-contrast: var(--green-50);
+    
+    /* Neutral Spectrum */
+    --neutral-100: #FFFFFF;
+    --neutral-200: #F8F9FA;
+    --neutral-300: #E9ECEF;
+    --neutral-400: #DEE2E6;
+    --neutral-500: #ADB5BD;
+    --neutral-600: #6C757D;
+    --neutral-700: #495057;
+    --neutral-800: #343A40;
+    --neutral-900: #212529;
+
+    /* ============================
+     * 2. SEMANTIC COLOR ROLES
+     * ============================ */
+    
+    /* Text Colors */
+    --text-primary: var(--neutral-900);
+    --text-secondary: var(--neutral-700);
+    --text-muted: var(--neutral-600);
+    --text-inverse: var(--neutral-100);
+    
+    /* Background Colors */
+    --bg-primary: var(--neutral-100);
+    --bg-secondary: var(--neutral-200);
+    --bg-tertiary: var(--neutral-300);
+    --bg-accent-red: var(--red-100);
+    --bg-accent-green: var(--green-100);
+    
+    /* Action Colors */
+    --action-primary: var(--kcca-red);
+    --action-primary-hover: var(--red-600);
+    --action-secondary: var(--kcca-green);
+    --action-secondary-hover: var(--green-600);
+    --action-success: var(--kcca-green);
+    --action-success-hover: var(--green-600);
+    --action-success-active: var(--green-700);
+    --action-success-disabled: var(--green-200);
+    
+    /* Status Colors */
+    --status-success: var(--kcca-green);
+    --status-error: var(--kcca-red);
+    --status-warning: #FFC107;
+    --status-info: #0dcaf0;
+    
+    /* Border Colors */
+    --border-light: var(--neutral-300);
+    --border-medium: var(--neutral-400);
+    --border-dark: var(--neutral-600);
+    --border-success-light: var(--green-200);
+    --border-success-main: var(--kcca-green);
+    --border-success-dark: var(--green-600);
+    
+    /* Shadow Colors */
+    --shadow-sm: rgba(0, 0, 0, 0.05);
+    --shadow-md: rgba(0, 0, 0, 0.1);
+    --shadow-lg: rgba(0, 0, 0, 0.15);
+
+    /* ============================
+     * 3. COMPONENT-SPECIFIC COLORS
+     * ============================ */
+    
+    /* Navigation */
+    --nav-bg: var(--bg-primary);
+    --nav-text: #333;
+    --nav-text-hover: var(--kcca-green);
+    --nav-text-active: var(--kcca-green);
+    --nav-border: var(--border-light);
+    --nav-brand: var(--kcca-red);
+    
+    /* Buttons */
+    --btn-primary-bg: var(--kcca-red);
+    --btn-primary-text: #fff;
+    --btn-primary-border: var(--kcca-red);
+    --btn-primary-hover-bg: var(--kcca-green);
+    --btn-primary-hover-border: var(--kcca-green);
+    --btn-secondary-bg: var(--kcca-green);
+    --btn-secondary-text: var(--text-inverse);
+    --btn-secondary-border: var(--kcca-green);
+    
+    /* Cards */
+    --card-bg: var(--bg-primary);
+    --card-border: var(--border-light);
+    --card-shadow: var(--shadow-sm);
+    --card-primary-accent: var(--action-primary);
+    --card-secondary-accent: var(--action-secondary);
+    
+    /* Forms */
+    --input-bg: var(--bg-primary);
+    --input-border: var(--border-medium);
+    --input-focus-border: var(--action-secondary);
+    --input-focus-shadow: var(--green-100);
+    
+    /* Section Backgrounds */
+    --section-primary-bg: var(--bg-primary);
+    --section-secondary-bg: var(--bg-secondary);
+    --section-red-accent-bg: var(--bg-accent-red);
+    --section-green-accent-bg: var(--bg-accent-green);
+
+    /* Background Accents */
+    --bg-success-light: var(--green-50);
+    --bg-success-main: var(--green-100);
+    --bg-success-dark: var(--green-200);
+}
+
+/* ============================
+ * 4. DARK THEME OVERRIDES
+ * ============================ */
+[data-theme="dark"] {
+    /* Core Brand Colors - Keep consistent in dark mode */
+    --kcca-red: #F22233;
+    --kcca-green: #2E7D32;
+    
+    /* Neutral Spectrum - Inverted */
+    --neutral-100: #121212;
+    --neutral-200: #1E1E1E;
+    --neutral-300: #2D2D2D;
+    --neutral-400: #404040;
+    --neutral-500: #666666;
+    --neutral-600: #808080;
+    --neutral-700: #A0A0A0;
+    --neutral-800: #D4D4D4;
+    --neutral-900: #FFFFFF;
+    
+    /* Background Colors */
+    --bg-primary: var(--neutral-100);
+    --bg-secondary: var(--neutral-200);
+    --bg-tertiary: var(--neutral-300);
+    --bg-accent-red: rgba(255, 77, 77, 0.1);
+    --bg-accent-green: rgba(46, 204, 113, 0.1);
+    
+    /* Shadow Colors */
+    --shadow-sm: rgba(0, 0, 0, 0.2);
+    --shadow-md: rgba(0, 0, 0, 0.3);
+    --shadow-lg: rgba(0, 0, 0, 0.4);
+
+    /* Navigation */
+    --nav-text: rgba(255, 255, 255, 0.8);
+    --nav-text-hover: var(--kcca-green);
+    --nav-text-active: var(--kcca-green);
+    --nav-brand: var(--kcca-red);
+}
+
+/* ============================
+ * 5. UTILITY CLASSES
+ * ============================ */
+
+/* Text Colors */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+.text-inverse { color: var(--text-inverse); }
+.text-success { color: var(--status-success); }
+.text-error { color: var(--status-error); }
+
+/* Background Colors */
+.bg-primary { background-color: var(--bg-primary); }
+.bg-secondary { background-color: var(--bg-secondary); }
+.bg-accent-red { background-color: var(--bg-accent-red); }
+.bg-accent-green { background-color: var(--bg-accent-green); }
+
+/* Border Utilities */
+.border-light { border-color: var(--border-light); }
+.border-medium { border-color: var(--border-medium); }
+.border-dark { border-color: var(--border-dark); }
+
+/* ============================
+ * 6. COMPONENT STYLES
+ * ============================ */
+
+/* Navigation */
+.navbar {
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid var(--nav-border);
+}
+
+.nav-link {
+    color: var(--nav-text);
+}
+
+.nav-link.active {
+    color: var(--nav-text-active);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--btn-primary-bg);
+    border-color: var(--btn-primary-border);
+    color: var(--btn-primary-text);
+}
+
+.btn-secondary {
+    background-color: var(--btn-secondary-bg);
+    border-color: var(--btn-secondary-border);
+    color: var(--btn-secondary-text);
+}
+
+/* Cards */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 2px 4px var(--card-shadow);
+}
+
+.card-primary {
+    border-left: 4px solid var(--card-primary-accent);
+}
+
+.card-secondary {
+    border-left: 4px solid var(--card-secondary-accent);
+}
+
+/* Forms */
+.form-control {
+    background-color: var(--input-bg);
+    border-color: var(--input-border);
+}
+
+.form-control:focus {
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 0 0.2rem var(--input-focus-shadow);
+}
+
+/* Section Backgrounds */
+.section-primary {
+    background-color: var(--section-primary-bg);
+}
+
+.section-secondary {
+    background-color: var(--section-secondary-bg);
+}
+
+.section-red-accent {
+    background-color: var(--section-red-accent-bg);
+}
+
+.section-green-accent {
+    background-color: var(--section-green-accent-bg);
+}
+
+/* ============================
+ * 7. PRINT STYLES
+ * ============================ */
+@media print {
+    :root {
+        /* Reset colors for printing */
+        --text-primary: #000000;
+        --text-secondary: #333333;
+        --text-muted: #666666;
+        --bg-primary: #FFFFFF;
+        --bg-secondary: #FFFFFF;
+        --border-light: #CCCCCC;
+    }
+    
+    .no-print {
+        display: none !important;
+    }
+}
+
+/* Mission & Vision Logo Styling */
+.mission-logo,
+.vision-logo {
+    color: var(--kcca-green);
+    fill: var(--kcca-green);
+}
+
+[data-theme="dark"] .mission-logo,
+[data-theme="dark"] .vision-logo {
+    color: var(--kcca-green);
+    fill: var(--kcca-green);
+}
