@@ -1,0 +1,23 @@
+/* Footer copyright color for light/dark mode */
+.footer-bottom .footer-copyright {
+  color: #fff !important; /* White in light mode */
+}
+[data-theme="dark"] .footer-bottom .footer-copyright {
+  color: #b0b0b0 !important; /* Grey in dark mode */
+}
+[data-theme="dark"] .footer-top {
+  background-color: #181818 !important; /* Subtle dark grey for dark mode */
+}
+
+.mega-dropdown {
+  width: 400px !important;
+  min-width: 0 !important;
+  max-width: 90vw !important;
+  padding: 0.5rem 1rem !important;
+}
+.mega-dropdown .row {
+  margin: 0 !important;
+}
+.mega-dropdown .col-md-4 {
+  padding: 0 0.5rem !important;
+}

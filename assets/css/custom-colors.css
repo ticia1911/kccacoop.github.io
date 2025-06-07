@@ -309,3 +309,77 @@
     color: var(--kcca-green);
     fill: var(--kcca-green);
 }
+
+/* Custom styles for dropdown menu */
+.mega-dropdown {
+    width: 600px !important;
+    padding: 1rem !important;
+    margin-top: 0.5rem !important;
+}
+
+.mega-dropdown .row {
+    margin: 0 !important;
+}
+
+.mega-dropdown .col-md-4 {
+    padding: 0.5rem !important;
+}
+
+.mega-dropdown .dropdown-header {
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    padding: 0.5rem 0 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.mega-dropdown .dropdown-item {
+    font-size: 0.85rem !important;
+    padding: 0.4rem 0.5rem !important;
+    white-space: normal !important;
+}
+
+/* Dark mode styles */
+[data-theme="dark"] .mega-dropdown {
+    background-color: #2d2d2d !important;
+    border-color: #404040 !important;
+}
+
+[data-theme="dark"] .mega-dropdown .dropdown-header {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .mega-dropdown .dropdown-item {
+    color: #e0e0e0 !important;
+}
+
+[data-theme="dark"] .mega-dropdown .dropdown-item:hover {
+    background-color: #404040 !important;
+    color: #ffffff !important;
+}
+
+/* Theme toggle button styles */
+.theme-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: inherit;
+}
+
+.theme-btn i {
+    font-size: 1.2rem;
+}
+
+[data-theme="dark"] .theme-btn {
+    color: #ffffff;
+}
+
+/* Active state for navigation links */
+.nav-link.active {
+    color: #198754 !important;
+    font-weight: 500;
+}
+
+[data-theme="dark"] .nav-link.active {
+    color: #4caf50 !important;
+}
