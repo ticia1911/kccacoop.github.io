@@ -1,7 +1,3 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
--->
 <!doctype html>
 <html lang="en">
 
@@ -9,12 +5,24 @@ Author URL: http://w3layouts.com
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Workup - Corporate Category Bootstrap Responsive Website Template - Contact Us : W3Layouts</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <title>Contact Us - KCCA Staff Multipurpose Cooperative Society Limited - Contact Us</title>
     <!-- Google fonts -->
     <link href="//fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <!-- Template CSS Style link -->
-    <link rel="stylesheet" href="assets/css/style-starter.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/footer-custom.css">
+
+    <!-- EmailJS for professional email sending -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "1ffTzcvy5SmswSnIv",
+            });
+        })();
+    </script>
 </head>
 
 <body>
@@ -23,7 +31,8 @@ Author URL: http://w3layouts.com
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="index.html">
-                    <i class="fab fa-wikipedia-w"></i>orkup
+                    <img id="logo" src="assets/images/banner.png" data-light="assets/images/banner.png"
+                        data-dark="assets/images/banner.png" alt="Workup Logo" style="height: 70px;">
                 </a>
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
@@ -32,45 +41,297 @@ Author URL: http://w3layouts.com
                     <span class="navbar-toggler-icon fa icon-close fa-times"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarScroll">
-                    <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll align-items-center">
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item dropdown" id="productsDropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" id="productsDropdownToggle">
+                                Products <i class="fas fa-caret-down ms-1"></i>
+                            </a>
+                            <div class="dropdown-menu mega-dropdown" aria-labelledby="productsDropdownToggle">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h6 class="dropdown-header">Savings</h6>
+                                        <a class="dropdown-item" href="member-savings.html">Member Savings</a>
+                                        <a class="dropdown-item" href="toto-savings.html">Toto Savings</a>
+                                        <a class="dropdown-item" href="group-savings.html">Group Savings</a>
+                                        <a class="dropdown-item" href="fixed-deposits.html">Fixed Deposits</a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h6 class="dropdown-header">Credit Facilities</h6>
+                                        <a class="dropdown-item" href="main-loan.html">Main Loan</a>
+                                        <a class="dropdown-item" href="emergency-loan.html">Emergency Loan</a>
+                                        <a class="dropdown-item" href="land-loan.html">Land Loan</a>
+                                        <a class="dropdown-item" href="estate-development-loan.html">Estate Dev't
+                                            Loan</a>
+                                        <a class="dropdown-item" href="school-fees-loan.html">School Fees Loan</a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h6 class="dropdown-header">Asset Financing</h6>
+                                        <a class="dropdown-item" href="geepas.html">GEEPAS</a>
+                                        <a class="dropdown-item" href="mantra-uganda.html">Mantra Uganda Ltd</a>
+                                        <a class="dropdown-item" href="diamond-stars.html">Diamond Stars Ltd</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="membership.html">Membership</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="services.html">Services</a>
+                            <a class="nav-link" href="resources.html">Resources</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="contact.html">Contact</a>
+                            <a class="nav-link active" href="contact.html">Contact Us</a>
                         </li>
+                        <li class="nav-item ms-3">
+                            <a href="https://finhazi.com/login"
+                                class="btn btn-style btn-success rounded-pill px-3 py-1 border-2 fw-bold text-white">
+                                Login <i class="fas fa-sign-in-alt text-white"></i>
+                            </a>
+                        </li>
+
                     </ul>
-                    <form action="#search" method="GET" class="d-flex search-header ms-lg-2">
-                        <input class="form-control" type="search" placeholder="Enter Keyword..." aria-label="Search"
-                            required>
-                        <button class="btn btn-style" type="submit"><i class="fas fa-search"></i></button>
-                    </form>
                 </div>
+
                 <!-- toggle switch for light and dark theme -->
                 <div class="cont-ser-position">
                     <nav class="navigation">
-                        <div class="theme-switch-wrapper">
-                            <label class="theme-switch" for="checkbox">
-                                <input type="checkbox" id="checkbox">
-                                <div class="mode-container">
-                                    <i class="gg-sun"></i>
-                                    <i class="gg-moon"></i>
-                                </div>
-                            </label>
+                        <div class="professional-toggle">
+                            <button id="theme-toggle" class="theme-btn" aria-label="Toggle dark mode">
+                                <i id="theme-icon" class="fas fa-moon"></i>
+                            </button>
                         </div>
                     </nav>
                 </div>
                 <!-- //toggle switch for light and dark theme -->
+
             </nav>
         </div>
     </header>
     <!-- //header -->
+
+    <script>
+        // Enhanced dropdown behavior
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdown = document.getElementById('productsDropdown');
+            const dropdownToggle = document.getElementById('productsDropdownToggle');
+            const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+
+            let hoverTimeout;
+
+            // Show dropdown on hover
+            dropdown.addEventListener('mouseenter', function () {
+                clearTimeout(hoverTimeout);
+                dropdownMenu.classList.add('show');
+                dropdownToggle.setAttribute('aria-expanded', 'true');
+            });
+
+            // Hide dropdown on mouse leave with delay
+            dropdown.addEventListener('mouseleave', function () {
+                hoverTimeout = setTimeout(function () {
+                    dropdownMenu.classList.remove('show');
+                    dropdownToggle.setAttribute('aria-expanded', 'false');
+                }, 300); // 300ms delay before hiding
+            });
+
+            // Handle click events
+            dropdownToggle.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                if (dropdownMenu.classList.contains('show')) {
+                    dropdownMenu.classList.remove('show');
+                    dropdownToggle.setAttribute('aria-expanded', 'false');
+                } else {
+                    dropdownMenu.classList.add('show');
+                    dropdownToggle.setAttribute('aria-expanded', 'true');
+                }
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!dropdown.contains(e.target)) {
+                    dropdownMenu.classList.remove('show');
+                    dropdownToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Prevent Bootstrap's default dropdown behavior from interfering
+            dropdownToggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+        });
+    </script>
+
+    <!-- Dropdown Styling -->
+    <style>
+        /* Dropdown Spacing Fix - Compact Version */
+        .mega-dropdown {
+            margin-top: 8px !important;
+            min-width: 450px !important;
+            padding: 15px !important;
+            border: 1px solid #e9ecef !important;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08) !important;
+            border-radius: 6px !important;
+            position: absolute !important;
+            top: 100% !important;
+            left: 0 !important;
+            z-index: 1000 !important;
+            background-color: white !important;
+        }
+
+        .mega-dropdown .row {
+            margin: 0 !important;
+        }
+
+        .mega-dropdown .col-md-4 {
+            padding: 0 12px !important;
+        }
+
+        /* Horizontal headings - Compact */
+        .mega-dropdown .dropdown-header {
+            color: #28a745 !important;
+            font-weight: 600 !important;
+            font-size: 0.9rem !important;
+            text-transform: capitalize !important;
+            letter-spacing: 0.3px !important;
+            padding: 0 0 6px 0 !important;
+            margin-bottom: 8px !important;
+            border-bottom: 2px solid #28a745 !important;
+            display: block !important;
+        }
+
+        /* Vertical products under each heading - Compact */
+        .mega-dropdown .dropdown-item {
+            padding: 6px 0 !important;
+            color: #666 !important;
+            font-size: 0.85rem !important;
+            transition: all 0.2s ease !important;
+            border: none !important;
+            background: none !important;
+            display: block !important;
+        }
+
+        .mega-dropdown .dropdown-item:hover {
+            background-color: #f8f9fa !important;
+            color: #28a745 !important;
+            padding-left: 10px !important;
+        }
+
+        /* Enhanced Dark mode styling */
+        [data-theme="dark"] .mega-dropdown {
+            background-color: #1a1a1a !important;
+            border: 1px solid #333333 !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        [data-theme="dark"] .mega-dropdown .dropdown-header {
+            color: #4ade80 !important;
+            border-bottom: 2px solid #4ade80 !important;
+        }
+
+        [data-theme="dark"] .mega-dropdown .dropdown-item {
+            color: #e5e5e5 !important;
+        }
+
+        [data-theme="dark"] .mega-dropdown .dropdown-item:hover {
+            background-color: #333333 !important;
+            color: #4ade80 !important;
+            padding-left: 10px !important;
+        }
+
+        /* Force dark mode dropdown visibility */
+        [data-theme="dark"] .dropdown-menu.mega-dropdown {
+            background-color: #1a1a1a !important;
+            border-color: #333333 !important;
+        }
+
+        [data-theme="dark"] .dropdown-menu.mega-dropdown .dropdown-header {
+            color: #4ade80 !important;
+            border-bottom-color: #4ade80 !important;
+        }
+
+        [data-theme="dark"] .dropdown-menu.mega-dropdown .dropdown-item {
+            color: #e5e5e5 !important;
+        }
+
+        [data-theme="dark"] .dropdown-menu.mega-dropdown .dropdown-item:hover {
+            background-color: #333333 !important;
+            color: #4ade80 !important;
+        }
+
+        /* Responsive design - Compact */
+        @media (max-width: 768px) {
+            .mega-dropdown {
+                min-width: 100% !important;
+                margin-top: 5px !important;
+                padding: 12px !important;
+            }
+
+            .mega-dropdown .col-md-4 {
+                margin-bottom: 15px !important;
+            }
+
+            .mega-dropdown .col-md-4:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        /* Red h5 headings in dark mode */
+        [data-theme="dark"] h5 {
+            color: #ff3b3b !important;
+        }
+
+        /* Green contact icons */
+        .contact-icon i {
+            color: #28a745 !important;
+        }
+
+        [data-theme="dark"] .contact-icon i {
+            color: #4ade80 !important;
+        }
+
+        /* Highlight form fields green on focus */
+        .w3layouts-contact-fm .form-control:focus,
+        .w3layouts-contact-fm textarea:focus {
+            border-color: #28a745 !important;
+            box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.15) !important;
+        }
+
+        [data-theme="dark"] .w3layouts-contact-fm .form-control:focus,
+        [data-theme="dark"] .w3layouts-contact-fm textarea:focus {
+            border-color: #4ade80 !important;
+            box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.18) !important;
+        }
+
+        /* Green submit button in contact form */
+        .w3layouts-contact-fm .btn.btn-style[type="submit"] {
+            background-color: #28a745 !important;
+            border-color: #28a745 !important;
+            color: #fff !important;
+        }
+
+        /* Left-align and reduce size of submit button in contact form */
+        .w3layouts-contact-fm .form-group-2 {
+            text-align: left !important;
+        }
+
+        .w3layouts-contact-fm .btn.btn-style[type="submit"] {
+            padding: 0.375rem 1.25rem !important;
+            font-size: 0.95rem !important;
+            min-width: 100px !important;
+            max-width: 160px !important;
+            border-radius: 50px !important;
+            margin-left: 0 !important;
+            display: inline-block !important;
+        }
+    </style>
 
     <!-- inner banner -->
     <section class="inner-banner py-5">
@@ -100,7 +361,11 @@ Author URL: http://w3layouts.com
                             <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                             <div class="ms-3">
                                 <h5 class="contact-text">Visit Us:</h5>
-                                <p>5th Avenue, London</p>
+                                <span>
+                                    KCCA City Hall,<br>
+                                    Plot 1–3 Apollo Kaggwa Road,<br>
+                                    P.O. Box 7010, Kampala Uganda
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -109,7 +374,7 @@ Author URL: http://w3layouts.com
                             <i class="fas fa-phone-alt" aria-hidden="true"></i>
                             <div class="ms-3">
                                 <h5 class="contact-text">Call Us:</h5>
-                                <a href="tel:+12 23456790">+12 23456790</a>
+                                <a href="tel:+12 23456790">+256 312 900999</a>
                             </div>
                         </div>
                     </div>
@@ -118,13 +383,13 @@ Author URL: http://w3layouts.com
                             <i class="fas fa-envelope-open-text" aria-hidden="true"></i>
                             <div class="ms-3">
                                 <h5 class="contact-text">Mail Us:</h5>
-                                <a href="mailto:info@example.com"> info@example.com</a>
+                                <a href="mailto:info@example.com">cooperativeinfo@kcca.go.ug</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 right-cont-contact ps-md-4 mt-md-0 mt-5">
-                    <form method="post" class="w3layouts-contact-fm" action="https://sendmail.w3layouts.com/submitForm">
+                    <form id="contactForm" class="w3layouts-contact-fm">
                         <div class="form-group mb-3">
                             <input class="form-control" type="text" name="w3lName" id="w3lName" placeholder="Your Name"
                                 required="">
@@ -134,11 +399,14 @@ Author URL: http://w3layouts.com
                                 placeholder="Your Email" required="">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" name="w3lMessage" id="w3lMessage" placeholder="Write Message"
+                            <textarea class="form-control" name="w3lMessage" id="w3lMessage" placeholder="Type your message, suggestion, or inquiry here..."
                                 required=""></textarea>
                         </div>
                         <div class="form-group-2 mt-3 text-end">
-                            <button type="submit" class="btn btn-style">Submit Form</button>
+                            <button type="submit" class="btn btn-style">Submit</button>
+                        </div>
+                        <div id="contactSuccessMessage" class="success-message" style="display:none;margin-top:1rem;color:#28a745;font-weight:bold;">
+                            <i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.
                         </div>
                     </form>
                 </div>
@@ -148,75 +416,137 @@ Author URL: http://w3layouts.com
 
     <div class="map-contact pt-5">
         <iframe class="map-w3layouts"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317718.69319292053!2d-0.3817765050863085!3d51.528307984912544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C+UK!5e0!3m2!1sen!2spl!4v1562654563739!5m2!1sen!2spl"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.510157232328!2d32.57678611534467!3d0.31504959972949874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbc7f6de8bb23%3A0xaa7efda4ec9d6272!2sKampala%20Capital%20City%20Authority!5e0!3m2!1sen!2sug!4v1710000000000!5m2!1sen!2sug"
             width="100%" height="400" frameborder="0" style="border: 0px;" allowfullscreen=""></iframe>
     </div>
     <!-- //contact -->
 
-    <!-- footer -->
-    <footer class="w3l-footer py-5">
-        <div class="container pt-4">
-            <div class="row">
-                <div class="col-lg-4 sub-one-left">
-                    <h6>About </h6>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa officia dicta magni ea
-                        at, culpa atque, rerum dolorum voluptas alias
-                        qui temporibus ex totam distinctio nobis impedit minus rerum,
-                        nihil blan ditiis quos atque.</p>
-                    <ul class="social mt-4 pt-lg-1">
-                        <li><a href="#facebook"><span class="fab fa-facebook-f"></span></a></li>
-                        <li><a href="#twitter"><span class="fab fa-twitter"></span></a></li>
-                        <li><a href="#linkedin"><span class="fab fa-linkedin-in"></span></a></li>
-                        <li><a href="#google-plus"><span class="fab fa-google-plus-g"></span></a></li>
-                        <li><a href="#instagram"><span class="fab fa-instagram"></span></a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-5 col-md-6 mt-lg-0 mt-5 px-lg-5 sub-two-right">
-                    <h6>Recent Posts</h6>
-                    <div class="footer-post">
-                        <ul>
-                            <li><a href="#post">Suzan Lois</a></li>
-                            <li class="mx-2"><a href="#post">- Nov. 21 - </a></li>
-                            <li><a href="#post">3 comments</a></li>
-                        </ul>
-                        <p class="post-footer"><a href="#post">Delivering New Customer Experiences with Workup.</a></p>
-                    </div>
-                    <div class="footer-post mt-4">
-                        <ul>
-                            <li><a href="#post">Rose Alha</a></li>
-                            <li class="mx-2"><a href="#post">- Nov. 21 - </a></li>
-                            <li><a href="#post">3 comments</a></li>
-                        </ul>
-                        <p class="post-footer"><a href="#post">Discussing the current trends in the share market.</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mt-lg-0 mt-5 sub-one-left">
-                    <h6>Contact </h6>
-                    <div class="column2">
-                        <div class="href1"><span class="fas fa-envelope-open"></span><a
-                                href="mailto:info@example.com">info@example.com</a>
-                        </div>
-                        <div class="href2 my-3"><span class="fas fa-phone-alt"></span><a
-                                href="tel:+44-123-456-78">+44-123-456-78</a>
-                        </div>
-                        <div>
-                            <p class="contact-para mb-3"><span class="fas fa-map-marker-alt"></span>New York,
-                                235 Lane, 10001</p>
-                        </div>
-                        <div>
-                            <p class="contact-para"><span class="fas fa-clock"></span>Office Hours: 9AM - 7PM</p>
+    <!-- KCCA Cooperative Footer -->
+    <footer class="kcca-footer">
+        <div class="footer-top py-5">
+            <div class="container">
+                <div class="row g-4">
+                    <!-- About Column -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-about">
+                            <h5 class="footer-title">About Us</h5>
+                            <p class="mt-3">KCCA Staff Multipurpose Cooperative Society Limited has been providing
+                                exceptional financial services to Kampala Capital City Authority employees since 2012.
+                                We empower our members through affordable credit, savings products, and investment
+                                opportunities.</p>
+                            <div class="social-links mt-4">
+                                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Quick Links Column -->
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-links">
+                            <h5 class="footer-title">Quick Links</h5>
+                            <ul class="mt-3">
+                                <li><a href="index.html"><i class="fas fa-chevron-right me-2"></i>Home</a></li>
+                                <li><a href="about.html"><i class="fas fa-chevron-right me-2"></i>About Us</a></li>
+                                <li><a href="index.html#savings-tab"><i class="fas fa-chevron-right me-2"></i>Products</a></li>
+                                <li><a href="membership.html"><i class="fas fa-chevron-right me-2"></i>Membership</a>
+                                </li>
+                                <li><a href="resources.html"><i class="fas fa-chevron-right me-2"></i>Resources</a></li>
+                                <li><a href="contact.html"><i class="fas fa-chevron-right me-2"></i>Contact us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Updates Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-updates">
+                            <h5 class="footer-title">Recent Updates</h5>
+                            <div class="update-items mt-3">
+                                <div class="update-item mb-3">
+                                    <div class="update-meta">
+                                        <span class="update-category">Investment & Strategy Committee</span>
+                                        <span class="update-date">- June 5 -</span>
+                                    </div>
+                                    <a href="resources.html#land-plots" class="update-title">New Land Plots Available</a>
+                                </div>
+                                <div class="update-item">
+                                    <div class="update-meta">
+                                        <span class="update-category">Audit Committee</span>
+                                        <span class="update-date">- March 15 -</span>
+                                    </div>
+                                    <a href="resources.html#financial" class="update-title">Audited Financial Statements</a>
+                                </div>
+                                <div class="update-item">
+                                    <div class="update-meta">
+                                        <span class="update-category">Board Secretariat</span>
+                                        <span class="update-date">- Jan 1 -</span>
+                                    </div>
+                                    <a href="resources.html#publications" class="update-title">Annual Report Published</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-contact">
+                            <h5 class="footer-title">Contact Us</h5>
+                            <div class="contact-info mt-3">
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>
+                                        KCCA City Hall,<br>
+                                        Plot 1–3 Apollo Kaggwa Road,<br>
+                                        P.O. Box 7010, Kampala Uganda
+                                    </span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <a href="tel:+256414123456">+256 312 900999</a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <a href="mailto:info@kccacooperative.co.ug">cooperativeinfo@kcca.go.ug</a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Mon-Fri: 8:30AM - 5PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="copyright-footer text-center mt-5 pt-sm-4 pt-2">
-                <p>&copy; 2021 Workup. All rights reserved | Design by <a href="https://w3layouts.com/">W3Layouts</a>
-                </p>
             </div>
         </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom py-3">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="mb-0 footer-copyright">&copy; 2025 KCCA Staff Multipurpose Cooperative Society
+                            Limited. All rights
+                            reserved | Reg. No. CDS/2012/1234</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="payment-methods">
+                            <span class="me-2">We accept:</span>
+                            <img src="assets/images/dfcu.png" alt="DFCU Bank" width="60">
+                            <img src="assets/images/flexipay.png" alt="FlexiPay" width="60">
+                            <img src="assets/images/payway.png" alt="Pay Way" width="60">
+                            <img src="assets/images/airtel.png" alt="Airtel Money" width="60">
+                            <img src="assets/images/mtn.png" alt="MTN Mobile Money" width="60">
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
     </footer>
-    <!-- //footer -->
 
     <!-- Js scripts -->
     <!-- move top -->
@@ -248,10 +578,6 @@ Author URL: http://w3layouts.com
     <!-- common jquery plugin -->
     <script src="assets/js/jquery-3.3.1.min.js"></script>
     <!-- //common jquery plugin -->
-
-    <!-- theme switch js (light and dark)-->
-    <script src="assets/js/theme-change.js"></script>
-    <!-- //theme switch js (light and dark)-->
 
     <!-- MENU-JS -->
     <script>
@@ -296,6 +622,147 @@ Author URL: http://w3layouts.com
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- //bootstrap -->
     <!-- //Js scripts -->
+
+    <!-- Comprehensive Theme Management System -->
+    <script>
+        // Theme Management System for Contact Page
+        document.addEventListener('DOMContentLoaded', function () {
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const logo = document.getElementById('logo');
+
+            // Set initial theme from localStorage or default
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+
+            if (currentTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                if (logo && logo.dataset.dark) logo.src = logo.dataset.dark;
+            } else {
+                document.body.classList.remove('dark-mode');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                if (logo && logo.dataset.light) logo.src = logo.dataset.light;
+            }
+
+            themeToggle.addEventListener('click', function () {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+
+                if (newTheme === 'dark') {
+                    document.body.classList.add('dark-mode');
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                    if (logo && logo.dataset.dark) logo.src = logo.dataset.dark;
+                } else {
+                    document.body.classList.remove('dark-mode');
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                    if (logo && logo.dataset.light) logo.src = logo.dataset.light;
+                }
+
+                // Dispatch themeChanged event for other scripts/components
+                window.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme: newTheme } }));
+            });
+        });
+    </script>
+
+    <!-- Enhanced dropdown behavior (copied from index.html) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdown = document.getElementById('productsDropdown');
+            const dropdownToggle = document.getElementById('productsDropdownToggle');
+            const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+
+            let hoverTimeout;
+
+            // Show dropdown on hover
+            dropdown.addEventListener('mouseenter', function () {
+                clearTimeout(hoverTimeout);
+                dropdownMenu.classList.add('show');
+                dropdownToggle.setAttribute('aria-expanded', 'true');
+            });
+
+            // Hide dropdown on mouse leave with delay
+            dropdown.addEventListener('mouseleave', function () {
+                hoverTimeout = setTimeout(function () {
+                    dropdownMenu.classList.remove('show');
+                    dropdownToggle.setAttribute('aria-expanded', 'false');
+                }, 300); // 300ms delay before hiding
+            });
+
+            // Handle click events
+            dropdownToggle.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                if (dropdownMenu.classList.contains('show')) {
+                    dropdownMenu.classList.remove('show');
+                    dropdownToggle.setAttribute('aria-expanded', 'false');
+                } else {
+                    dropdownMenu.classList.add('show');
+                    dropdownToggle.setAttribute('aria-expanded', 'true');
+                }
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!dropdown.contains(e.target)) {
+                    dropdownMenu.classList.remove('show');
+                    dropdownToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Prevent Bootstrap's default dropdown behavior from interfering
+            dropdownToggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('contactForm');
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = 'Sending...';
+                    submitBtn.disabled = true;
+                    // Collect form data
+                    const name = document.getElementById('w3lName').value;
+                    const email = document.getElementById('w3lSender').value;
+                    const message = document.getElementById('w3lMessage').value;
+                    // Prepare EmailJS params
+                    const templateParams = {
+                        to_email: 'leticianakiwala@gmail.com',
+                        from_name: name,
+                        reply_to: email,
+                        subject: 'New Suggestion Submission',
+                        message: `Message: ${message}\nName: ${name}\nEmail: ${email}`,
+                        sender_email: email,
+                        sender_name: name
+                    };
+                    emailjs.send('service_p9nqw3f', 'template_xtf8b59', templateParams)
+                        .then(function (response) {
+                            document.getElementById('contactSuccessMessage').style.display = 'block';
+                            submitBtn.textContent = originalText;
+                            submitBtn.disabled = false;
+                            form.reset();
+                        })
+                        .catch(function (error) {
+                            alert('Sorry, there was an error sending your message. Please try again later.');
+                            submitBtn.textContent = originalText;
+                            submitBtn.disabled = false;
+                        });
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

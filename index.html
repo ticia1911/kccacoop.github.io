@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -56,14 +57,15 @@
                                         <a class="dropdown-item" href="main-loan.html">Main Loan</a>
                                         <a class="dropdown-item" href="emergency-loan.html">Emergency Loan</a>
                                         <a class="dropdown-item" href="land-loan.html">Land Loan</a>
-                                        <a class="dropdown-item" href="estate-development-loan.html">Estate Development Loan</a>
+                                        <a class="dropdown-item" href="estate-development-loan.html">Estate Dev't
+                                            Loan</a>
                                         <a class="dropdown-item" href="school-fees-loan.html">School Fees Loan</a>
                                     </div>
                                     <div class="col-md-4">
                                         <h6 class="dropdown-header">Asset Financing</h6>
                                         <a class="dropdown-item" href="geepas.html">GEEPAS</a>
-                                        <a class="dropdown-item" href="mantra-uganda.html">Mantra Uganda Limited</a>
-                                        <a class="dropdown-item" href="diamond-stars.html">Diamond Stars Limited</a>
+                                        <a class="dropdown-item" href="mantra-uganda.html">Mantra Uganda Ltd</a>
+                                        <a class="dropdown-item" href="diamond-stars.html">Diamond Stars Ltd</a>
                                     </div>
                                 </div>
                             </div>
@@ -119,28 +121,26 @@
             </div>
         </div>
 
-        <!-- Slide 2: How to Borrow -->
-        <div class="slide">
-            <div class="bg-layer">
-                <div class="content">
-                    <h6>Need a Loan?</h6>
-                    <h3>How to Borrow</h3>
-                    <p class="my-3">Discover our simple borrowing process and flexible credit terms</p>
-                    <a href="creditfacilities.html" class="btn btn-style btn-danger mt-2">Apply for a Loan</a>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 3: Save With Us -->
+        <!-- Slide 2: Save With Us -->
         <div class="slide">
             <div class="bg-layer">
                 <div class="content">
                     <h6>Smart Saving Starts Here</h6>
                     <h3>Save With Us</h3>
                     <p class="my-3">Secure your future with high-yield savings plans</p>
-                    <a href="savings.html" class="btn btn-style btn-danger mt-2">Start Saving</a>
+                    <a href="#" class="btn btn-style btn-danger mt-2" id="start-saving-btn">Start Saving</a>
+                </div>
+            </div>
+        </div>
 
+        <!-- Slide 3: How to Borrow  -->
+        <div class="slide">
+            <div class="bg-layer">
+                <div class="content">
+                    <h6>Need a Loan?</h6>
+                    <h3>How to Borrow</h3>
+                    <p class="my-3">Discover our simple borrowing process and flexible credit terms</p>
+                    <a href="#" class="btn btn-style btn-danger mt-2" id="apply-loan-btn">Apply for a Loan</a>
                 </div>
             </div>
         </div>
@@ -152,7 +152,7 @@
                     <h6>Finance Your Future</h6>
                     <h3>Asset Financing</h3>
                     <p class="my-3">Get support to acquire land, vehicles, or equipment affordably</p>
-                    <a href="assetfinancing.html" class="btn btn-style btn-danger mt-2">Get Started</a>
+                    <a href="#" class="btn btn-style btn-danger mt-2" id="get-started-btn">Get Started</a>
 
                 </div>
             </div>
@@ -168,6 +168,97 @@
             </button>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var startSavingBtn = document.getElementById('start-saving-btn');
+            var savingsTabBtn = document.getElementById('savings-tab');
+            if (startSavingBtn && savingsTabBtn) {
+                startSavingBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    savingsTabBtn.click();
+                    var tabSection = document.getElementById('products-services');
+                    if (tabSection) {
+                        tabSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            }
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            var startSavingBtn = document.getElementById('apply-loan-btn');
+            var savingsTabBtn = document.getElementById('credit-tab');
+            if (startSavingBtn && savingsTabBtn) {
+                startSavingBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    savingsTabBtn.click();
+                    var tabSection = document.getElementById('products-services');
+                    if (tabSection) {
+                        tabSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            }
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            var startSavingBtn = document.getElementById('get-started-btn');
+            var savingsTabBtn = document.getElementById('assets-tab');
+            if (startSavingBtn && savingsTabBtn) {
+                startSavingBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    savingsTabBtn.click();
+                    var tabSection = document.getElementById('products-services');
+                    if (tabSection) {
+                        tabSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.slide');
+            let current = 0;
+            const total = slides.length;
+            const intervalTime = 5000;
+            let slideInterval;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('current', i === index);
+                });
+            }
+
+            function nextSlide() {
+                current = (current + 1) % total;
+                showSlide(current);
+            }
+
+            function prevSlide() {
+                current = (current - 1 + total) % total;
+                showSlide(current);
+            }
+
+            // Initial display
+            showSlide(current);
+
+            // Button events
+            document.querySelector('.next-btn').onclick = function () {
+                nextSlide();
+                resetInterval();
+            };
+            document.querySelector('.prev-btn').onclick = function () {
+                prevSlide();
+                resetInterval();
+            };
+
+            // Auto slide
+            function resetInterval() {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, intervalTime);
+            }
+            slideInterval = setInterval(nextSlide, intervalTime);
+        });
+    </script>
 
     <!-- Why Choose Us Section -->
     <section class="w3l-about py-5" id="about">
@@ -870,13 +961,13 @@
 
     <!-- Dropdown Styling -->
     <style>
-        /* Dropdown Spacing Fix */
+        /* Dropdown Spacing Fix - Compact Version */
         .mega-dropdown {
-            margin-top: 10px !important;
-            min-width: 600px !important;
-            padding: 20px !important;
+            margin-top: 8px !important;
+            min-width: 450px !important;
+            padding: 15px !important;
             border: 1px solid #e9ecef !important;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08) !important;
             border-radius: 6px !important;
             position: absolute !important;
             top: 100% !important;
@@ -890,27 +981,27 @@
         }
 
         .mega-dropdown .col-md-4 {
-            padding: 0 15px !important;
+            padding: 0 12px !important;
         }
 
-        /* Horizontal headings */
+        /* Horizontal headings - Compact */
         .mega-dropdown .dropdown-header {
             color: #28a745 !important;
             font-weight: 600 !important;
-            font-size: 0.95rem !important;
+            font-size: 0.9rem !important;
             text-transform: capitalize !important;
-            letter-spacing: 0.5px !important;
-            padding: 0 0 10px 0 !important;
-            margin-bottom: 10px !important;
+            letter-spacing: 0.3px !important;
+            padding: 0 0 6px 0 !important;
+            margin-bottom: 8px !important;
             border-bottom: 2px solid #28a745 !important;
             display: block !important;
         }
 
-        /* Vertical products under each heading */
+        /* Vertical products under each heading - Compact */
         .mega-dropdown .dropdown-item {
-            padding: 8px 0 !important;
+            padding: 6px 0 !important;
             color: #666 !important;
-            font-size: 0.9rem !important;
+            font-size: 0.85rem !important;
             transition: all 0.2s ease !important;
             border: none !important;
             background: none !important;
@@ -927,7 +1018,7 @@
         [data-theme="dark"] .mega-dropdown {
             background-color: #1a1a1a !important;
             border: 1px solid #333333 !important;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
         }
 
         [data-theme="dark"] .mega-dropdown .dropdown-header {
@@ -965,15 +1056,16 @@
             color: #4ade80 !important;
         }
 
-        /* Responsive design */
+        /* Responsive design - Compact */
         @media (max-width: 768px) {
             .mega-dropdown {
                 min-width: 100% !important;
                 margin-top: 5px !important;
+                padding: 12px !important;
             }
 
             .mega-dropdown .col-md-4 {
-                margin-bottom: 20px !important;
+                margin-bottom: 15px !important;
             }
 
             .mega-dropdown .col-md-4:last-child {
@@ -1019,14 +1111,16 @@
                                             <i class="fas fa-user-friends"></i>
                                         </div>
                                         <h4>Member Savings</h4>
-                                        <p>Regular savings account with competitive interest rates and flexible
-                                            withdrawal options</p>
+                                        <p>Regular savings account with interest earned yearly, flexible withdrawal
+                                            terms, and structured contribution requirements.</p>
+
                                         <div class="product-rate">
                                             <span class="rate">Annual</span>
                                             <span class="label">Interest</span>
                                         </div>
-                                        <a href="savings.html"
-                                            class="btn btn-outline-blue rounded-pill px-4 mt-3">Learn More</a>
+                                        <a href="member-savings.html"
+                                            class="btn btn-outline-blue rounded-pill px-4 mt-3">Learn
+                                            More</a>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-lg-3 mb-4">
@@ -1035,14 +1129,16 @@
                                             <i class="fas fa-child"></i>
                                         </div>
                                         <h4>Toto Savings</h4>
-                                        <p>Special savings plan for children's education with bonus interest upon
-                                            maturity</p>
+                                        <p>Special savings plan for young savers with annual interest, limited yearly
+                                            withdraws, and parental account control.</p>
+
                                         <div class="product-rate">
                                             <span class="rate">Annual</span>
                                             <span class="label">Interest</span>
                                         </div>
-                                        <div style="height: 20px;"></div>
-                                        <a href="#" class="btn btn-outline-success rounded-pill px-4 mt-3">Learn
+
+                                        <a href="toto-savings.html"
+                                            class="btn btn-outline-success rounded-pill px-4 mt-3">Learn
                                             More</a>
                                     </div>
                                 </div>
@@ -1052,13 +1148,16 @@
                                             <i class="fas fa-users"></i>
                                         </div>
                                         <h4>Group Savings</h4>
-                                        <p>Collective savings for groups with enhanced benefits and shared dividends</p>
+                                        <p>Collective savings for groups with flexible withdrawal options, shared
+                                            benefits, and annual interest earnings.</p>
+
                                         <div class="product-rate">
                                             <span class="rate">Annual</span>
                                             <span class="label">Interest</span>
                                         </div>
-                                        <div style="height: 20px;"></div>
-                                        <a href="#" class="btn btn-outline-warning rounded-pill px-4 mt-3">Learn
+
+                                        <a href="group-savings.html"
+                                            class="btn btn-outline-warning rounded-pill px-4 mt-3">Learn
                                             More</a>
                                     </div>
                                 </div>
@@ -1068,7 +1167,9 @@
                                             <i class="fas fa-calendar-alt"></i>
                                         </div>
                                         <h4>Fixed Deposits</h4>
-                                        <p>Higher yield savings with fixed terms and guaranteed returns</p>
+                                        <p>Higher yield savings with fixed terms, guaranteed returns, and attractive
+                                            interest over periods.</p>
+
                                         <div class="product-rates">
                                             <div class="rate-item">
                                                 <span>9%</span> for 3 months
@@ -1077,10 +1178,11 @@
                                                 <span>10%</span> for 6 months
                                             </div>
                                             <div class="rate-item">
-                                                <span>12%</span> for 12 months
+                                                <span>11%</span> for 12 months
                                             </div>
                                         </div>
-                                        <a href="#" class="btn btn-outline-info rounded-pill px-4 mt-3">Learn More</a>
+                                        <a href="fixed-deposits.html"
+                                            class="btn btn-outline-info rounded-pill px-4 mt-1">Learn More</a>
                                     </div>
                                 </div>
                             </div>
@@ -1095,12 +1197,14 @@
                                             <i class="fas fa-home"></i>
                                         </div>
                                         <h4>Main Loan</h4>
-                                        <p>General purpose loan for various needs with flexible repayment terms</p>
+                                        <p>General purpose loan for members with flexible repayment and eligibility.</p>
+
                                         <div class="product-rate">
                                             <span class="rate">14% p.a.</span>
                                             <span class="label">Interest</span>
                                         </div>
-                                        <a href="creditfacilities.html" class="btn btn-outline-danger rounded-pill btn-inline mt-3">Apply
+                                        <a href="main-loan.html"
+                                            class="btn btn-outline-danger rounded-pill btn-inline mt-3">Apply
                                             Now</a>
                                     </div>
                                 </div>
@@ -1110,12 +1214,14 @@
                                             <i class="fas fa-ambulance"></i>
                                         </div>
                                         <h4>Emergency Loan</h4>
-                                        <p>Quick access funds for urgent needs with fast approval process</p>
+                                        <p>Quick access funds for urgent needs with fast approval and repayment.</p>
+
                                         <div class="product-rate">
                                             <span class="rate">16% p.a.</span>
                                             <span class="label">Interest</span>
                                         </div>
-                                        <a href="creditfacilities.html" class="btn btn-outline-secondary rounded-pill btn-inline mt-3">Apply
+                                        <a href="emergency-loan.html"
+                                            class="btn btn-outline-secondary rounded-pill btn-inline mt-3">Apply
                                             Now</a>
                                     </div>
                                 </div>
@@ -1125,12 +1231,14 @@
                                             <i class="fas fa-map-marked-alt"></i>
                                         </div>
                                         <h4>Land Loan</h4>
-                                        <p>Special facility for secure land purchase and development projects</p>
+                                        <p>Special facility for secure land purchase with flexible repayment terms.</p>
+
                                         <div class="product-rate">
                                             <span class="rate">13% p.a.</span>
                                             <span class="label">Interest</span>
                                         </div>
-                                        <a href="creditfacilities.html" class="btn btn-outline-success rounded-pill btn-inline mt-3">Apply
+                                        <a href="land-loan.html"
+                                            class="btn btn-outline-success rounded-pill btn-inline mt-3">Apply
                                             Now</a>
                                     </div>
                                 </div>
@@ -1140,12 +1248,14 @@
                                             <i class="fas fa-hammer"></i>
                                         </div>
                                         <h4>Estate Development Loan</h4>
-                                        <p>Home construction and property development</p>
+                                        <p>Home construction with phased disbursement.</p>
+
                                         <div class="product-rate">
                                             <span class="rate">12.5% p.a.</span>
                                             <span class="label">Interest</span>
                                         </div>
-                                        <a href="creditfacilities.html" class="btn btn-outline-blue rounded-pill btn-inline mt-3">Apply
+                                        <a href="estate-development-loan.html"
+                                            class="btn btn-outline-blue rounded-pill btn-inline mt-3">Apply
                                             Now</a>
                                     </div>
                                 </div>
@@ -1155,12 +1265,13 @@
                                             <i class="fas fa-graduation-cap"></i>
                                         </div>
                                         <h4>School Fees Loan</h4>
-                                        <p>Education financing with flexible repayment aligned to school terms</p>
+                                        <p>Education financing with flexible repayment aligned to school terms.</p>
                                         <div class="product-rate">
                                             <span class="rate">13% p.a.</span>
                                             <span class="label">Interest</span>
                                         </div>
-                                        <a href="creditfacilities.html" class="btn btn-outline-info rounded-pill btn-inline mt-3">Apply
+                                        <a href="school-fees-loan.html"
+                                            class="btn btn-outline-info rounded-pill btn-inline mt-3">Apply
                                             Now</a>
                                     </div>
                                 </div>
@@ -1178,13 +1289,14 @@
                                             <i class="fas fa-tv"></i>
                                         </div>
                                         <h4>GEEPAS</h4>
-                                        <p>Exclusive discounts on home appliances and electronics for members</p>
+                                        <p>Exclusive discounts on home appliances and electronics for members.</p>
                                         <div class="product-rate">
-                                            <span class="rate">15% off</span>
-                                            <span class="label">Electronics</span>
+                                            <span class="rate">14% p.a</span>
+                                            <span class="label">Intrest</span>
                                         </div>
                                         <div class="button-container">
-                                            <a href="#" class="btn btn-outline-blue rounded-pill px-4 mt-3">View
+                                            <a href="geepas.html"
+                                                class="btn btn-outline-blue rounded-pill px-4 mt-3">View
                                                 Offers</a>
                                         </div>
                                     </div>
@@ -1197,13 +1309,15 @@
                                             <i class="fas fa-briefcase"></i>
                                         </div>
                                         <h4>Mantra Uganda Limited</h4>
-                                        <p>Special deals on office equipment and business solutions</p>
+                                        <p>Special deals on household equipment with cooperative financing options.</p>
+
                                         <div class="product-rate">
-                                            <span class="rate">20% off</span>
-                                            <span class="label">First Purchase</span>
+                                            <span class="rate">14% p.a</span>
+                                            <span class="label">Interest</span>
                                         </div>
                                         <div class="button-container">
-                                            <a href="#" class="btn btn-outline-success rounded-pill px-4 mt-3">Explore
+                                            <a href="mantra-uganda.html"
+                                                class="btn btn-outline-success rounded-pill px-4 mt-3">Explore
                                                 Services</a>
                                         </div>
                                     </div>
@@ -1216,13 +1330,15 @@
                                             <i class="fas fa-hammer"></i>
                                         </div>
                                         <h4>Diamond Stars Limited</h4>
-                                        <p>Preferred rates on construction materials and building services</p>
+                                        <p>Preferred rates on household equipment through cooperative asset financing.
+                                        </p>
                                         <div class="product-rate">
-                                            <span class="rate">10% off</span>
-                                            <span class="label">Materials</span>
+                                            <span class="rate">14% p.a</span>
+                                            <span class="label">Interest</span>
                                         </div>
                                         <div class="button-container">
-                                            <a href="#" class="btn btn-outline-warning rounded-pill px-4 mt-3">Learn
+                                            <a href="diamond-stars.html"
+                                                class="btn btn-outline-warning rounded-pill px-4 mt-3">Learn
                                                 More</a>
                                         </div>
                                     </div>
@@ -1248,9 +1364,26 @@
                 });
             });
         });
+        
+document.addEventListener('DOMContentLoaded', function () {
+    // Check if the URL has a hash for a tab (e.g., #credit-tab or #assets-tab)
+    var hash = window.location.hash;
+    if (hash === '#credit-tab' || hash === '#assets-tab' || hash === '#savings-tab') {
+        var tabBtn = document.getElementById(hash.replace('#', ''));
+        if (tabBtn) {
+            tabBtn.click();
+            // Optionally scroll to the products section
+            var tabSection = document.getElementById('products-services');
+            if (tabSection) {
+                tabSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }
+});
+
     </script>
 
-    <!-- SACCO Impact Section with BG Images -->
+    <!-- Cooperative Impact Section with BG Images -->
     <div class="w3l-homeblock3 py-5">
         <div class="container py-lg-5 py-md-4 py-2">
             <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:700px;">
@@ -1264,8 +1397,21 @@
                             <span class="meta-value">Membership</span>
                             <a href="#membership" class="blog-desc">1,252+ Empowered Members (10% growth)
                             </a>
-                            <a href="membership.html" class="btn btn-style-primary btn-style text-white mt-4 rounded-pill px-4 py-2"
+                            <a href="membership.html"
+                                class="btn btn-style-primary btn-style text-white mt-4 rounded-pill px-4 py-2"
                                 style="font-size: 0.875rem;">Join Us
+                                <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
+                    <div class="top-pic3">
+                        <div class="card-body blog-details">
+                            <span class="meta-value">Savings</span>
+                            <a href="#savings" class="blog-desc">UGX 13.3B Member Savings (11% interest)
+                            </a>
+                            <a href="#" class="btn btn-style-primary btn-style text-white mt-4 rounded-pill px-4 py-2"
+                                id="save-withus-btn" style="font-size: 0.875rem;">Save With Us
                                 <i class="fas fa-arrow-right ms-1"></i></a>
                         </div>
                     </div>
@@ -1276,35 +1422,56 @@
                             <span class="meta-value">Loans</span>
                             <a href="#loans" class="blog-desc">UGX 16.1B Loan Portfolio (13.8% growth)
                             </a>
-                            <a href="creditfacilities.html"
-                                class="btn btn-style-primary btn-style text-white mt-4 rounded-pill px-4 py-2"
-                                style="font-size: 0.875rem;">Apply Now
+                            <a href="#" class="btn btn-style-primary btn-style text-white mt-4 rounded-pill px-4 py-2"
+                                id="apply-now-btn" style="font-size: 0.875rem;">Apply Now
                                 <i class="fas fa-arrow-right ms-1"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
-                    <div class="top-pic3">
-                        <div class="card-body blog-details">
-                            <span class="meta-value">Savings</span>
-                            <a href="#savings" class="blog-desc">UGX 13.3B Member Savings
-                            </a>
-                            <a href="savings.html" class="btn btn-style-primary btn-style text-white mt-4 rounded-pill px-4 py-2"
-                                style="font-size: 0.875rem;">Save With Us
-                                <i class="fas fa-arrow-right ms-1"></i></a>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
-    <!-- //SACCO Impact Section -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var startSavingBtn = document.getElementById('save-withus-btn');
+            var savingsTabBtn = document.getElementById('savings-tab');
+            if (startSavingBtn && savingsTabBtn) {
+                startSavingBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    savingsTabBtn.click();
+                    var tabSection = document.getElementById('products-services');
+                    if (tabSection) {
+                        tabSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            }
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            var startSavingBtn = document.getElementById('apply-now-btn');
+            var savingsTabBtn = document.getElementById('credit-tab');
+            if (startSavingBtn && savingsTabBtn) {
+                startSavingBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    savingsTabBtn.click();
+                    var tabSection = document.getElementById('products-services');
+                    if (tabSection) {
+                        tabSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            }
+        });
+    </script>
+
+    <!-- //Cooperative Impact Section -->
     <!-- progress section with matching background to products section -->
     <section class="w3l-progress py-5" id="progress">
         <div class="container py-lg-5 py-md-4 py-2">
             <div class="row align-items-center">
                 <div class="col-lg-6 about-2-secs-right mb-lg-0 mb-5">
-                    <img src="assets/images/img2.jpg" alt="KCCA SACCO Performance" class="img-fluid radius-image" />
+                    <img src="assets/images/img2.jpg" alt="KCCA Cooperative Performance"
+                        class="img-fluid radius-image" />
                 </div>
                 <div class="col-lg-6 about-2-secs-left ps-xl-5">
                     <h5 class="small-title mb-2">Our 2023 Performance</h5>
@@ -1386,7 +1553,7 @@
         console.log('Immediate Dark Mode Background Fix disabled to fix theme switching issues');
     </script>
 
-    <!-- KCCA SACCO Testimonials Section -->
+    <!-- KCCA Cooperative Testimonials Section -->
     <section class="w3l-index4 py-5" id="testimonials" style="color: white;">
         <div class="container py-md-5 py-4">
             <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:700px;">
@@ -1431,10 +1598,10 @@
             </div>
         </div>
     </section>
-    <!-- //KCCA SACCO Testimonials Section -->
+    <!-- //KCCA Cooperative Testimonials Section -->
 
 
-    <!-- SACCO News Section -->
+    <!-- Cooperative News Section -->
     <div class="w3l-blog-block-5 py-5" id="news">
         <div class="container py-md-5 py-4">
             <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:700px;">
@@ -1445,15 +1612,15 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="blog-card-single">
                         <div class="grids5-info">
-                            <a href="resources.html#financials"><img src="assets/images/blog.png"
-                                    alt="Financials" /></a>
-                            <div class="blog-info">
-                                <h4><a href="resources.html#financials">Audited Financial Statements</a></h4>
-                                <p>Review the audited financial statements for the year ending 2023 for transparency and
-                                    accountability.</p>
+                            <a href="resources.html#land-plots"><img src="assets/images/blog4.jpg"
+                                    alt="Newsletter" /></a>
+                            <div class="blog-info" id = new-land-plots>
+                                <h4><a href="resources.html#land-plots">New Land Plots Available </a></h4>
+                                <p>Explore our newly listed land plots, ideal for investment, development, or personal
+                                    use. Find your perfect piece of land today.</p>
                                 <div class="d-flex align-items-center justify-content-between mt-4">
-                                    <span class="small ms-2">Finance Department</span>
-                                    <p class="date-text"><i class="far fa-calendar-alt me-1"></i>May 10, 2025</p>
+                                    <span class="small ms-2">Investment & Strategy Committee</span>
+                                    <p class="date-text"><i class="far fa-calendar-alt me-1"></i>June 5, 2025</p>
                                 </div>
                             </div>
                         </div>
@@ -1462,32 +1629,33 @@
                 <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
                     <div class="blog-card-single">
                         <div class="grids5-info">
-                            <a href="resources.html#newsletter"><img src="assets/images/blog4.jpg"
-                                    alt="Newsletter" /></a>
+                            <a href="resources.html#financial"><img src="assets/images/blog.png" alt="Financials" /></a>
                             <div class="blog-info">
-                                <h4><a href="resources.html#newsletter">Newsletter Issue 2025 Available</a></h4>
-                                <p>Catch up on our milestones, member success stories, and upcoming initiatives in our
-                                    latest newsletter.</p>
+                                <h4><a href="resources.html#financial">Audited Financial Statements</a></h4>
+                                <p>Review the audited financial statements for the year ending 2023 for transparency and
+                                    accountability.</p>
                                 <div class="d-flex align-items-center justify-content-between mt-4">
-                                    <span class="small ms-2">Communications Team</span>
-                                    <p class="date-text"><i class="far fa-calendar-alt me-1"></i>May 5, 2025</p>
+                                    <span class="small ms-2">Audit Committee</span>
+                                    <p class="date-text"><i class="far fa-calendar-alt me-1"></i>March 15, 2025</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- ...existing third news item... -->
+
                 <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
                     <div class="blog-card-single">
                         <div class="grids5-info">
-                            <a href="resources.html#annualreport"><img src="assets/images/blog5.jpg"
+                            <a href="resources.html#publications"><img src="assets/images/blog5.jpg"
                                     alt="Annual Report" /></a>
                             <div class="blog-info">
-                                <h4><a href="resources.html#annualreport">Annual Report 2023 Published</a></h4>
+                                <h4><a href="resources.html#publications">Annual Report 2023 Published</a></h4>
                                 <p>Access insights into our performance, achievements, and strategic direction outlined
                                     in the 2023 annual report.</p>
                                 <div class="d-flex align-items-center justify-content-between mt-4">
                                     <span class="small ms-2">Board Secretariat</span>
-                                    <p class="date-text"><i class="far fa-calendar-alt me-1"></i>Apr 30, 2025</p>
+                                    <p class="date-text"><i class="far fa-calendar-alt me-1"></i>Jan 1, 2025</p>
                                 </div>
                             </div>
                         </div>
@@ -1497,7 +1665,7 @@
         </div>
     </div>
 
-    <!-- //SACCO News Section -->
+    <!-- //Cooperative News Section -->
 
     <!-- Services Section -->
     <section class="services-section py-5" id="services">
@@ -1520,10 +1688,11 @@
                         <ul class="service-features">
                             <li>DFCU Bank branches</li>
                             <li>Stanbic FlexiPay</li>
-                            <li>Direct bank transfers</li>
+                            <li>Pay Way</li>
                         </ul>
                         <div class="button-container">
-                            <a href="#" class="btn btn-outline-green rounded-pill px-4 mt-3">Deposit Now</a>
+                            <a href="https://finhazi.com/login"
+                                class="btn btn-outline-green rounded-pill px-4 mt-3">Deposit Now</a>
                         </div>
                     </div>
                 </div>
@@ -1542,7 +1711,8 @@
                             <li>Agent banking network</li>
                         </ul>
                         <div class="button-container">
-                            <a href="#" class="btn btn-outline-danger rounded-pill px-4 mt-3">Withdraw Now</a>
+                            <a href="https://finhazi.com/login"
+                                class="btn btn-outline-danger rounded-pill px-4 mt-3">Withdraw Now</a>
                         </div>
                     </div>
                 </div>
@@ -1561,7 +1731,8 @@
                             <li>Transaction history</li>
                         </ul>
                         <div class="button-container">
-                            <a href="#" class="btn btn-outline-black rounded-pill px-4 mt-3">Access Now</a>
+                            <a href="https://finhazi.com/login"
+                                class="btn btn-outline-black rounded-pill px-4 mt-3">Access Now</a>
                         </div>
                     </div>
                 </div>
@@ -1680,7 +1851,7 @@
                         if (card.classList.contains('border-danger')) {
                             bullet.style.setProperty('--bullet-color', theme === 'dark' ? '#aa3333' : '#C8102E');
                         } else if (card.classList.contains('border-black')) {
-                            bullet.style.setProperty('--bullet-color', theme === 'dark' ? '#888888' : '#000000');
+                            bullet.style.setProperty('--bullet-color', theme === 'dark' ? '#ffffff' : '#000000');
                         } else if (card.classList.contains('border-green')) {
                             bullet.style.setProperty('--bullet-color', theme === 'dark' ? '#2a6a2a' : '#2E7D32');
                         }
@@ -1696,8 +1867,14 @@
                     const button = card.querySelector('.btn');
 
                     if (theme === 'dark') {
-                        // Update title color
-                        if (title) title.style.color = '#ffffff';
+                        // Update title color - special case for Digital Banking
+                        if (title) {
+                            if (card.classList.contains('border-black')) {
+                                title.style.color = '#888888'; // Grey for Digital Banking
+                            } else {
+                                title.style.color = '#ffffff'; // White for other cards
+                            }
+                        }
 
                         // Update border and button colors based on card type
                         if (card.classList.contains('border-danger')) {
@@ -1713,10 +1890,10 @@
                                 button.style.borderColor = '#2a6a2a';
                             }
                         } else if (card.classList.contains('border-black')) {
-                            card.style.borderColor = '#888888'; // Dull white/gray for Digital Banking
+                            card.style.borderColor = '#ffffff'; // White for Digital Banking in dark mode
                             if (button) {
-                                button.style.color = '#888888';
-                                button.style.borderColor = '#888888';
+                                button.style.color = '#ffffff';
+                                button.style.borderColor = '#ffffff';
                             }
                         } else if (card.classList.contains('border-primary')) {
                             card.style.borderColor = '#004080';
@@ -2013,6 +2190,22 @@
         [data-theme="dark"] .updates-dark-section .update-date {
             color: #666;
         }
+
+        /* 2023 Performance Bootstrap Red Styling in Dark Mode */
+        [data-theme="dark"] .small-title {
+            color: #dc3545 !important;
+        }
+
+        /* Specifically target 2023 Performance text */
+        [data-theme="dark"] h5.small-title:contains("2023 Performance"),
+        [data-theme="dark"] .small-title:contains("2023 Performance") {
+            color: #dc3545 !important;
+        }
+
+        /* Digital Banking title grey in dark mode */
+        [data-theme="dark"] .service-card.border-black .service-title {
+            color: #888888 !important;
+        }
     `;
             document.head.appendChild(styleEl);
 
@@ -2030,6 +2223,11 @@
                 if (digitalBankingCard && currentTheme === 'dark') {
                     digitalBankingCard.style.borderColor = '#888888';
                     digitalBankingCard.style.borderWidth = '2px';
+
+                    const title = digitalBankingCard.querySelector('.service-title');
+                    if (title) {
+                        title.style.color = '#888888'; // Grey title for Digital Banking
+                    }
 
                     const button = digitalBankingCard.querySelector('.btn');
                     if (button) {
@@ -2300,8 +2498,365 @@
         });
     </script>
 
+    <!-- Footer Styling -->
+    <style>
+        /* KCCA Footer Styling - Matching Toto-Savings */
+        .kcca-footer {
+            background-color: #000 !important;
+            color: #fff !important;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+            line-height: 1.6 !important;
+        }
 
-    <!-- KCCA SACCO Footer -->
+        .footer-top {
+            background-color: #000 !important;
+            border-top: 4px solid #fff !important;
+        }
+
+        .footer-title {
+            color: #fff !important;
+            font-weight: 600 !important;
+            font-size: 1.1rem !important;
+            margin-bottom: 1.2rem !important;
+            text-transform: uppercase !important;
+            position: relative !important;
+            padding-bottom: 8px !important;
+            letter-spacing: 0.5px !important;
+        }
+
+        .footer-title:after {
+            content: '' !important;
+            position: absolute !important;
+            left: 0 !important;
+            bottom: 0 !important;
+            width: 40px !important;
+            height: 2px !important;
+            background: #fff !important;
+        }
+
+        .footer-about p {
+            color: #e0e0e0 !important;
+            opacity: 0.9 !important;
+        }
+
+        .footer-links {
+            list-style: none !important;
+            padding: 0 !important;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem !important;
+        }
+
+        .footer-links ul {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .footer-links ul li a {
+            color: #e0e0e0 !important;
+            text-decoration: none !important;
+            opacity: 0.9 !important;
+            transition: all 0.3s ease !important;
+            display: flex !important;
+            align-items: center !important;
+            padding: 0.3rem 0 !important;
+        }
+
+        .footer-links ul li a:hover {
+            color: #fff !important;
+            opacity: 1 !important;
+            padding-left: 8px !important;
+        }
+
+        .footer-links ul li a i {
+            color: #28a745 !important;
+            opacity: 1 !important;
+            font-size: 0.8rem !important;
+        }
+
+        .update-items {
+            margin-top: 1rem !important;
+        }
+
+        .update-item {
+            margin-bottom: 1rem !important;
+            padding-bottom: 0.8rem !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        }
+
+        .update-item:last-child {
+            border-bottom: none !important;
+        }
+
+        .update-meta {
+            display: flex !important;
+            align-items: center !important;
+            gap: 0.5rem !important;
+            margin-bottom: 0.3rem !important;
+        }
+
+        .update-category {
+            background: rgba(255, 255, 255, 0.1) !important;
+            color: #fff !important;
+            padding: 2px 8px !important;
+            border-radius: 12px !important;
+            font-size: 0.75rem !important;
+            font-weight: 500 !important;
+        }
+
+        .update-date {
+            color: #ccc !important;
+            font-size: 0.8rem !important;
+        }
+
+        .update-title {
+            color: #e0e0e0 !important;
+            text-decoration: none !important;
+            font-size: 0.9rem !important;
+            line-height: 1.4 !important;
+            transition: color 0.3s ease !important;
+        }
+
+        .update-title:hover {
+            color: #fff !important;
+            text-decoration: underline !important;
+        }
+
+        .contact-info {
+            margin-top: 1rem !important;
+        }
+
+        .contact-item {
+            display: flex !important;
+            align-items: flex-start !important;
+            margin-bottom: 1rem !important;
+            gap: 0.8rem !important;
+        }
+
+        .contact-item i {
+            color: #fff !important;
+            margin-top: 3px !important;
+            min-width: 16px !important;
+            opacity: 0.8 !important;
+        }
+
+        .contact-item span,
+        .contact-item a {
+            color: #fff !important;
+            text-decoration: none !important;
+            opacity: 0.9 !important;
+        }
+
+        .contact-item a:hover {
+            color: #fff !important;
+            text-decoration: underline !important;
+            opacity: 1 !important;
+        }
+
+        .social-links {
+            display: flex !important;
+            gap: 12px !important;
+        }
+
+        .social-icon {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 36px !important;
+            height: 36px !important;
+            background: rgba(255, 255, 255, 0.1) !important;
+            border-radius: 50% !important;
+            color: #fff !important;
+            transition: all 0.3s ease !important;
+            font-size: 0.9rem !important;
+            text-decoration: none !important;
+        }
+
+        .social-icon:hover {
+            background: #fff !important;
+            color: #000 !important;
+            transform: translateY(-3px) !important;
+        }
+
+        .footer-bottom {
+            background-color: #111 !important;
+            color: #fff !important;
+            font-size: 0.9rem !important;
+            border-top: 1px solid #333 !important;
+        }
+
+        .footer-bottom p {
+            color: #fff !important;
+            margin: 0 !important;
+        }
+
+        .payment-methods {
+            display: flex !important;
+            align-items: center !important;
+            gap: 0.5rem !important;
+        }
+
+        .payment-methods span {
+            color: #fff !important;
+        }
+
+        .payment-methods img {
+            filter: none !important;
+            opacity: 1 !important;
+            transition: opacity 0.3s !important;
+        }
+
+        .payment-methods img:hover {
+            opacity: 1 !important;
+        }
+
+        /* Dark Mode Footer Styles */
+        [data-theme="dark"] .kcca-footer {
+            background-color: #1a1a1a !important;
+        }
+
+        [data-theme="dark"] .footer-top {
+            background-color: #1a1a1a !important;
+            border-top: 4px solid #333 !important;
+        }
+
+        [data-theme="dark"] .footer-title {
+            color: #e5e5e5 !important;
+        }
+
+        [data-theme="dark"] .footer-title:after {
+            background: #e5e5e5 !important;
+        }
+
+        [data-theme="dark"] .footer-about p {
+            color: #b0b0b0 !important;
+        }
+
+        [data-theme="dark"] .footer-links ul li a {
+            color: #b0b0b0 !important;
+        }
+
+        [data-theme="dark"] .footer-links ul li a:hover {
+            color: #e5e5e5 !important;
+        }
+
+        [data-theme="dark"] .footer-links ul li a i {
+            color: #28a745 !important;
+        }
+
+        [data-theme="dark"] .update-category {
+            background: rgba(229, 229, 229, 0.1) !important;
+            color: #e5e5e5 !important;
+        }
+
+        [data-theme="dark"] .update-date {
+            color: #888888 !important;
+        }
+
+        [data-theme="dark"] .update-title {
+            color: #b0b0b0 !important;
+        }
+
+        [data-theme="dark"] .update-title:hover {
+            color: #e5e5e5 !important;
+        }
+
+        [data-theme="dark"] .contact-item i {
+            color: #e5e5e5 !important;
+        }
+
+        [data-theme="dark"] .contact-item span,
+        [data-theme="dark"] .contact-item a {
+            color: #b0b0b0 !important;
+        }
+
+        [data-theme="dark"] .contact-item a:hover {
+            color: #e5e5e5 !important;
+        }
+
+        [data-theme="dark"] .footer-bottom {
+            background-color: #0d0d0d !important;
+            border-top: 1px solid #333 !important;
+        }
+
+        [data-theme="dark"] .footer-bottom p {
+            color: #b0b0b0 !important;
+        }
+
+        [data-theme="dark"] .payment-methods span {
+            color: #b0b0b0 !important;
+        }
+
+        [data-theme="dark"] .social-icon {
+            background: rgba(229, 229, 229, 0.1) !important;
+            color: #e5e5e5 !important;
+        }
+
+        [data-theme="dark"] .social-icon:hover {
+            background: #e5e5e5 !important;
+            color: #1a1a1a !important;
+        }
+
+        /* Footer Responsive Styles */
+        @media (max-width: 767px) {
+            .footer-title {
+                margin-top: 1.5rem !important;
+            }
+
+            .footer-links a {
+                padding: 0.4rem 0 !important;
+            }
+
+            .footer-bottom .row>div {
+                text-align: center !important;
+                margin-bottom: 0.5rem !important;
+            }
+
+            .payment-methods {
+                justify-content: center !important;
+            }
+        }
+
+        /* X (Twitter) icon centering fix */
+        .x-icon {
+            position: relative !important;
+            width: 36px !important;
+            height: 36px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            overflow: hidden !important;
+        }
+
+        .x-icon .png-normal,
+        .x-icon .webp-hover {
+            position: absolute !important;
+            left: 50% !important;
+            top: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            display: block !important;
+            margin: 0 !important;
+            max-width: 70% !important;
+            max-height: 70% !important;
+        }
+
+        .x-icon .webp-hover {
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .x-icon:hover .webp-hover {
+            opacity: 1;
+        }
+
+        .x-icon:hover .png-normal {
+            opacity: 0;
+        }
+    </style>
+
+    <!-- KCCA Cooperative Footer -->
     <footer class="kcca-footer">
         <div class="footer-top py-5">
             <div class="container">
@@ -2315,10 +2870,16 @@
                                 We empower our members through affordable credit, savings products, and investment
                                 opportunities.</p>
                             <div class="social-links mt-4">
-                                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="https://youtube.com/@kccamultipurposecorporative?si=qlBLqq6SdSIWIvop"
+                                    class="social-icon"><i class="fab fa-youtube"></i></a>
                                 <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-icon x-icon">
+                                    <img src="assets/images/X.png" alt="X" style="height:25px;" class="png-normal">
+                                    <img src="assets/images/X.webp" alt="X"
+                                        style="height:15px; position:absolute; left:0; top:0;" class="webp-hover">
+                                </a>
+
                             </div>
                         </div>
                     </div>
@@ -2328,12 +2889,14 @@
                         <div class="footer-links">
                             <h5 class="footer-title">Quick Links</h5>
                             <ul class="mt-3">
-                                <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Home</a></li>
-                                <li><a href="#"><i class="fas fa-chevron-right me-2"></i>About Us</a></li>
-                                <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Products</a></li>
-                                <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Membership</a></li>
-                                <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Resources</a></li>
-                                <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Contact us</a></li>
+                                <li><a href="index.html"><i class="fas fa-chevron-right me-2"></i>Home</a></li>
+                                <li><a href="about.html"><i class="fas fa-chevron-right me-2"></i>About Us</a></li>
+                                <li><a href="index.html#savings-tab"><i
+                                            class="fas fa-chevron-right me-2"></i>Products</a></li>
+                                <li><a href="membership.html"><i class="fas fa-chevron-right me-2"></i>Membership</a>
+                                </li>
+                                <li><a href="resources.html"><i class="fas fa-chevron-right me-2"></i>Resources</a></li>
+                                <li><a href="contact.html"><i class="fas fa-chevron-right me-2"></i>Contact us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -2345,17 +2908,27 @@
                             <div class="update-items mt-3">
                                 <div class="update-item mb-3">
                                     <div class="update-meta">
-                                        <span class="update-category">Board</span>
-                                        <span class="update-date">- Nov 21 -</span>
+                                        <span class="update-category">Investment & Strategy Committee</span>
+                                        <span class="update-date">- June 5 -</span>
                                     </div>
-                                    <a href="#" class="update-title">2024 Loan Interest Rates Announcement</a>
+                                    <a href="resources.html#land-plots" class="update-title">New Land Plots
+                                        Available</a>
                                 </div>
                                 <div class="update-item">
                                     <div class="update-meta">
-                                        <span class="update-category">Management</span>
-                                        <span class="update-date">- Nov 15 -</span>
+                                        <span class="update-category">Audit Committee</span>
+                                        <span class="update-date">- March 15 -</span>
                                     </div>
-                                    <a href="#" class="update-title">AGM 2023 Minutes Now Available</a>
+                                    <a href="resources.html#financial" class="update-title">Audited Financial
+                                        Statements</a>
+                                </div>
+                                <div class="update-item">
+                                    <div class="update-meta">
+                                        <span class="update-category">Board Secretariat</span>
+                                        <span class="update-date">- Jan 1 -</span>
+                                    </div>
+                                    <a href="resources.html#publications" class="update-title">Annual Report
+                                        Published</a>
                                 </div>
                             </div>
                         </div>
@@ -2376,11 +2949,11 @@
                                 </div>
                                 <div class="contact-item">
                                     <i class="fas fa-phone-alt"></i>
-                                    <a href="tel:+256414123456">+256 414 123456</a>
+                                    <a href="tel:+256414123456">+256 312 900999</a>
                                 </div>
                                 <div class="contact-item">
                                     <i class="fas fa-envelope"></i>
-                                    <a href="mailto:info@kccasacco.co.ug">info@kccasacco.co.ug</a>
+                                    <a href="mailto:info@kccacooperative.co.ug">cooperativeinfo@kcca.go.ug</a>
                                 </div>
                                 <div class="contact-item">
                                     <i class="fas fa-clock"></i>
@@ -2406,9 +2979,10 @@
                             <span class="me-2">We accept:</span>
                             <img src="assets/images/dfcu.png" alt="DFCU Bank" width="60">
                             <img src="assets/images/flexipay.png" alt="FlexiPay" width="60">
+                            <img src="assets/images/payway.png" alt="Pay Way" width="60">
                             <img src="assets/images/airtel.png" alt="Airtel Money" width="60">
                             <img src="assets/images/mtn.png" alt="MTN Mobile Money" width="60">
-
+                            
                         </div>
                     </div>
 

@@ -1,7 +1,3 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
--->
 <!doctype html>
 <html lang="en">
 
@@ -9,12 +5,558 @@ Author URL: http://w3layouts.com
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Workup - Corporate Category Bootstrap Responsive Website Template - Services : W3Layouts</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <title>Membership - KCCA Staff Multipurpose Cooperative Society Limited</title>
+    <meta name="description"
+        content="Join KCCA Staff Multipurpose Cooperative Society Limited. Learn about membership benefits, requirements, and how to become a member of our cooperative.">
+    <meta name="keywords"
+        content="KCCA cooperative membership, join cooperative, membership benefits, KCCA staff, cooperative society">
     <!-- Google fonts -->
     <link href="//fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <!-- Template CSS Style link -->
-    <link rel="stylesheet" href="assets/css/style-starter.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/footer-custom.css">
+    <style>
+        /* Custom Styles */
+        :root {
+            --kcca-red: #dc3545;
+            --kcca-green: #28a745;
+            --kcca-blue: #007bff;
+            --kcca-dark: #343a40;
+        }
+
+
+
+        /* Cards */
+        .benefit-card {
+            transition: all 0.3s ease;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--kcca-green);
+        }
+
+        /* Progress Steps */
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .progress-steps::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #e9ecef;
+            z-index: 1;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            width: 25%;
+        }
+
+        .step span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            background: #e9ecef;
+            color: #6c757d;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .step.active span {
+            background: var(--kcca-red);
+            color: white;
+        }
+
+        .step p {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-bottom: 0;
+        }
+
+        .step.active p {
+            color: var(--kcca-dark);
+            font-weight: 500;
+        }
+
+        /* Testimonials */
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 1rem;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 4rem;
+            color: rgba(220, 53, 69, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border: 3px solid var(--kcca-red);
+        }
+
+        /* Calculator */
+        .calculator {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .calculator .form-control {
+            border-color: var(--kcca-red);
+        }
+
+        .calculator .btn {
+            background: var(--kcca-red);
+            border: none;
+        }
+
+        /* Dark Mode Adjustments */
+        [data-theme="dark"] .benefit-card,
+        [data-theme="dark"] .testimonial,
+        [data-theme="dark"] .calculator {
+            background: #2d2d2d;
+            color: #e5e5e5;
+        }
+
+        [data-theme="dark"] .testimonial::before {
+            color: rgba(220, 53, 69, 0.3);
+        }
+
+        /* FAQ Styling - Green question mark icons */
+        .accordion-button .fas.fa-question-circle {
+            color: var(--kcca-green) !important;
+        }
+
+        /* Keep green question marks even when expanded */
+        .accordion-button:not(.collapsed) .fas.fa-question-circle {
+            color: var(--kcca-green) !important;
+        }
+
+        /* Dark mode FAQ adjustments */
+        [data-theme="dark"] .accordion-button .fas.fa-question-circle {
+            color: var(--kcca-green) !important;
+        }
+
+        [data-theme="dark"] .accordion-button:not(.collapsed) .fas.fa-question-circle {
+            color: var(--kcca-green) !important;
+        }
+
+        /* Override Bootstrap accordion button styling - Remove blue, add green */
+        .accordion-button:focus {
+            border-color: var(--kcca-green) !important;
+            box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25) !important;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(40, 167, 69, 0.1) !important;
+            color: var(--kcca-green) !important;
+            border-color: var(--kcca-green) !important;
+        }
+
+        .accordion-button:not(.collapsed)::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2328a745'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+        }
+
+        .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2328a745'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+        }
+
+        /* Dark mode accordion button adjustments */
+        [data-theme="dark"] .accordion-button:focus {
+            border-color: var(--kcca-green) !important;
+            box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25) !important;
+        }
+
+        [data-theme="dark"] .accordion-button:not(.collapsed) {
+            background-color: rgba(40, 167, 69, 0.2) !important;
+            color: var(--kcca-green) !important;
+            border-color: var(--kcca-green) !important;
+        }
+
+        /* Requirements List Styling (matching main-loan.html) */
+        .requirements-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #28a745;
+        }
+
+        .requirements-list li {
+            position: relative;
+            padding: 1rem 1.5rem 1rem 3rem;
+            margin-bottom: 0.5rem;
+            color: #495057;
+            font-size: 1rem;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .requirements-list li:hover {
+            background: #d4edda;
+            transform: translateX(5px);
+        }
+
+        .requirements-list li::before {
+            content: "✓";
+            color: #28a745;
+            font-weight: bold;
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background: #28a745;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        /* Dark mode requirements list */
+        [data-theme="dark"] .requirements-list {
+            background: #2d2d2d !important;
+            border-left: 4px solid #28a745 !important;
+        }
+
+        [data-theme="dark"] .requirements-list li {
+            background: #333333 !important;
+            color: #e5e5e5 !important;
+        }
+
+        [data-theme="dark"] .requirements-list li:hover {
+            background: #404040 !important;
+        }
+
+        /* Content wrapper and section title (matching geepas.html) */
+        .content-wrapper {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            color: #dc3545;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #dc3545;
+            display: inline-block;
+        }
+
+        /* Dark mode content wrapper */
+        [data-theme="dark"] .content-wrapper {
+            background: #2d2d2d !important;
+            color: #e5e5e5 !important;
+        }
+
+        [data-theme="dark"] .section-title {
+            color: #dc3545 !important;
+            border-bottom-color: #dc3545 !important;
+        }
+
+        /* Interactive Progress Steps */
+        .step {
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .step-status {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            font-size: 0.8rem;
+        }
+
+        .step.completed {
+            background: #d4edda;
+            border-color: #28a745;
+        }
+
+        .step.completed span {
+            background: #28a745;
+            color: white;
+        }
+
+        .step.completed .step-status .fa-check {
+            color: #28a745;
+        }
+
+        .step.active {
+            border-color: #28a745;
+            box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.25);
+        }
+
+        .step.active span {
+            background: #28a745;
+            color: white;
+        }
+
+        .step-actions {
+            margin-top: 1rem;
+        }
+
+        .progress-message {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Interactive Button States */
+        .step-actions .btn {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-actions .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .step-actions .btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-actions .btn.clicked {
+            background-color: #28a745 !important;
+            border-color: #28a745 !important;
+            color: white !important;
+            animation: buttonSuccess 0.6s ease-in-out;
+        }
+
+        .step-actions .btn.clicked::after {
+            content: "✓";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: bold;
+            animation: checkmarkAppear 0.3s ease-in-out 0.3s both;
+        }
+
+        @keyframes buttonSuccess {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes checkmarkAppear {
+            0% {
+                opacity: 0;
+                transform: translateY(-50%) scale(0);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(-50%) scale(1);
+            }
+        }
+
+        /* Specific button color changes */
+        #markStep2Complete.clicked {
+            background-color: #17a2b8 !important;
+            border-color: #17a2b8 !important;
+        }
+
+        #markStep3Complete.clicked {
+            background-color: #ffc107 !important;
+            border-color: #ffc107 !important;
+            color: #212529 !important;
+        }
+
+        #markStep4Complete.clicked {
+            background-color: #28a745 !important;
+            border-color: #28a745 !important;
+        }
+
+        /* Dark mode button adjustments */
+        [data-theme="dark"] .step-actions .btn.clicked {
+            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3) !important;
+        }
+
+        /* Dark mode interactive steps */
+        [data-theme="dark"] .step.completed {
+            background: rgba(40, 167, 69, 0.2) !important;
+            border-color: #28a745 !important;
+        }
+
+        [data-theme="dark"] .step.active {
+            border-color: #007bff !important;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25) !important;
+        }
+
+        #registration-process {
+            background: #f8f9fa !important;
+        }
+
+        [data-theme="dark"] #registration-process {
+            background: #232323 !important;
+        }
+
+        /* --- DARK MODE FAQ & REQUIREMENTS OVERRIDES --- */
+        [data-theme="dark"] .accordion,
+        [data-theme="dark"] .accordion-item,
+        [data-theme="dark"] .accordion-body,
+        [data-theme="dark"] .accordion-button {
+            background: #232323 !important;
+            color: #e5e5e5 !important;
+            border-color: #333 !important;
+        }
+
+        [data-theme="dark"] .accordion-button:not(.collapsed) {
+            background: #232323 !important;
+            color: #4ade80 !important;
+        }
+
+        [data-theme="dark"] .requirements-list {
+            background: #232323 !important;
+            color: #e5e5e5 !important;
+            border-left: 4px solid #28a745 !important;
+        }
+
+        [data-theme="dark"] .requirements-list li {
+            background: #333 !important;
+            color: #e5e5e5 !important;
+            border: 1px solid #444 !important;
+        }
+
+        [data-theme="dark"] .requirements-list li::before {
+            background: #28a745 !important;
+            color: #fff !important;
+        }
+
+        [data-theme="dark"] .requirements-list li:hover {
+            background: #404040 !important;
+        }
+
+        /* Dark mode adjustments for specific sections */
+        [data-theme="dark"] #benefits,
+        [data-theme="dark"] #membership-requirements,
+        [data-theme="dark"] #registration-process,
+        [data-theme="dark"] section.py-5.bg-light:not(.inner-banner) {
+            background: #232323 !important;
+            color: #e5e5e5 !important;
+        }
+
+        [data-theme="dark"] .benefit-card,
+        [data-theme="dark"] .content-wrapper {
+            background: #2d2d2d !important;
+            color: #e5e5e5 !important;
+        }
+
+        [data-theme="dark"] .divider.bg-danger {
+            background: #dc3545 !important;
+        }
+
+        [data-theme="dark"] .accordion,
+        [data-theme="dark"] .accordion-item,
+        [data-theme="dark"] .accordion-button,
+        [data-theme="dark"] .accordion-body {
+            background: #232323 !important;
+            color: #e5e5e5 !important;
+            border-color: #333 !important;
+        }
+
+        [data-theme="dark"] .accordion-button:not(.collapsed) {
+            background: #232323 !important;
+            color: #4ade80 !important;
+        }
+
+        [data-theme="dark"] .accordion-button.collapsed {
+            background: #232323 !important;
+            color: #e5e5e5 !important;
+        }
+
+        [data-theme="dark"] .accordion-item.shadow-sm {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        [data-theme="dark"] .requirements-list {
+            background: #232323 !important;
+            color: #e5e5e5 !important;
+            border-left: 4px solid #28a745 !important;
+        }
+
+        [data-theme="dark"] .requirements-list li {
+            background: #2d2d2d !important;
+            color: #e5e5e5 !important;
+            border: 1px solid #333 !important;
+        }
+
+        [data-theme="dark"] .requirements-list li:hover {
+            background: #333 !important;
+        }
+    </style>
+
+
 </head>
 
 <body>
@@ -23,7 +565,8 @@ Author URL: http://w3layouts.com
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="index.html">
-                    <i class="fab fa-wikipedia-w"></i>orkup
+                    <img id="logo" src="assets/images/banner.png" data-light="assets/images/banner.png"
+                        data-dark="assets/images/banner.png" alt="Workup Logo" style="height: 70px;">
                 </a>
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
@@ -32,271 +575,868 @@ Author URL: http://w3layouts.com
                     <span class="navbar-toggler-icon fa icon-close fa-times"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarScroll">
-                    <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll align-items-center">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                            <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item dropdown" id="productsDropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false" id="productsDropdownToggle">
+                                Products <i class="fas fa-caret-down ms-1"></i>
+                            </a>
+                            <div class="dropdown-menu mega-dropdown" aria-labelledby="productsDropdownToggle">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h6 class="dropdown-header">Savings</h6>
+                                        <a class="dropdown-item" href="member-savings.html">Member Savings</a>
+                                        <a class="dropdown-item" href="toto-savings.html">Toto Savings</a>
+                                        <a class="dropdown-item" href="group-savings.html">Group Savings</a>
+                                        <a class="dropdown-item" href="fixed-deposits.html">Fixed Deposits</a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h6 class="dropdown-header">Credit Facilities</h6>
+                                        <a class="dropdown-item" href="main-loan.html">Main Loan</a>
+                                        <a class="dropdown-item" href="emergency-loan.html">Emergency Loan</a>
+                                        <a class="dropdown-item" href="land-loan.html">Land Loan</a>
+                                        <a class="dropdown-item" href="estate-development-loan.html">Estate Dev't
+                                            Loan</a>
+                                        <a class="dropdown-item" href="school-fees-loan.html">School Fees Loan</a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h6 class="dropdown-header">Asset Financing</h6>
+                                        <a class="dropdown-item" href="geepas.html">GEEPAS</a>
+                                        <a class="dropdown-item" href="mantra-uganda.html">Mantra Uganda Ltd</a>
+                                        <a class="dropdown-item" href="diamond-stars.html">Diamond Stars Ltd</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="membership.html">Membership</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="services.html">Services</a>
+                            <a class="nav-link" href="resources.html">Resources</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                            <a class="nav-link" href="contact.html">Contact Us</a>
                         </li>
+                        <li class="nav-item ms-3">
+                            <a href="https://finhazi.com/login"
+                                class="btn btn-style btn-success rounded-pill px-3 py-1 border-2 fw-bold text-white">
+                                Login <i class="fas fa-sign-in-alt text-white"></i>
+                            </a>
+                        </li>
+
                     </ul>
-                    <form action="#search" method="GET" class="d-flex search-header ms-lg-2">
-                        <input class="form-control" type="search" placeholder="Enter Keyword..." aria-label="Search"
-                            required>
-                        <button class="btn btn-style" type="submit"><i class="fas fa-search"></i></button>
-                    </form>
                 </div>
+
                 <!-- toggle switch for light and dark theme -->
                 <div class="cont-ser-position">
                     <nav class="navigation">
-                        <div class="theme-switch-wrapper">
-                            <label class="theme-switch" for="checkbox">
-                                <input type="checkbox" id="checkbox">
-                                <div class="mode-container">
-                                    <i class="gg-sun"></i>
-                                    <i class="gg-moon"></i>
-                                </div>
-                            </label>
+                        <div class="professional-toggle">
+                            <button id="theme-toggle" class="theme-btn" aria-label="Toggle dark mode">
+                                <i id="theme-icon" class="fas fa-moon"></i>
+                            </button>
                         </div>
                     </nav>
                 </div>
                 <!-- //toggle switch for light and dark theme -->
+
             </nav>
         </div>
     </header>
     <!-- //header -->
 
+
+    <script>
+        // Enhanced dropdown behavior
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdown = document.getElementById('productsDropdown');
+            const dropdownToggle = document.getElementById('productsDropdownToggle');
+            const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+
+            let hoverTimeout;
+
+            // Show dropdown on hover
+            dropdown.addEventListener('mouseenter', function () {
+                clearTimeout(hoverTimeout);
+                dropdownMenu.classList.add('show');
+                dropdownToggle.setAttribute('aria-expanded', 'true');
+            });
+
+            // Hide dropdown on mouse leave with delay
+            dropdown.addEventListener('mouseleave', function () {
+                hoverTimeout = setTimeout(function () {
+                    dropdownMenu.classList.remove('show');
+                    dropdownToggle.setAttribute('aria-expanded', 'false');
+                }, 300); // 300ms delay before hiding
+            });
+
+            // Handle click events
+            dropdownToggle.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                if (dropdownMenu.classList.contains('show')) {
+                    dropdownMenu.classList.remove('show');
+                    dropdownToggle.setAttribute('aria-expanded', 'false');
+                } else {
+                    dropdownMenu.classList.add('show');
+                    dropdownToggle.setAttribute('aria-expanded', 'true');
+                }
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!dropdown.contains(e.target)) {
+                    dropdownMenu.classList.remove('show');
+                    dropdownToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Prevent Bootstrap's default dropdown behavior from interfering
+            dropdownToggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+        });
+    </script>
+
+    <!-- Dropdown Styling -->
+    <style>
+        /* Dropdown Spacing Fix - Compact Version */
+        .mega-dropdown {
+            margin-top: 8px !important;
+            min-width: 450px !important;
+            padding: 15px !important;
+            border: 1px solid #e9ecef !important;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08) !important;
+            border-radius: 6px !important;
+            position: absolute !important;
+            top: 100% !important;
+            left: 0 !important;
+            z-index: 1000 !important;
+            background-color: white !important;
+        }
+
+        .mega-dropdown .row {
+            margin: 0 !important;
+        }
+
+        .mega-dropdown .col-md-4 {
+            padding: 0 12px !important;
+        }
+
+        /* Horizontal headings - Compact */
+        .mega-dropdown .dropdown-header {
+            color: #28a745 !important;
+            font-weight: 600 !important;
+            font-size: 0.9rem !important;
+            text-transform: capitalize !important;
+            letter-spacing: 0.3px !important;
+            padding: 0 0 6px 0 !important;
+            margin-bottom: 8px !important;
+            border-bottom: 2px solid #28a745 !important;
+            display: block !important;
+        }
+
+        /* Vertical products under each heading - Compact */
+        .mega-dropdown .dropdown-item {
+            padding: 6px 0 !important;
+            color: #666 !important;
+            font-size: 0.85rem !important;
+            transition: all 0.2s ease !important;
+            border: none !important;
+            background: none !important;
+            display: block !important;
+        }
+
+        .mega-dropdown .dropdown-item:hover {
+            background-color: #f8f9fa !important;
+            color: #28a745 !important;
+            padding-left: 10px !important;
+        }
+
+        /* Enhanced Dark mode styling */
+        [data-theme="dark"] .mega-dropdown {
+            background-color: #1a1a1a !important;
+            border: 1px solid #333333 !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        [data-theme="dark"] .mega-dropdown .dropdown-header {
+            color: #4ade80 !important;
+            border-bottom: 2px solid #4ade80 !important;
+        }
+
+        [data-theme="dark"] .mega-dropdown .dropdown-item {
+            color: #e5e5e5 !important;
+        }
+
+        [data-theme="dark"] .mega-dropdown .dropdown-item:hover {
+            background-color: #333333 !important;
+            color: #4ade80 !important;
+            padding-left: 10px !important;
+        }
+
+        /* Force dark mode dropdown visibility */
+        [data-theme="dark"] .dropdown-menu.mega-dropdown {
+            background-color: #1a1a1a !important;
+            border-color: #333333 !important;
+        }
+
+        [data-theme="dark"] .dropdown-menu.mega-dropdown .dropdown-header {
+            color: #4ade80 !important;
+            border-bottom-color: #4ade80 !important;
+        }
+
+        [data-theme="dark"] .dropdown-menu.mega-dropdown .dropdown-item {
+            color: #e5e5e5 !important;
+        }
+
+        [data-theme="dark"] .dropdown-menu.mega-dropdown .dropdown-item:hover {
+            background-color: #333333 !important;
+            color: #4ade80 !important;
+        }
+
+        /* Responsive design - Compact */
+        @media (max-width: 768px) {
+            .mega-dropdown {
+                min-width: 100% !important;
+                margin-top: 5px !important;
+                padding: 12px !important;
+            }
+
+            .mega-dropdown .col-md-4 {
+                margin-bottom: 15px !important;
+            }
+
+            .mega-dropdown .col-md-4:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+    </style>
+
+
     <!-- inner banner -->
-    <section class="inner-banner py-5">
-        <div class="w3l-breadcrumb py-lg-5">
+    <section class="inner-banner py-5"
+        style="background-image: url('assets/images/img/happy7.webp'); background-size: cover; background-position: center; position: relative;">
+        <div class="overlay"
+            style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5);"></div>
+        <div class="w3l-breadcrumb py-lg-5" style="position: relative; z-index: 2;">
             <div class="container pt-5 pb-sm-4">
-                <h4 class="inner-text-title font-weight-bold pt-sm-5 pt-4">Services</h4>
+                <h4 class="inner-text-title font-weight-bold pt-sm-5 pt-4 text-white">Membership</h4>
+                <p class="text-white-50 mt-3 mb-4">Join KCCA Staff Multipurpose Cooperative Society Limited and unlock
+                    exclusive financial benefits designed specifically for KCCA employees.</p>
                 <ul class="breadcrumbs-custom-path">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="active"><i class="fas fa-angle-right mx-2"></i>Services</li>
+                    <li><a href="index.html" class="text-white-50">Home</a></li>
+                    <li class="active text-white"><i class="fas fa-angle-right mx-2"></i>Membership</li>
                 </ul>
             </div>
         </div>
     </section>
-    <!-- //inner banner -->
 
-    <!-- home page service grids -->
-    <section class="home-services py-5" id="services">
-        <div class="container py-lg-5 py-md-4 py-2">
-            <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:700px;">
-                <h5 class="small-title mb-2">Best Services</h5>
-                <h3 class="title-style">More than 30+ years we provide business consulting</h3>
+    <!-- Membership Benefits -->
+    <section id="benefits" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5 animate__animated animate__fadeIn">
+                <h2 class="h3 fw-bold text-danger">Why Join KCCA Cooperative?</h2>
+                <p class="lead">Discover the exclusive benefits available to our members</p>
+                <div class="divider mx-auto bg-danger"></div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="box-wrap">
-                        <div class="icon">
-                            <i class="fas fa-donate"></i>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp">
+                    <div class="benefit-card card h-100 shadow">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-percentage card-icon"></i>
+                            <h4 class="card-title">High-Interest Savings</h4>
+                            <p class="card-text">Earn up to 12% interest on your savings annually, helping your money
+                                grow faster than traditional banks.</p>
                         </div>
-                        <h4 class="number">01</h4>
-                        <h4><a href="#url">Financial planing</a></h4>
-                        <p>Lorem ipsum dolor sit amet sed consectetur adipisicing elit.
-                            doloret quas saepe autem, dolor set.</p>
-                        <a href="services.html" class="read">Read more</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
-                    <div class="box-wrap">
-                        <div class="icon">
-                            <i class="fas fa-marker"></i>
+
+                <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="benefit-card card h-100 shadow">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-hand-holding-usd card-icon"></i>
+                            <h4 class="card-title">Affordable Loans</h4>
+                            <p class="card-text">Access loans at competitive rates (as low as 12.5%) with flexible
+                                repayment terms tailored for KCCA staff.</p>
                         </div>
-                        <h4 class="number">02</h4>
-                        <h4><a href="#url">Training services</a></h4>
-                        <p>Lorem ipsum dolor sit amet sed consectetur adipisicing elit.
-                            doloret quas saepe autem, dolor set.</p>
-                        <a href="services.html" class="read">Read more</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
-                    <div class="box-wrap">
-                        <div class="icon">
-                            <i class="fas fa-user-tie"></i>
+
+                <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="benefit-card card h-100 shadow">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-gift card-icon"></i>
+                            <h4 class="card-title">Annual Dividends</h4>
+                            <p class="card-text">Receive dividends (15% in 2024) based on cooperative performance and
+                                your participation level.</p>
                         </div>
-                        <h4 class="number">03</h4>
-                        <h4><a href="#url">Marketing services</a></h4>
-                        <p>Lorem ipsum dolor sit amet sed consectetur adipisicing elit.
-                            doloret quas saepe autem, dolor set.</p>
-                        <a href="services.html" class="read">Read more</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mt-4">
-                    <div class="box-wrap">
-                        <div class="icon">
-                            <i class="fas fa-calculator"></i>
+
+                <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp">
+                    <div class="benefit-card card h-100 shadow">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-users card-icon"></i>
+                            <h4 class="card-title">Collective Bargaining</h4>
+                            <p class="card-text">Enjoy discounted rates through our partnerships with suppliers like
+                                GEEPAS and Mantra Uganda.</p>
                         </div>
-                        <h4 class="number">04</h4>
-                        <h4><a href="#url">Taxation services</a></h4>
-                        <p>Lorem ipsum dolor sit amet sed consectetur adipisicing elit.
-                            doloret quas saepe autem, dolor set.</p>
-                        <a href="services.html" class="read">Read more</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mt-4">
-                    <div class="box-wrap">
-                        <div class="icon">
-                            <i class="fas fa-ruler-combined"></i>
+
+                <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="benefit-card card h-100 shadow">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-shield-alt card-icon"></i>
+                            <h4 class="card-title">Insurance Coverage</h4>
+                            <p class="card-text">Benefit from group insurance schemes and emergency financial support
+                                when you need it most.</p>
                         </div>
-                        <h4 class="number">05</h4>
-                        <h4><a href="#url">Start Ups</a></h4>
-                        <p>Lorem ipsum dolor sit amet sed consectetur adipisicing elit.
-                            doloret quas saepe autem, dolor set.</p>
-                        <a href="services.html" class="read">Read more</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mt-4">
-                    <div class="box-wrap">
-                        <div class="icon">
-                            <i class="fas fa-edit"></i>
+
+                <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="benefit-card card h-100 shadow">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-chart-line card-icon"></i>
+                            <h4 class="card-title">Financial Growth</h4>
+                            <p class="card-text">Participate in investment opportunities like our Estate Development
+                                projects with guaranteed returns.</p>
                         </div>
-                        <h4 class="number">06</h4>
-                        <h4><a href="#url">Business Planning</a></h4>
-                        <p>Lorem ipsum dolor sit amet sed consectetur adipisicing elit.
-                            doloret quas saepe autem, dolor set.</p>
-                        <a href="services.html" class="read">Read more</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- //home page service grids -->
 
-    <!-- content block -->
-    <section class="w3l-content1 py-5">
-        <div class="container py-md-5 py-sm-4 py-2">
-            <div class="row py-4">
-                <div class="col-lg-7">
-                    <h3 class="title-style text-white">We manage your business</span></h3>
-                    <p class="mt-4 text-light">Lorem ipsum dolor sit amet elit. Velit beatae
-                        rem ullam dolore nisi esse quasi. Integer sit amet. Lorem ipsum dolor sit
-                        amet elit.</p>
-                    <a href="contact.html" class="btn btn-style mt-md-5 mt-4">Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- //content block -->
-
-    <!-- 3grids with bg-image section -->
-    <div class="w3l-homeblock3 py-5">
-        <div class="container py-lg-5 py-md-4 py-2">
-            <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:700px;">
-                <h5 class="small-title mb-2">What we do?</h5>
-                <h3 class="title-style">We take care of the Future!</h3>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="top-pic1">
-                        <div class="card-body blog-details">
-                            <span class="meta-value">Investment</span>
-                            <a href="#blog" class="blog-desc">Strength solutions
-                            </a>
-                            <a href="#blog" class="btn btn-style-primary btn-style text-white mt-4">Read
-                                More<i class="fas fa-arrow-right ms-1"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
-                    <div class="top-pic2">
-                        <div class="card-body blog-details">
-                            <span class="meta-value">Strategy</span>
-                            <a href="#blog" class="blog-desc">Business analytics
-                            </a>
-                            <a href="#blog" class="btn btn-style-primary btn-style text-white mt-4">Read
-                                More<i class="fas fa-arrow-right ms-1"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
-                    <div class="top-pic3">
-                        <div class="card-body blog-details">
-                            <span class="meta-value"> Tax Consulting </span>
-                            <a href="#blog" class="blog-desc">Stock investments
-                            </a>
-                            <a href="#blog" class="btn btn-style-primary btn-style text-white mt-4">Read
-                                More<i class="fas fa-arrow-right ms-1"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- //3grids with bg-image section -->
-
-    <!-- footer -->
-    <footer class="w3l-footer py-5">
-        <div class="container pt-4">
+    <!-- Membership Requirements -->
+    <section id="membership-requirements" class="py-5 bg-light">
+        <div class="container">
             <div class="row">
-                <div class="col-lg-4 sub-one-left">
-                    <h6>About </h6>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa officia dicta magni ea
-                        at, culpa atque, rerum dolorum voluptas alias
-                        qui temporibus ex totam distinctio nobis impedit minus rerum,
-                        nihil blan ditiis quos atque.</p>
-                    <ul class="social mt-4 pt-lg-1">
-                        <li><a href="#facebook"><span class="fab fa-facebook-f"></span></a></li>
-                        <li><a href="#twitter"><span class="fab fa-twitter"></span></a></li>
-                        <li><a href="#linkedin"><span class="fab fa-linkedin-in"></span></a></li>
-                        <li><a href="#google-plus"><span class="fab fa-google-plus-g"></span></a></li>
-                        <li><a href="#instagram"><span class="fab fa-instagram"></span></a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-5 col-md-6 mt-lg-0 mt-5 px-lg-5 sub-two-right">
-                    <h6>Recent Posts</h6>
-                    <div class="footer-post">
-                        <ul>
-                            <li><a href="#post">Suzan Lois</a></li>
-                            <li class="mx-2"><a href="#post">- Nov. 21 - </a></li>
-                            <li><a href="#post">3 comments</a></li>
-                        </ul>
-                        <p class="post-footer"><a href="#post">Delivering New Customer Experiences with Workup.</a></p>
-                    </div>
-                    <div class="footer-post mt-4">
-                        <ul>
-                            <li><a href="#post">Rose Alha</a></li>
-                            <li class="mx-2"><a href="#post">- Nov. 21 - </a></li>
-                            <li><a href="#post">3 comments</a></li>
-                        </ul>
-                        <p class="post-footer"><a href="#post">Discussing the current trends in the share market.</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mt-lg-0 mt-5 sub-one-left">
-                    <h6>Contact </h6>
-                    <div class="column2">
-                        <div class="href1"><span class="fas fa-envelope-open"></span><a
-                                href="mailto:info@example.com">info@example.com</a>
-                        </div>
-                        <div class="href2 my-3"><span class="fas fa-phone-alt"></span><a
-                                href="tel:+44-123-456-78">+44-123-456-78</a>
-                        </div>
-                        <div>
-                            <p class="contact-para mb-3"><span class="fas fa-map-marker-alt"></span>New York,
-                                235 Lane, 10001</p>
-                        </div>
-                        <div>
-                            <p class="contact-para"><span class="fas fa-clock"></span>Office Hours: 9AM - 7PM</p>
+                <!-- Main Content -->
+                <div class="col-lg-12">
+                    <div class="content-wrapper">
+                        <!-- Requirements Section -->
+                        <div class="requirements-section mb-5">
+                            <h3 class="section-title">Requirements</h3>
+                            <ul class="requirements-list">
+                                <li>Current employment with Kampala Capital City Authority (KCCA)</li>
+                                <li>Valid identification (National ID, Passport, or Driver's License)</li>
+                                <li>Recent passport-size photographs</li>
+                                <li>Proof of employment (appointment letter or staff ID)</li>
+                                <li>Completed membership registration form</li>
+                                <li>Commitment to regular savings contributions</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="copyright-footer text-center mt-5 pt-sm-4 pt-2">
-                <p>&copy; 2021 Workup. All rights reserved | Design by <a href="https://w3layouts.com/">W3Layouts</a>
-                </p>
+        </div>
+    </section>
+
+    <!-- Registration Process -->
+    <section id="registration-process" class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Main Content -->
+                <div class="col-lg-12">
+                    <div class="content-wrapper">
+                        <!-- Registration Process Section -->
+                        <div class="process-section mb-5">
+                            <h3 class="section-title">Registration</h3>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="progress-steps mb-4" id="registrationSteps">
+                                        <div class="step active" id="step1" data-step="1">
+                                            <span>1</span>
+                                            <p>Download Form</p>
+                                            <div class="step-status">
+                                                <i class="fas fa-circle-notch fa-spin d-none" id="step1-loading"></i>
+                                                <i class="fas fa-check d-none" id="step1-complete"></i>
+                                            </div>
+                                        </div>
+                                        <div class="step" id="step2" data-step="2">
+                                            <span>2</span>
+                                            <p>Complete & Submit</p>
+                                            <div class="step-status">
+                                                <i class="fas fa-check d-none" id="step2-complete"></i>
+                                            </div>
+                                        </div>
+                                        <div class="step" id="step3" data-step="3">
+                                            <span>3</span>
+                                            <p>Pay Fees</p>
+                                            <div class="step-status">
+                                                <i class="fas fa-check d-none" id="step3-complete"></i>
+                                            </div>
+                                        </div>
+                                        <div class="step" id="step4" data-step="4">
+                                            <span>4</span>
+                                            <p>Activation</p>
+                                            <div class="step-status">
+                                                <i class="fas fa-check d-none" id="step4-complete"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Progress Message -->
+                                    <div class="progress-message mt-3 text-center">
+                                        <div class="alert alert-primary" id="currentStepMessage"></div>
+                                    </div>
+
+                                    <div class="text-start mb-4">
+                                        <a href="assets/resources/MEMBERSHIP REGISTRATION FORM 2025.pdf"
+                                            class="btn btn-success btn-md px-4 rounded-pill"
+                                            download="KCCA_Membership_Form_2025.pdf" id="downloadFormBtn">
+                                            <i class="fas fa-download me-2"></i>Download
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="alert alert-info h-100 d-flex flex-column justify-content-center">
+                                        <h5><i class="fas fa-info-circle me-2"></i>Process Notes:</h5>
+                                        <ul class="mb-0">
+                                            <li>Processing time: 3-5 working days</li>
+                                            <li>All documents must be submitted in person at our office</li>
+                                            <li>Mandatory orientation session after approval</li>
+                                            <li>Bring all required documents listed in requirements section</li>
+                                            <li>Office hours: Monday to Friday, 8:30 AM - 5:00 PM</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Step elements
+            const steps = [
+                document.getElementById('step1'),
+                document.getElementById('step2'),
+                document.getElementById('step3'),
+                document.getElementById('step4')
+            ];
+
+            // Step message
+            const stepMessage = document.getElementById('currentStepMessage');
+
+            // Step messages
+            const messages = [
+                '<strong>Step 1:</strong> Click the download button to get your membership registration form instantly.',
+                '<strong>Step 2:</strong> Fill out the downloaded form and submit it with all required documents at our office.',
+                '<strong>Step 3:</strong> Pay the membership and savings fees at the office or via the provided payment methods.',
+                '<strong>Step 4:</strong> Your application is being processed. You will be notified once your account is activated.'
+            ];
+
+            // Helper to update steps UI
+            function setStep(stepIdx) {
+                steps.forEach((step, idx) => {
+                    if (idx === stepIdx) {
+                        step.classList.add('active');
+                    } else {
+                        step.classList.remove('active');
+                    }
+                });
+                // Update message
+                stepMessage.innerHTML = messages[stepIdx];
+            }
+
+            // Initial state
+            setStep(0);
+
+            // Add click event listeners to each step
+            steps.forEach((step, index) => {
+                step.addEventListener('click', function () {
+                    setStep(index);
+                });
+            });
+        });
+    </script>
+
+    <style>
+        .section-title {
+            position: relative;
+            color: #dc3545;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+            border-bottom: none;
+            /* Remove the long red line */
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 3px;
+            background: #dc3545;
+            margin: 0.5rem 0 0 0;
+            /* Left align the line */
+            border-radius: 2px;
+        }
+
+        [data-theme="dark"] .section-title {
+            color: #dc3545 !important;
+        }
+
+        [data-theme="dark"] .section-title::after {
+            background: #dc3545 !important;
+        }
+
+        .progress-message .alert-primary {
+            background-color: #d4edda !important;
+            color: #155724 !important;
+            border-color: #c3e6cb !important;
+        }
+
+        /* Make Process Notes green */
+        .alert-info.h-100.d-flex.flex-column.justify-content-center {
+            background-color: #d4edda !important;
+            color: #155724 !important;
+            border-color: #c3e6cb !important;
+        }
+
+        [data-theme="dark"] .alert-info.h-100.d-flex.flex-column.justify-content-center {
+            background-color: #23482a !important;
+            color: #d4edda !important;
+            border-color: #357a38 !important;
+        }
+
+        [data-theme="dark"] .alert-info.h-100.d-flex.flex-column.justify-content-center h5,
+        [data-theme="dark"] .alert-info.h-100.d-flex.flex-column.justify-content-center .fa-info-circle {
+            color: #dc3545 !important;
+        }
+
+        [data-theme="dark"] .progress-steps .step.active p,
+        [data-theme="dark"] .progress-steps .step.active span {
+            color: #fff !important;
+        }
+
+        [data-theme="dark"] .progress-steps .step.active {
+            font-weight: bold;
+        }
+
+        .step.active {
+            border-color: transparent !important;
+            box-shadow: none !important;
+        }
+
+        [data-theme="dark"] .progress-steps .step.active {
+            border-color: transparent !important;
+            box-shadow: none !important;
+        }
+
+        [data-theme="dark"] #benefits,
+        [data-theme="dark"] #membership-requirements,
+        [data-theme="dark"] #registration-process,
+        [data-theme="dark"] section.py-5.bg-light:not(.inner-banner) {
+            background: #232323 !important;
+            color: #e5e5e5 !important;
+        }
+
+        [data-theme="dark"] .benefit-card,
+        [data-theme="dark"] .content-wrapper {
+            background: #2d2d2d !important;
+            color: #e5e5e5 !important;
+        }
+
+        [data-theme="dark"] .divider.bg-danger {
+            background: #dc3545 !important;
+        }
+
+        [data-theme="dark"] .accordion,
+        [data-theme="dark"] .accordion-item,
+        [data-theme="dark"] .accordion-button,
+        [data-theme="dark"] .accordion-body {
+            background: #232323 !important;
+            color: #e5e5e5 !important;
+            border-color: #333 !important;
+        }
+
+        [data-theme="dark"] .accordion-button:not(.collapsed) {
+            background: #232323 !important;
+            color: #4ade80 !important;
+        }
+
+        [data-theme="dark"] .accordion-button.collapsed {
+            background: #232323 !important;
+            color: #e5e5e5 !important;
+        }
+
+        [data-theme="dark"] .accordion-item.shadow-sm {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        [data-theme="dark"] .requirements-list {
+            background: #232323 !important;
+            color: #e5e5e5 !important;
+            border-left: 4px solid #28a745 !important;
+        }
+
+        [data-theme="dark"] .requirements-list li {
+            background: #2d2d2d !important;
+            color: #e5e5e5 !important;
+            border: 1px solid #333 !important;
+        }
+
+        [data-theme="dark"] .requirements-list li:hover {
+            background: #333 !important;
+        }
+    </style>
+
+    <!-- FAQ Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5 animate__animated animate__fadeIn">
+                <h2 class="h3 fw-bold text-danger">Frequently Asked Questions</h2>
+                <p class="lead">Get answers to common questions about membership</p>
+                <div class="divider mx-auto bg-danger"></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="membershipFAQ">
+                        <div class="accordion-item border-0 mb-3 shadow-sm animate__animated animate__fadeInUp">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed rounded" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    <i class="fas fa-question-circle text-danger me-2"></i> How long does membership
+                                    approval take?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#membershipFAQ">
+                                <div class="accordion-body">
+                                    Membership applications are typically processed within <strong>3-5 working
+                                        days</strong> after submission of all required documents. You'll receive an SMS
+                                    notification once your application is approved.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="accordion-item border-0 mb-3 shadow-sm animate__animated animate__fadeInUp animate__delay-1s">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed rounded" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    <i class="fas fa-question-circle text-danger me-2"></i> What is the minimum monthly
+                                    savings requirement?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#membershipFAQ">
+                                <div class="accordion-body">
+                                    We require a minimum monthly savings contribution of <strong>UGX 50,000</strong> for
+                                    regular members. However, you're encouraged to save more to maximize your benefits
+                                    and loan eligibility.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="accordion-item border-0 mb-3 shadow-sm animate__animated animate__fadeInUp animate__delay-2s">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed rounded" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    <i class="fas fa-question-circle text-danger me-2"></i> Can I access my savings
+                                    anytime?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#membershipFAQ">
+                                <div class="accordion-body">
+                                    Regular savings can be withdrawn with <strong>30 days notice</strong>. Fixed
+                                    deposits have specific terms (6 months to 5 years) with higher interest rates.
+                                    Emergency withdrawals may be approved under special circumstances.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 mb-3 shadow-sm animate__animated animate__fadeInUp">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed rounded" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    <i class="fas fa-question-circle text-danger me-2"></i> How do I qualify for loans?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#membershipFAQ">
+                                <div class="accordion-body">
+                                    Loan eligibility depends on: <br>
+                                    1) Your savings balance (typically 3x the loan amount) <br>
+                                    2) Length of membership (minimum 3 months for most loans) <br>
+                                    3) Existing loan obligations <br>
+                                    4) Your repayment capacity
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="accordion-item border-0 shadow-sm animate__animated animate__fadeInUp animate__delay-1s">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed rounded" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    <i class="fas fa-question-circle text-danger me-2"></i> What happens if I leave KCCA
+                                    employment?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#membershipFAQ">
+                                <div class="accordion-body">
+                                    Your membership remains active for <strong>6 months</strong> after leaving KCCA.
+                                    During this period, you can: <br>
+                                    - Continue as an associate member (with different terms) <br>
+                                    - Withdraw your savings <br>
+                                    - Transfer to another SACCO <br>
+                                    After 6 months, inactive accounts are subject to dormancy fees.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- KCCA Cooperative Footer -->
+    <footer class="kcca-footer">
+        <div class="footer-top py-5">
+            <div class="container">
+                <div class="row g-4">
+                    <!-- About Column -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-about">
+                            <h5 class="footer-title">About Us</h5>
+                            <p class="mt-3">KCCA Staff Multipurpose Cooperative Society Limited has been providing
+                                exceptional financial services to Kampala Capital City Authority employees since 2012.
+                                We empower our members through affordable credit, savings products, and investment
+                                opportunities.</p>
+                            <div class="social-links mt-4">
+                                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+<!-- Quick Links Column -->
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-links">
+                            <h5 class="footer-title">Quick Links</h5>
+                            <ul class="mt-3">
+                                <li><a href="index.html"><i class="fas fa-chevron-right me-2"></i>Home</a></li>
+                                <li><a href="about.html"><i class="fas fa-chevron-right me-2"></i>About Us</a></li>
+                                <li><a href="index.html#savings-tab"><i class="fas fa-chevron-right me-2"></i>Products</a></li>
+                                <li><a href="membership.html"><i class="fas fa-chevron-right me-2"></i>Membership</a>
+                                </li>
+                                <li><a href="resources.html"><i class="fas fa-chevron-right me-2"></i>Resources</a></li>
+                                <li><a href="contact.html"><i class="fas fa-chevron-right me-2"></i>Contact us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Updates Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-updates">
+                            <h5 class="footer-title">Recent Updates</h5>
+                            <div class="update-items mt-3">
+                                <div class="update-item mb-3">
+                                    <div class="update-meta">
+                                        <span class="update-category">Investment & Strategy Committee</span>
+                                        <span class="update-date">- June 5 -</span>
+                                    </div>
+                                    <a href="resources.html#land-plots" class="update-title">New Land Plots Available</a>
+                                </div>
+                                <div class="update-item">
+                                    <div class="update-meta">
+                                        <span class="update-category">Audit Committee</span>
+                                        <span class="update-date">- March 15 -</span>
+                                    </div>
+                                    <a href="resources.html#financial" class="update-title">Audited Financial Statements</a>
+                                </div>
+                                <div class="update-item">
+                                    <div class="update-meta">
+                                        <span class="update-category">Board Secretariat</span>
+                                        <span class="update-date">- Jan 1 -</span>
+                                    </div>
+                                    <a href="resources.html#publications" class="update-title">Annual Report Published</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-contact">
+                            <h5 class="footer-title">Contact Us</h5>
+                            <div class="contact-info mt-3">
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>
+                                        KCCA City Hall,<br>
+                                        Plot 1–3 Apollo Kaggwa Road,<br>
+                                        P.O. Box 7010, Kampala Uganda
+                                    </span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <a href="tel:+256414123456">+256 312 900999</a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <a href="mailto:info@kccacooperative.co.ug">cooperativeinfo@kcca.go.ug</a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Mon-Fri: 8:30AM - 5PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom py-3">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="mb-0 footer-copyright">&copy; 2025 KCCA Staff Multipurpose Cooperative Society
+                            Limited. All rights
+                            reserved | Reg. No. CDS/2012/1234</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="payment-methods">
+                            <span class="me-2">We accept:</span>
+                            <img src="assets/images/dfcu.png" alt="DFCU Bank" width="60">
+                            <img src="assets/images/flexipay.png" alt="FlexiPay" width="60">
+                            <img src="assets/images/payway.png" alt="Pay Way" width="60">
+                            <img src="assets/images/airtel.png" alt="Airtel Money" width="60">
+                            <img src="assets/images/mtn.png" alt="MTN Mobile Money" width="60">
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
         </div>
     </footer>
-    <!-- //footer -->
 
     <!-- Js scripts -->
     <!-- move top -->
@@ -328,10 +1468,6 @@ Author URL: http://w3layouts.com
     <!-- common jquery plugin -->
     <script src="assets/js/jquery-3.3.1.min.js"></script>
     <!-- //common jquery plugin -->
-
-    <!-- theme switch js (light and dark)-->
-    <script src="assets/js/theme-change.js"></script>
-    <!-- //theme switch js (light and dark)-->
 
     <!-- MENU-JS -->
     <script>
@@ -376,6 +1512,147 @@ Author URL: http://w3layouts.com
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- //bootstrap -->
     <!-- //Js scripts -->
+
+    <!-- Comprehensive Theme Management System -->
+    <script>
+        // Theme Management System for Contact Page
+        document.addEventListener('DOMContentLoaded', function () {
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const logo = document.getElementById('logo');
+
+            // Set initial theme from localStorage or default
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+
+            if (currentTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                if (logo && logo.dataset.dark) logo.src = logo.dataset.dark;
+            } else {
+                document.body.classList.remove('dark-mode');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                if (logo && logo.dataset.light) logo.src = logo.dataset.light;
+            }
+
+            themeToggle.addEventListener('click', function () {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+
+                if (newTheme === 'dark') {
+                    document.body.classList.add('dark-mode');
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                    if (logo && logo.dataset.dark) logo.src = logo.dataset.dark;
+                } else {
+                    document.body.classList.remove('dark-mode');
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                    if (logo && logo.dataset.light) logo.src = logo.dataset.light;
+                }
+
+                // Dispatch themeChanged event for other scripts/components
+                window.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme: newTheme } }));
+            });
+        });
+    </script>
+
+    <!-- Enhanced dropdown behavior (copied from index.html) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdown = document.getElementById('productsDropdown');
+            const dropdownToggle = document.getElementById('productsDropdownToggle');
+            const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+
+            let hoverTimeout;
+
+            // Show dropdown on hover
+            dropdown.addEventListener('mouseenter', function () {
+                clearTimeout(hoverTimeout);
+                dropdownMenu.classList.add('show');
+                dropdownToggle.setAttribute('aria-expanded', 'true');
+            });
+
+            // Hide dropdown on mouse leave with delay
+            dropdown.addEventListener('mouseleave', function () {
+                hoverTimeout = setTimeout(function () {
+                    dropdownMenu.classList.remove('show');
+                    dropdownToggle.setAttribute('aria-expanded', 'false');
+                }, 300); // 300ms delay before hiding
+            });
+
+            // Handle click events
+            dropdownToggle.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                if (dropdownMenu.classList.contains('show')) {
+                    dropdownMenu.classList.remove('show');
+                    dropdownToggle.setAttribute('aria-expanded', 'false');
+                } else {
+                    dropdownMenu.classList.add('show');
+                    dropdownToggle.setAttribute('aria-expanded', 'true');
+                }
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!dropdown.contains(e.target)) {
+                    dropdownMenu.classList.remove('show');
+                    dropdownToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Prevent Bootstrap's default dropdown behavior from interfering
+            dropdownToggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('contactForm');
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = 'Sending...';
+                    submitBtn.disabled = true;
+                    // Collect form data
+                    const name = document.getElementById('w3lName').value;
+                    const email = document.getElementById('w3lSender').value;
+                    const message = document.getElementById('w3lMessage').value;
+                    // Prepare EmailJS params
+                    const templateParams = {
+                        to_email: 'leticianakiwala@gmail.com',
+                        from_name: name,
+                        reply_to: email,
+                        subject: 'New Suggestion Submission',
+                        message: `Message: ${message}\nName: ${name}\nEmail: ${email}`,
+                        sender_email: email,
+                        sender_name: name
+                    };
+                    emailjs.send('service_p9nqw3f', 'template_xtf8b59', templateParams)
+                        .then(function (response) {
+                            document.getElementById('contactSuccessMessage').style.display = 'block';
+                            submitBtn.textContent = originalText;
+                            submitBtn.disabled = false;
+                            form.reset();
+                        })
+                        .catch(function (error) {
+                            alert('Sorry, there was an error sending your message. Please try again later.');
+                            submitBtn.textContent = originalText;
+                            submitBtn.disabled = false;
+                        });
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
