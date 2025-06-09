@@ -1,0 +1,96 @@
+{
+    "forms": [
+        {
+            "title": "Membership Registration Form",
+            "description": "Official form for new member registration",
+            "url": "assets/resources/Forms/MEMBERSHIP REGISTRATION FORM 2025.pdf"
+        },
+        {
+            "title": "Change of Details Form",
+            "description": "Form for updating member information",
+            "url": "assets/resources/Forms/SACCO CHANGE OF DETAILS FORM (1).pdf"
+        },
+        {
+            "title": "Loan Settlement Form",
+            "description": "Form for loan repayment and settlement",
+            "url": "assets/resources/Forms/LOAN SETTELMENT FORM 2025.pdf"
+        },
+        {
+            "title": "Main Loan Form",
+            "description": "Application form for main loans",
+            "url": "assets/resources/Forms/MAIN LOAN FORM UPDATED 2025.pdf"
+        },
+        {
+            "title": "Emergency Loan Form",
+            "description": "Application form for emergency loans",
+            "url": "assets/resources/Forms/EMMERGENCY LOAN FORM 2025.pdf"
+        },
+        {
+            "title": "Land Loan Form",
+            "description": "Application form for land loans",
+            "url": "assets/resources/Forms/Land_Loan_Form 2025.pdf"
+        },
+        {
+            "title": "Savings Withdraw Form",
+            "description": "Application form for main loans",
+            "url": "assets/resources/Forms/SAVINGS WITHDRAW FORM 2025.pdf"
+        },
+        {
+            "title": "Security Deposit Form",
+            "description": "Application form for emergency loans",
+            "url": "assets/resources/Forms/SECURITY DEPOSIT FORM 2025.pdf"
+        },
+        {
+            "title": "Toto Application Form",
+            "description": "Application form for land loans",
+            "url": "assets/resources/Forms/TOTO application form 2025.pdf"
+        },
+        {
+            "title": "8",
+            "description": "Test123",
+            "url": "assets/resources/Forms/2.pdf"
+        }
+    ],
+    "financial": [
+        {
+            "title": "Financial Statement 2023",
+            "description": "Audited financial statements for FY 2023",
+            "url": "assets/resources/Financial Reports/Audited Financial statements FY2023.pdf"
+        },
+        {
+            "title": "Financial Statement 2022",
+            "description": "Audited financial statements for FY 2022",
+            "url": "assets/resources/Financial Reports/Audited Financial statements FY 2022.pdf"
+        },
+        {
+            "title": "Financial Statement 2021",
+            "description": "Audited financial statements for FY 2021",
+            "url": "assets/resources/Financial Reports/Audited Financial statements FY2021.pdf"
+        }
+    ],
+    "publications": [
+        {
+            "title": "Newsletter Issue 1, 2025",
+            "description": "Latest updates and news from KCCA SACCO",
+            "url": "assets/resources/Publications/KCCA SACCO_NEWS LETTER ISSUE 1 2025-1.pdf"
+        },
+        {
+            "title": "Strategic Plan 2032",
+            "description": "Our long-term vision and strategic objectives",
+            "url": "assets/resources/Publications/KCCA SACCO 2032.pdf"
+        },
+        {
+            "title": "KCCA Cooperative Products Profile",
+            "description": "Comprehensive overview of all cooperative products and services offered",
+            "url": "assets/resources/Publications/KCCA SACCO_COOPERATIVE PRODUCTS PROFILE.pdf"
+        }
+    ],
+    "landPlots": [
+        {
+            "title": "Namuseera Tongolo Land Plot",
+            "description": "Prime land available for investment, development, or personal use. Secure your future with this exclusive offer from KCCA Cooperative.",
+            "image": "assets/resources/Land Plots/Namuseera Tongolo.jpeg",
+            "googleLink": "https://maps.app.goo.gl/zbgteZpBUBiFqEe16?g_st=aw"
+        }
+    ]
+}
