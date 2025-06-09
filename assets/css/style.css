@@ -31085,19 +31085,19 @@ h5.small-title {
 }
 
 .slide:first-child {
-  background: url(../images/slidder1.jpg) no-repeat center top/cover;
+  background: url(../images/header1.jpeg) no-repeat center top/cover;
 }
 
 .slide:nth-child(2) {
-  background: url(../images/slidder2.jpeg) no-repeat center top/cover;
+  background: url(../images/header2.jpg) no-repeat center top/cover;
 }
 
 .slide:nth-child(3) {
-  background: url(../images/slidder1.jpg) no-repeat center top/cover;
+  background: url(../images/header1.jpeg) no-repeat center top/cover;
 }
 
 .slide:nth-child(4) {
-  background: url(../images/slidder2.jpeg) no-repeat center top/cover;
+  background: url(../images/header2.jpg) no-repeat center top/cover;
 }
 
 .slider .nav-btn {
@@ -31437,17 +31437,6 @@ body.dark-mode .w3l-homeblock3 {
   /* Black background in dark mode */
 }
 
-.w3l-homeblock3 .top-pic1 {
-  background: url(../images/carousel12.jpg) no-repeat 0px 0px;
-}
-
-.w3l-homeblock3 .top-pic2 {
-  background: url(../images/carousel32.jpg) no-repeat 0px 0px;
-}
-
-.w3l-homeblock3 .top-pic3 {
-  background: url(../images/carousel22.jpg) no-repeat 0px 0px;
-}
 
 .w3l-homeblock3 .top-pic1,
 .w3l-homeblock3 .top-pic2,
