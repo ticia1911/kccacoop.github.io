@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <title>Admin - KCCA Staff Multipurpose Cooperative Society Limited - Growing and Saving Together</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body { background: #f8f9fa; font-family: 'Poppins', sans-serif; }
+        .admin-container { max-width: 420px; margin: 60px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 32px; }
+        .admin-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 24px; text-align: center; }
+        .form-group { margin-bottom: 18px; }
+        label { font-weight: 500; }
+        input[type="text"], input[type="password"], input[type="email"] { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-top: 6px; }
+        .btn { background: #28a745; color: #fff; border: none; padding: 10px 0; width: 100%; border-radius: 5px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+        .btn:hover { background: #218838; }
+        .link { color: #007bff; text-decoration: underline; cursor: pointer; font-size: 0.95rem; }
+        .admin-panel { max-width: 900px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 32px; }
+        .upload-section { margin-bottom: 32px; }
+        .upload-section h3 { font-size: 1.1rem; margin-bottom: 12px; }
+        .upload-section input[type="file"], .upload-section input[type="text"] { margin-bottom: 10px; }
+        .logout-btn { background: #dc3545; margin-top: 18px; }
+        .success-msg { color: #28a745; font-size: 0.98rem; margin-bottom: 10px; }
+        .error-msg { color: #dc3545; font-size: 0.98rem; margin-bottom: 10px; }
+        .resource-list { margin: 20px 0; border: 1px solid #eee; border-radius: 5px; padding: 15px; }
+        .resource-item { display: flex; justify-content: space-between; align-items: center; padding: 10px; border-bottom: 1px solid #f0f0f0; }
+        .resource-item:last-child { border-bottom: none; }
+        .resource-info { flex: 1; }
+        .resource-title { font-weight: 600; margin-bottom: 5px; }
+        .resource-desc { color: #666; font-size: 0.9rem; }
+        .resource-link { color: #007bff; text-decoration: none; }
+        .resource-link:hover { text-decoration: underline; }
+        .delete-btn { background: #dc3545; color: white; border: none; padding: 5px 15px; border-radius: 4px; cursor: pointer; margin-left: 15px; }
+        .delete-btn:hover { background: #c82333; }
+        .section-title { margin-top: 30px; color: #333; border-bottom: 1px solid #ddd; padding-bottom: 8px; }
+        /* ...existing styles... */
+        .btn { background: #28a745; color: #fff; border: none; padding: 10px 0; width: 100%; border-radius: 5px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+        .btn:hover { background: #218838; }
+        .delete-btn, .small-btn, .logout-btn { background: #dc3545; color: white; border: none; padding: 5px 15px; border-radius: 4px; cursor: pointer; margin-left: 15px; width: auto; font-size: 0.95rem; }
+        .delete-btn:hover, .small-btn:hover, .logout-btn:hover { background: #c82333; }
+        .logout-btn { margin-top: 18px; }
+        .upload-btn { background: #28a745; color: #fff; border: none; padding: 5px 15px; border-radius: 4px; cursor: pointer; width: auto; font-size: 0.95rem; }
+        .upload-btn:hover { background: #218838; }
+        /* ...rest of your styles... */
+    </style>
+</head>
+<body>
+    <div id="login-section" class="admin-container">
+        <div class="admin-title">Admin Login</div>
+        <div id="login-error" class="error-msg" style="display:none;"></div>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="admin-username">Username</label>
+                <input type="text" id="admin-username" required>
+            </div>
+            <div class="form-group">
+                <label for="admin-password">Password</label>
+                <input type="password" id="admin-password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+    </div>
+  
+    <div id="panel-section" class="admin-panel" style="display:none;">
+        <div class="admin-title">Admin Panel</div>
+        <div id="panel-success" class="success-msg" style="display:none;"></div>
+        <div id="panel-error" class="error-msg" style="display:none;"></div>
+
+        <!-- Resources Display Sections -->
+        <div id="resources-display">
+            <h3 class="section-title">Current Resources</h3>
+            <div id="forms-section">
+                <h4>Forms</h4>
+                <div id="forms-list" class="resource-list"></div>
+            </div>
+            <div id="financial-section">
+                <h4>Financial Reports</h4>
+                <div id="financial-list" class="resource-list"></div>
+            </div>
+            <div id="publications-section">
+                <h4>Publications</h4>
+                <div id="publications-list" class="resource-list"></div>
+            </div>
+            <div id="landplots-section">
+                <h4>Land Plots</h4>
+                <div id="landplots-list" class="resource-list"></div>
+            </div>
+        </div>
+
+        <!-- Upload Forms -->
+        <h3 class="section-title">Upload New Resources</h3>
+        <form class="upload-section" id="form-upload-forms">
+        <h3>Upload PDF to Forms</h3>
+        <input type="text" name="title" placeholder="Title" required>
+        <input type="text" name="description" placeholder="Description" required>
+        <input type="file" name="file" accept="application/pdf" required>
+        <button type="submit" class="upload-btn">Upload</button>
+    </form>
+    <form class="upload-section" id="form-upload-financial">
+        <h3>Upload PDF to Financial Reports</h3>
+        <input type="text" name="title" placeholder="Title" required>
+        <input type="text" name="description" placeholder="Description" required>
+        <input type="file" name="file" accept="application/pdf" required>
+        <button type="submit" class="upload-btn">Upload</button>
+    </form>
+        <form class="upload-section" id="form-upload-publications">
+        <h3>Upload PDF to Publications</h3>
+        <input type="text" name="title" placeholder="Title" required>
+        <input type="text" name="description" placeholder="Description" required>
+        <input type="file" name="file" accept="application/pdf" required>
+        <button type="submit" class="upload-btn">Upload</button>
+    </form>
+    <form class="upload-section" id="form-upload-land">
+        <h3>Upload Land Plot Image & Google Maps Link</h3>
+        <input type="text" name="title" placeholder="Title" required>
+        <input type="text" name="description" placeholder="Description" required>
+        <input type="file" name="file" accept="image/*" required>
+        <input type="text" name="googleLink" placeholder="Google Maps Link" required>
+        <button type="submit" class="upload-btn">Upload</button>
+    </form>
+
+        <div class="upload-section">
+            <h3>Change Password</h3>
+            <form id="change-password-form">
+                <input type="password" id="old-password" placeholder="Old Password" required><br>
+                <input type="password" id="new-password" placeholder="New Password" required><br>
+                <input type="password" id="confirm-password" placeholder="Confirm New Password" required><br>
+                <div style="height: 10px;"></div>
+                <button type="submit" class="upload-btn">Change Password</button>               
+            </form>
+            <button class="btn logout-btn" onclick="logout()">Logout</button>
+        </div>
+       
+    </div>
+
+    <script>
+        const loginSection = document.getElementById('login-section');
+        const panelSection = document.getElementById('panel-section');
+        const loginForm = document.getElementById('login-form');
+        const changePasswordForm = document.getElementById('change-password-form');
+        const loginError = document.getElementById('login-error');
+        const panelSuccess = document.getElementById('panel-success');
+        const panelError = document.getElementById('panel-error');
+        let loggedIn = false;
+
+        // Login
+        loginForm.onsubmit = async function(e) {
+            e.preventDefault();
+            const username = document.getElementById('admin-username').value;
+            const password = document.getElementById('admin-password').value;
+            try {
+                const formData = new FormData();
+                formData.append('action', 'login');
+                formData.append('username', username);
+                formData.append('password', password);
+                const res = await fetch('admin_api.php', {
+                    method: 'POST',
+                    body: formData,
+                    credentials: 'same-origin'
+                });
+                if (res.ok) {
+                    loginSection.style.display = 'none';
+                    panelSection.style.display = 'block';
+                    loginError.style.display = 'none';
+                    loggedIn = true;
+                    loadResources(); // Load resources after login
+                } else {
+                    const data = await res.json();
+                    loginError.textContent = data.message || 'Login failed.';
+                    loginError.style.display = 'block';
+                }
+            } catch (err) {
+                loginError.textContent = 'Network error.';
+                loginError.style.display = 'block';
+            }
+        };
+
+        // Change password
+        changePasswordForm.onsubmit = async function(e) {
+            e.preventDefault();
+            const oldPassword = document.getElementById('old-password').value;
+            const newPassword = document.getElementById('new-password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            if (newPassword !== confirmPassword) {
+                panelError.textContent = 'New passwords do not match.';
+                panelError.style.display = 'block';
+                panelSuccess.style.display = 'none';
+                scrollToPanelMessage();
+                return;
+            }
+            try {
+                const formData = new FormData();
+                formData.append('action', 'change_password');
+                formData.append('oldPassword', oldPassword);
+                formData.append('newPassword', newPassword);
+                const res = await fetch('admin_api.php', {
+                    method: 'POST',
+                    body: formData,
+                    credentials: 'same-origin'
+                });
+                if (res.ok) {
+                    panelSuccess.textContent = 'Password changed successfully.';
+                    panelSuccess.style.display = 'block';
+                    panelError.style.display = 'none';
+                } else {
+                    const data = await res.json();
+                    panelError.textContent = data.message || 'Change password failed.';
+                    panelError.style.display = 'block';
+                    panelSuccess.style.display = 'none';
+                }
+            } catch (err) {
+                panelError.textContent = 'Network error.';
+                panelError.style.display = 'block';
+                panelSuccess.style.display = 'none';
+            }
+            scrollToPanelMessage();
+        };
+
+        // Load and display resources with delete buttons
+        async function loadResources() {
+            try {
+                const res = await fetch('get_resources.php');
+                const data = await res.json();
+
+                // Helper function to render resource list
+                function renderResourceList(listId, items, type, urlKey = 'url', extraKey = null) {
+                    const listElement = document.getElementById(listId);
+                    listElement.innerHTML = '';
+                    
+                    if (!items || items.length === 0) {
+                        listElement.innerHTML = '<div class="resource-item">No items found</div>';
+                        return;
+                    }
+
+                    items.forEach(item => {
+                        const itemElement = document.createElement('div');
+                        itemElement.className = 'resource-item';
+                        
+                        const infoElement = document.createElement('div');
+                        infoElement.className = 'resource-info';
+                        
+                        const titleElement = document.createElement('div');
+                        titleElement.className = 'resource-title';
+                        titleElement.textContent = item.title || 'Untitled';
+                        
+                        const descElement = document.createElement('div');
+                        descElement.className = 'resource-desc';
+                        descElement.textContent = item.description || '';
+                        
+                        infoElement.appendChild(titleElement);
+                        infoElement.appendChild(descElement);
+                        
+                        if (item[urlKey]) {
+                            const linkElement = document.createElement('a');
+                            linkElement.className = 'resource-link';
+                            linkElement.href = item[urlKey];
+                            linkElement.target = '_blank';
+                            linkElement.textContent = type === 'Land Plots' ? 'View Image' : 'View PDF';
+                            infoElement.appendChild(document.createElement('br'));
+                            infoElement.appendChild(linkElement);
+                        }
+                        
+                        if (extraKey && item[extraKey]) {
+                            const extraElement = document.createElement('a');
+                            extraElement.className = 'resource-link';
+                            extraElement.href = item[extraKey];
+                            extraElement.target = '_blank';
+                            extraElement.textContent = 'View on Map';
+                            extraElement.style.marginLeft = '10px';
+                            infoElement.appendChild(extraElement);
+                        }
+                        
+                        const deleteButton = document.createElement('button');
+                        deleteButton.className = 'delete-btn';
+                        deleteButton.textContent = 'Delete';
+                        deleteButton.onclick = () => deleteResource(type, item.title, item[urlKey] || item.image);
+                        
+                        itemElement.appendChild(infoElement);
+                        itemElement.appendChild(deleteButton);
+                        listElement.appendChild(itemElement);
+                    });
+                }
+
+                // Render each section
+                renderResourceList('forms-list', data.forms || [], 'forms');
+                renderResourceList('financial-list', data.financial || [], 'financial');
+                renderResourceList('publications-list', data.publications || [], 'publications');
+                renderResourceList('landplots-list', data.landPlots || [], 'landPlots', 'image', 'googleLink');
+            } catch (err) {
+                console.error('Error loading resources:', err);
+                panelError.textContent = 'Failed to load resources.';
+                panelError.style.display = 'block';
+            }
+        }
+
+        // Delete resource
+        async function deleteResource(type, title, filePath) {
+            if (!confirm(`Are you sure you want to delete "${title}"?`)) return;
+            
+            try {
+                const formData = new FormData();
+                formData.append('action', 'delete');
+                formData.append('type', type);
+                formData.append('title', title);
+                formData.append('filePath', filePath);
+                
+                const res = await fetch('admin_api.php', {
+                    method: 'POST',
+                    body: formData,
+                    credentials: 'same-origin'
+                });
+                
+                if (res.ok) {
+                    panelSuccess.textContent = 'Resource deleted successfully.';
+                    panelSuccess.style.display = 'block';
+                    panelError.style.display = 'none';
+                    loadResources(); // Refresh the list
+                } else {
+                    const data = await res.json();
+                    panelError.textContent = data.message || 'Delete failed.';
+                    panelError.style.display = 'block';
+                    panelSuccess.style.display = 'none';
+                }
+            } catch (err) {
+                panelError.textContent = 'Network error.';
+                panelError.style.display = 'block';
+                panelSuccess.style.display = 'none';
+            }
+            scrollToPanelMessage();
+        }
+
+        // Handle upload forms
+        function handleUpload(formId, type) {
+            document.getElementById(formId).onsubmit = async function(e) {
+                e.preventDefault();
+                const form = e.target;
+                const formData = new FormData(form);
+                formData.append('action', 'upload');
+                formData.append('type', type);
+                try {
+                    const res = await fetch('admin_api.php', {
+                        method: 'POST',
+                        body: formData,
+                        credentials: 'same-origin'
+                    });
+                    if (res.ok) {
+                        panelSuccess.textContent = 'File uploaded successfully.';
+                        panelSuccess.style.display = 'block';
+                        panelError.style.display = 'none';
+                        form.reset();
+                        loadResources(); // Refresh the list after upload
+                    } else {
+                        let data;
+                        try {
+                            data = await res.json();
+                        } catch {
+                            data = {};
+                        }
+                        panelError.textContent = data.message || 'Upload failed.';
+                        panelError.style.display = 'block';
+                        panelSuccess.style.display = 'none';
+                    }
+                } catch (err) {
+                    panelError.textContent = 'Network error.';
+                    panelError.style.display = 'block';
+                    panelSuccess.style.display = 'none';
+                }
+                scrollToPanelMessage();
+            };
+        }
+
+        // Initialize upload handlers
+        handleUpload('form-upload-forms', 'Forms');
+        handleUpload('form-upload-financial', 'Financial Reports');
+        handleUpload('form-upload-publications', 'Publications');
+        handleUpload('form-upload-land', 'Land Plots');
+
+        // Helper to scroll to the top of the admin panel
+        function scrollToPanelMessage() {
+            panelSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (panelSuccess.style.display === 'block') {
+                panelSuccess.setAttribute('tabindex', '-1');
+                panelSuccess.focus();
+            } else if (panelError.style.display === 'block') {
+                panelError.setAttribute('tabindex', '-1');
+                panelError.focus();
+            }
+        }
+
+        // Logout
+        function logout() {
+            panelSection.style.display = 'none';
+            loginSection.style.display = 'block';
+            loggedIn = false;
+        }
+    </script>
+</body>
+</html>

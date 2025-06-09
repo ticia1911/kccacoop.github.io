@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -79,11 +80,16 @@
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact Us</a>
                         </li>
-                        <li class="nav-item ms-3">
-                            <a href="https://finhazi.com/login"
-                                class="btn btn-style btn-success rounded-pill px-3 py-1 border-2 fw-bold text-white">
+                        <li class="nav-item dropdown ms-3">
+                            <a class="btn btn-style btn-success rounded-pill px-3 py-1 border-2 fw-bold text-white dropdown-toggle"
+                                href="#" id="loginDropdown" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
                                 Login <i class="fas fa-sign-in-alt text-white"></i>
                             </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="loginDropdown">
+                                <li><a class="dropdown-item" href="https://finhazi.com/login">Member Login</a></li>
+                                <li><a class="dropdown-item" href="admin.html">Admin Login</a></li>
+                            </ul>
                         </li>
 
                     </ul>
@@ -106,23 +112,156 @@
     </header>
     <!-- //header -->
 
+    <style>
+        #loginDropdown+.dropdown-menu .dropdown-item {
+            font-size: 0.85rem !important;
+            color: #222 !important;
+            padding: 5px 0 !important;
+        }
+
+        [data-theme="dark"] #loginDropdown+.dropdown-menu .dropdown-item {
+            font-size: 0.85rem !important;
+            color: #e5e5e5 !important;
+        }
+
+        #loginDropdown+.dropdown-menu {
+            margin-top: 8px !important;
+            min-width: 140px !important;
+            max-width: 180px !important;
+            padding: 6px 0 !important;
+            border: 1px solid #e9ecef !important;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08) !important;
+            border-radius: 6px !important;
+            position: absolute !important;
+            top: 100% !important;
+            right: 0 !important;
+            left: auto !important;
+            z-index: 1000 !important;
+            background-color: white !important;
+        }
+
+        #loginDropdown+.dropdown-menu .dropdown-item {
+            padding: 5px 0 !important;
+            color: #222 !important;
+            font-size: 0.85rem !important;
+            font-weight: 600 !important;
+            transition: all 0.2s ease !important;
+            border: none !important;
+            background: none !important;
+            display: block !important;
+            border-radius: 4px !important;
+            margin: 0 2px !important;
+        }
+
+        #loginDropdown+.dropdown-menu .dropdown-item:hover {
+            background-color: #f8f9fa !important;
+            color: #28a745 !important;
+            padding-left: 10px !important;
+            border-radius: 4px !important;
+            margin: 0 2px !important;
+        }
+
+        [data-theme="dark"] #loginDropdown+.dropdown-menu {
+            background-color: #1a1a1a !important;
+            border: 1px solid #333333 !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        [data-theme="dark"] #loginDropdown+.dropdown-menu .dropdown-item {
+            color: #e5e5e5 !important;
+        }
+
+        [data-theme="dark"] #loginDropdown+.dropdown-menu .dropdown-item:hover {
+            background-color: #333333 !important;
+            color: #4ade80 !important;
+            padding-left: 10px !important;
+            border-radius: 4px !important;
+            margin: 0 2px !important;
+        }
+
+        @media (max-width: 768px) {
+            #loginDropdown+.dropdown-menu {
+                min-width: 100% !important;
+                margin-top: 5px !important;
+                padding: 12px !important;
+            }
+        }
+    </style>
+
+    <script>
+        // Login dropdown: behave like mega-dropdown
+        document.addEventListener('DOMContentLoaded', function () {
+            const loginDropdown = document.querySelector('.nav-item.dropdown.ms-3');
+            const loginDropdownToggle = document.getElementById('loginDropdown');
+            const loginDropdownMenu = loginDropdown.querySelector('.dropdown-menu');
+            const productsDropdown = document.getElementById('productsDropdown');
+            const productsDropdownToggle = document.getElementById('productsDropdownToggle');
+            let loginHoverTimeout;
+
+            // Show login dropdown on hover
+            loginDropdown.addEventListener('mouseenter', function () {
+                clearTimeout(loginHoverTimeout);
+                loginDropdownMenu.classList.add('show');
+                loginDropdownToggle.setAttribute('aria-expanded', 'true');
+            });
+            // Hide login dropdown on mouse leave with delay
+            loginDropdown.addEventListener('mouseleave', function () {
+                loginHoverTimeout = setTimeout(function () {
+                    loginDropdownMenu.classList.remove('show');
+                    loginDropdownToggle.setAttribute('aria-expanded', 'false');
+                }, 300);
+            });
+            // Toggle login dropdown on click
+            loginDropdownToggle.addEventListener('click', function (e) {
+                e.preventDefault();
+                if (loginDropdownMenu.classList.contains('show')) {
+                    loginDropdownMenu.classList.remove('show');
+                    loginDropdownToggle.setAttribute('aria-expanded', 'false');
+                } else {
+                    loginDropdownMenu.classList.add('show');
+                    loginDropdownToggle.setAttribute('aria-expanded', 'true');
+                }
+            });
+            // Close login dropdown when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!loginDropdown.contains(e.target)) {
+                    loginDropdownMenu.classList.remove('show');
+                    loginDropdownToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+            // Prevent Bootstrap's default dropdown behavior from interfering
+            loginDropdownToggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+            // Hide login dropdown if products dropdown is opened
+            productsDropdownToggle.addEventListener('click', function () {
+                loginDropdownMenu.classList.remove('show');
+                loginDropdownToggle.setAttribute('aria-expanded', 'false');
+            });
+            productsDropdown.addEventListener('mouseenter', function () {
+                loginDropdownMenu.classList.remove('show');
+                loginDropdownToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
+
     <div class="slider">
         <!-- Slide 1: Become a Member -->
         <div class="slide current">
-            <div class="bg-layer" style="background-image: url('assets/images/membership-bg.jpg');">
-                <div class="content">
-                    <h6>Membership Made Easy</h6>
-                    <h3>Become a Member</h3>
-                    <p class="my-3">Join our cooperative and take control of your financial future</p>
-                    <a href="membership.html" class="btn btn-style btn-danger mt-2">Join Now</a>
-
-                </div>
-            </div>
+    <div class="bg-layer" style="background-image: url('assets/images/header.jpeg'); background-position: center 10%;">
+        <div class="content">
+            <h6>Membership Made Easy</h6>
+            <h3>Become a Member</h3>
+            <p class="my-3">Join our cooperative and take control of your financial future</p>
+            <a href="membership.html" class="btn btn-style btn-danger mt-2">Join Now</a>
         </div>
+    </div>
+</div>
+
 
         <!-- Slide 2: Save With Us -->
         <div class="slide">
-            <div class="bg-layer">
+            <div class="bg-layer"  style="background-image: url('assets/images/header.jpeg'); background-position: center 10%; ">
                 <div class="content">
                     <h6>Smart Saving Starts Here</h6>
                     <h3>Save With Us</h3>
@@ -134,7 +273,7 @@
 
         <!-- Slide 3: How to Borrow  -->
         <div class="slide">
-            <div class="bg-layer">
+            <div class="bg-layer" style="background-image: url('assets/images/header.jpeg'); background-position: center 10%; ">
                 <div class="content">
                     <h6>Need a Loan?</h6>
                     <h3>How to Borrow</h3>
@@ -146,7 +285,7 @@
 
         <!-- Slide 4: Asset Financing -->
         <div class="slide">
-            <div class="bg-layer">
+            <div class="bg-layer" style="background-image: url('assets/images/header.jpeg'); background-position: center 10%; ">
                 <div class="content">
                     <h6>Finance Your Future</h6>
                     <h3>Asset Financing</h3>
@@ -168,6 +307,31 @@
         </div>
     </div>
 
+    <style>
+        .bg-layer {
+  position: relative; /* Needed for overlay to anchor */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Ensures ::before doesn’t overflow */
+}
+
+/* Dark overlay effect */
+.bg-layer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust this opacity for more/less dimming */
+  z-index: 0;
+}
+    </style>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var startSavingBtn = document.getElementById('start-saving-btn');
@@ -260,96 +424,103 @@
     </script>
 
     <!-- Why Choose Us Section -->
-    <section class="w3l-about py-5" id="about">
-        <div class="container py-lg-3 py-md-2 py-2 theme-container">
-            <div class="title-main mb-4 text-left">
-                <h5 class="small-title mb-2">Why Choose Us</h5>
-                <h3 class="title-style text-dark mb-3">KCCA Staff Multipurpose Cooperative Society</h3>
-                <p class="text-muted mb-0">
-                    KCCA Staff Multipurpose Cooperative Society is a member-owned financial institution founded by
-                    Kampala Capital City Authority (KCCA) staff to empower members through savings, affordable credit,
-                    and financial growth.
-                </p>
-            </div>
-            <div class="row align-items-center">
-                <!-- Left: Benefits with Integrated Stats -->
-                <div class="col-lg-6 pe-lg-4">
-                    <div class="why-choose-list mt-3">
-                        <div class="why-choose-item">
-                            <div class="icon">
-                                <i class="fas fa-users" aria-hidden="true"></i>
-                            </div>
-                            <div class="content">
-                                <h4>Member-Owned Community</h4>
-                                <p>Since 2013, we've grown from 398 to 1,252 members, all with equal ownership in our
-                                    democratic cooperative.</p>
-                                <div class="stat-inline">
-                                    <span class="counter" data-target="1252" aria-label="1252 active members">0</span>
-                                    <span class="stat-text"> Active Members</span>
-                                    <span class="stat-note">10% growth from 2022</span>
-                                </div>
+<section class="w3l-about py-5" id="about">
+    <div class="container py-lg-3 py-md-2 py-2 theme-container">
+        <div class="title-main mb-4 text-left">
+            <h5 class="small-title mb-2">Why Choose Us</h5>
+            <h3 class="title-style text-dark mb-3">KCCA Staff Multipurpose Cooperative Society</h3>
+            <p class="text-muted mb-0">
+                KCCA Staff Multipurpose Cooperative Society is a member-owned financial institution founded by
+                Kampala Capital City Authority (KCCA) staff to empower members through savings, affordable credit,
+                and financial growth.
+            </p>
+        </div>
+        <div class="row align-items-center" style="align-items: stretch;">
+            <!-- Left: Benefits with Integrated Stats -->
+            <div class="col-lg-6 pe-lg-4">
+                <div class="why-choose-list mt-3">
+                    <div class="why-choose-item">
+                        <div class="icon">
+                            <i class="fas fa-users" aria-hidden="true"></i>
+                        </div>
+                        <div class="content">
+                            <h4>Member-Owned Community</h4>
+                            <p>Since 2013, we've grown from 398 to 1,325 members, all with equal ownership in our
+                                democratic cooperative.</p>
+                            <div class="stat-inline">
+                                <span class="counter" data-target="1325" aria-label="1,325 active members">0</span>
+                                <span class="stat-text"> Active Members</span>
+                                <span class="stat-note">10% growth from 2022</span>
                             </div>
                         </div>
-                        <div class="why-choose-item">
-                            <div class="icon">
-                                <i class="fas fa-chart-line" aria-hidden="true"></i>
-                            </div>
-                            <div class="content">
-                                <h4>Financial Stability</h4>
-                                <p>Our UGX 17.4 billion in assets ensures stability, backed by regulatory oversight.</p>
-                                <div class="stat-inline">
-                                    <span class="counter" data-target="17.4"
-                                        aria-label="17.4 billion UGX in assets">0</span>
-                                    <span class="stat-text"> Billion UGX Assets</span>
-                                    <span class="stat-note">6.1% growth</span>
-                                </div>
+                    </div>
+                    <div class="why-choose-item">
+                        <div class="icon">
+                            <i class="fas fa-chart-line" aria-hidden="true"></i>
+                        </div>
+                        <div class="content">
+                            <h4>Financial Stability</h4>
+                            <p>Our UGX 17.4 billion in assets ensures stability, backed by regulatory oversight.</p>
+                            <div class="stat-inline">
+                                <span class="counter" data-target="17.4"
+                                    aria-label="17.4 billion UGX in assets">0</span>
+                                <span class="stat-text"> Billion UGX Assets</span>
+                                <span class="stat-note">6.1% growth</span>
                             </div>
                         </div>
-                        <div class="why-choose-item">
-                            <div class="icon">
-                                <i class="fas fa-piggy-bank" aria-hidden="true"></i>
-                            </div>
-                            <div class="content">
-                                <h4>Rewarding Savings</h4>
-                                <p>We offer high-return savings, managing UGX 13.4 billion, accessible via online
-                                    banking.</p>
-                                <div class="stat-inline">
-                                    <span class="counter" data-target="13.4"
-                                        aria-label="13.4 billion UGX in savings">0</span>
-                                    <span class="stat-text"> Billion UGX Savings</span>
-                                    <span class="stat-note">11% interest paid</span>
-                                </div>
+                    </div>
+                    <div class="why-choose-item">
+                        <div class="icon">
+                            <i class="fas fa-piggy-bank" aria-hidden="true"></i>
+                        </div>
+                        <div class="content">
+                            <h4>Rewarding Savings</h4>
+                            <p>We offer high-return savings, managing UGX 13.4 billion, accessible via online
+                                banking.</p>
+                            <div class="stat-inline">
+                                <span class="counter" data-target="13.4"
+                                    aria-label="13.4 billion UGX in savings">0</span>
+                                <span class="stat-text"> Billion UGX Savings</span>
+                                <span class="stat-note">12% interest paid</span>
                             </div>
                         </div>
-                        <div class="why-choose-item">
-                            <div class="icon">
-                                <i class="fas fa-hand-holding-usd" aria-hidden="true"></i>
-                            </div>
-                            <div class="content">
-                                <h4>Affordable Loans</h4>
-                                <p>We provide emergency and development loans, with a UGX 16.1 billion portfolio for
-                                    staff.</p>
-                                <div class="stat-inline">
-                                    <span class="counter" data-target="16.1"
-                                        aria-label="16.1 billion UGX loan portfolio">0</span>
-                                    <span class="stat-text"> Billion UGX Loans</span>
-                                    <span class="stat-note">95% of assets</span>
-                                </div>
+                    </div>
+                    <div class="why-choose-item">
+                        <div class="icon">
+                            <i class="fas fa-hand-holding-usd" aria-hidden="true"></i>
+                        </div>
+                        <div class="content">
+                            <h4>Affordable Loans</h4>
+                            <p>We provide emergency and development loans, with a UGX 16.1 billion portfolio for
+                                staff.</p>
+                            <div class="stat-inline">
+                                <span class="counter" data-target="16.1"
+                                    aria-label="16.1 billion UGX loan portfolio">0</span>
+                                <span class="stat-text"> Billion UGX Loans</span>
+                                <span class="stat-note">95% of assets</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Right: Image with Bigger Badge -->
-                <div class="col-lg-6 mt-lg-0 mt-4 position-relative">
-                    <img src="assets/images/img1.jpg" alt="KCCA Cooperative Team" class="img-fluid radius-image">
-                    <div class="years-badge">
-                        <span class="number">12+</span>
-                        <span class="text">Years</span>
-                    </div>
+            </div>
+            
+            <!-- Right: Image with Bigger Badge -->
+            <div class="col-lg-6 mt-lg-0 mt-4 position-relative h-100">
+                <div class="h-100 d-flex align-items-center">
+                    <img src="assets/images/staff/Chief executive officer.png" 
+                         alt="KCCA Cooperative Team" 
+                         class="img-fluid radius-image w-100 h-auto"
+                         style="object-fit: cover; min-height: 100%;">
+                </div>
+                <div class="years-badge">
+                    <span class="number">12+</span>
+                    <span class="text">Years</span>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- JavaScript -->
     <script>
@@ -1147,8 +1318,7 @@
                                             <i class="fas fa-users"></i>
                                         </div>
                                         <h4>Group Savings</h4>
-                                        <p>Collective savings for groups with flexible withdrawal options, shared
-                                            benefits, and annual interest earnings.</p>
+                                        <p>Collective savings plans for groups with flexible withdrawal options, shared financial benefits, and annual interest earnings.</p>
 
                                         <div class="product-rate">
                                             <span class="rate">Annual</span>
@@ -1363,22 +1533,22 @@
                 });
             });
         });
-        
-document.addEventListener('DOMContentLoaded', function () {
-    // Check if the URL has a hash for a tab (e.g., #credit-tab or #assets-tab)
-    var hash = window.location.hash;
-    if (hash === '#credit-tab' || hash === '#assets-tab' || hash === '#savings-tab') {
-        var tabBtn = document.getElementById(hash.replace('#', ''));
-        if (tabBtn) {
-            tabBtn.click();
-            // Optionally scroll to the products section
-            var tabSection = document.getElementById('products-services');
-            if (tabSection) {
-                tabSection.scrollIntoView({ behavior: 'smooth' });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check if the URL has a hash for a tab (e.g., #credit-tab or #assets-tab)
+            var hash = window.location.hash;
+            if (hash === '#credit-tab' || hash === '#assets-tab' || hash === '#savings-tab') {
+                var tabBtn = document.getElementById(hash.replace('#', ''));
+                if (tabBtn) {
+                    tabBtn.click();
+                    // Optionally scroll to the products section
+                    var tabSection = document.getElementById('products-services');
+                    if (tabSection) {
+                        tabSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
             }
-        }
-    }
-});
+        });
 
     </script>
 
@@ -1390,21 +1560,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 <h3 class="title-style">Supporting KCCA Staff to Realize Their Dreams</h3>
             </div>
             <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="top-pic1">
-                        <div class="card-body blog-details">
-                            <span class="meta-value">Membership</span>
-                            <a href="#membership" class="blog-desc">1,252+ Empowered Members (10% growth)
-                            </a>
-                            <a href="membership.html"
-                                class="btn btn-style-primary btn-style text-white mt-4 rounded-pill px-4 py-2"
-                                style="font-size: 0.875rem;">Join Us
-                                <i class="fas fa-arrow-right ms-1"></i></a>
-                        </div>
-                    </div>
-                </div>
+               <div class="col-lg-4 col-md-6">
+    <div class="top-pic1" style="background: url('assets/images/img2/members.jpeg') center/cover no-repeat; min-height: 300px;">
+        <div class="card-body blog-details">
+            <span class="meta-value">Membership</span>
+            <a href="#membership" class="blog-desc">1,325+ Empowered Members (10% growth)</a>
+            <a href="membership.html" class="btn btn-style-primary btn-style text-white mt-4 rounded-pill px-4 py-2" style="font-size: 0.875rem;">
+                Join Us <i class="fas fa-arrow-right ms-1"></i>
+            </a>
+        </div>
+    </div>
+</div>
                 <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
-                    <div class="top-pic3">
+                    <div class="top-pic3" style="background: url('assets/images/img2/savings1.png') center/cover no-repeat; min-height: 300px;">
                         <div class="card-body blog-details">
                             <span class="meta-value">Savings</span>
                             <a href="#savings" class="blog-desc">UGX 13.3B Member Savings (11% interest)
@@ -1416,7 +1584,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
-                    <div class="top-pic2">
+                    <div class="top-pic2" style="background: url('assets/images/img2/loanportfolio.jpeg') center/cover no-repeat; min-height: 300px;">
                         <div class="card-body blog-details">
                             <span class="meta-value">Loans</span>
                             <a href="#loans" class="blog-desc">UGX 16.1B Loan Portfolio (13.8% growth)
@@ -1464,57 +1632,68 @@ document.addEventListener('DOMContentLoaded', function () {
     </script>
 
     <!-- //Cooperative Impact Section -->
+     
     <!-- progress section with matching background to products section -->
-    <section class="w3l-progress py-5" id="progress">
-        <div class="container py-lg-5 py-md-4 py-2">
-            <div class="row align-items-center">
-                <div class="col-lg-6 about-2-secs-right mb-lg-0 mb-5">
-                    <img src="assets/images/img2.jpg" alt="KCCA Cooperative Performance"
-                        class="img-fluid radius-image" />
-                </div>
-                <div class="col-lg-6 about-2-secs-left ps-xl-5">
-                    <h5 class="small-title mb-2">Our 2023 Performance</h5>
-                    <h3 class="title-style mb-sm-3 mb-2">Record-Breaking Financial Growth</h3>
-                    <p>KCCA Staff Cooperative achieved unprecedented results in 2023, with our core financial indicators
-                        reaching new heights and digital transformation nearing completion.</p>
-                    <div class="w3l-progressblock mt-md-5 mt-4">
-                        <div class="progress-info info1">
-                            <h6 class="progress-tittle">Loan Portfolio Coverage <span class="">95%</span></h6>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 95%"
-                                    aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-                                </div>
+<section class="w3l-progress py-5" id="progress">
+    <div class="container py-lg-5 py-md-4 py-2">
+        <div class="row align-items-center">
+            <div class="col-lg-6 about-2-secs-right mb-lg-0 mb-5">
+    <img src="assets/images/img2/performance1.jpeg" 
+         alt="KCCA Cooperative Performance"
+         style="width: 600px; height: 500px; object-fit: cover;" 
+         class="radius-image" />
+</div>
+
+            <div class="col-lg-6 about-2-secs-left ps-xl-5">
+                <h5 class="small-title mb-2">Our Recent Performance</h5>
+                <h3 class="title-style mb-sm-3 mb-2">Delivering Sustainable Financial Growth</h3>
+                
+                <p>KCCA Staff Cooperative continues to register outstanding results, with our core financial indicators demonstrating strength, consistency, and long-term value for our members.</p>
+                
+                <div class="row g-4 mt-md-5 mt-4">
+                    <div class="col-6">
+                        <div class="d-flex align-items-start">
+                            <i class="fas fa-piggy-bank fa-2x text-primary me-3"></i>
+                            <div>
+                                <h6 class="mb-1">Asset Growth</h6>
+                                <p class="small mb-0">6.14% growth to UGX 17.41B in total assets.</p>
                             </div>
                         </div>
-                        <div class="progress-info info3">
-                            <h6 class="progress-tittle">Digital Transformation <span class="">75%</span></h6>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%"
-                                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex align-items-start">
+                            <i class="fas fa-chart-line fa-2x text-success me-3"></i>
+                            <div>
+                                <h6 class="mb-1">Revenue Increase</h6>
+                                <p class="small mb-0">7.74% rise to UGX 2.67B, driven by high loan demand.</p>
                             </div>
                         </div>
-                        <div class="progress-info info3">
-                            <h6 class="progress-tittle">Member Satisfaction <span class="">89%</span></h6>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 89%"
-                                    aria-valuenow="89" aria-valuemin="0" aria-valuemax="100">
-                                </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex align-items-start">
+                            <i class="fas fa-users fa-2x text-warning me-3"></i>
+                            <div>
+                                <h6 class="mb-1">Membership Growth</h6>
+                                <p class="small mb-0">10% increase, now serving 1,253 active members.</p>
                             </div>
                         </div>
-                        <div class="progress-info info3 mb-0">
-                            <h6 class="progress-tittle">Loan Recovery Rate <span class="">82%</span></h6>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 82%"
-                                    aria-valuenow="82" aria-valuemin="0" aria-valuemax="100">
-                                </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex align-items-start">
+                            <i class="fas fa-gift fa-2x text-danger me-3"></i>
+                            <div>
+                                <h6 class="mb-1">Member Returns</h6>
+                                <p class="small mb-0">15% dividend & 12% interest paid to members.</p>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <script>
         // Improved section background synchronization
@@ -1599,63 +1778,66 @@ document.addEventListener('DOMContentLoaded', function () {
     </section>
     <!-- //KCCA Cooperative Testimonials Section -->
 
-
-    <!-- Cooperative News Section -->
-    <div class="w3l-blog-block-5 py-5" id="news">
-        <div class="container py-md-5 py-4">
-            <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:700px;">
-                <h5 class="small-title mb-2">Latest Updates</h5>
-                <h3 class="title-style">KCCA Multipurpose Cooperative Society News & Announcements</h3>
+<!-- Cooperative News Section -->
+<div class="w3l-blog-block-5 py-5" id="news">
+    <div class="container py-md-5 py-4">
+        <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:700px;">
+            <h5 class="small-title mb-2">Latest Updates</h5>
+            <h3 class="title-style">KCCA Multipurpose Cooperative Society News & Announcements</h3>
+        </div>
+        <div class="row justify-content-center">
+            <!-- News Item 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="blog-card-single">
+                    <div class="grids5-info">
+                        <a href="resources.html#land-plots">
+                            <img src="assets/images/img2/landplots.jpeg" alt="Newsletter" />
+                        </a>
+                        <div class="blog-info" id="new-land-plots">
+                            <h4><a href="resources.html#land-plots">New Land Plots Available</a></h4>
+                            <p>Explore our newly listed land plots, ideal for investment, development, or personal use. Find your perfect piece of land today.</p>
+                            <div class="d-flex align-items-center justify-content-between mt-4">
+                                <span class="small ms-2">Investment Committee</span>
+                                <p class="date-text"><i class="far fa-calendar-alt me-1"></i>June 5, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="blog-card-single">
-                        <div class="grids5-info">
-                            <a href="resources.html#land-plots"><img src="assets/images/blog4.jpg"
-                                    alt="Newsletter" /></a>
-                            <div class="blog-info" id = new-land-plots>
-                                <h4><a href="resources.html#land-plots">New Land Plots Available </a></h4>
-                                <p>Explore our newly listed land plots, ideal for investment, development, or personal
-                                    use. Find your perfect piece of land today.</p>
-                                <div class="d-flex align-items-center justify-content-between mt-4">
-                                    <span class="small ms-2">Investment & Strategy Committee</span>
-                                    <p class="date-text"><i class="far fa-calendar-alt me-1"></i>June 5, 2025</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
-                    <div class="blog-card-single">
-                        <div class="grids5-info">
-                            <a href="resources.html#financial"><img src="assets/images/blog.png" alt="Financials" /></a>
-                            <div class="blog-info">
-                                <h4><a href="resources.html#financial">Audited Financial Statements</a></h4>
-                                <p>Review the audited financial statements for the year ending 2023 for transparency and
-                                    accountability.</p>
-                                <div class="d-flex align-items-center justify-content-between mt-4">
-                                    <span class="small ms-2">Audit Committee</span>
-                                    <p class="date-text"><i class="far fa-calendar-alt me-1"></i>March 15, 2025</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ...existing third news item... -->
 
-                <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
-                    <div class="blog-card-single">
-                        <div class="grids5-info">
-                            <a href="resources.html#publications"><img src="assets/images/blog5.jpg"
-                                    alt="Annual Report" /></a>
-                            <div class="blog-info">
-                                <h4><a href="resources.html#publications">Annual Report 2023 Published</a></h4>
-                                <p>Access insights into our performance, achievements, and strategic direction outlined
-                                    in the 2023 annual report.</p>
-                                <div class="d-flex align-items-center justify-content-between mt-4">
-                                    <span class="small ms-2">Board Secretariat</span>
-                                    <p class="date-text"><i class="far fa-calendar-alt me-1"></i>Jan 1, 2025</p>
-                                </div>
+            <!-- News Item 2 -->
+            <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
+                <div class="blog-card-single">
+                    <div class="grids5-info">
+                        <a href="resources.html#financial">
+                            <img src="assets/images/img2/audit.jpeg" alt="Financials" />
+                        </a>
+                        <div class="blog-info">
+                            <h4><a href="resources.html#financial">Audited Financial Statements</a></h4>
+                            <p>Review audited financial statements to promote transparency, ensure accountability, and verify standards.</p>
+
+                            <div class="d-flex align-items-center justify-content-between mt-4">
+                                <span class="small ms-2">Audit Committee</span>
+                                <p class="date-text"><i class="far fa-calendar-alt me-1"></i>March 15, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News Item 3 -->
+            <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
+                <div class="blog-card-single">
+                    <div class="grids5-info">
+                        <a href="resources.html#publications">
+                            <img src="assets/images/img2/annualreport.jpeg" alt="Annual Report" />
+                        </a>
+                        <div class="blog-info">
+                            <h4><a href="resources.html#publications">Annual Report Published</a></h4>
+                            <p>Access insights into our performance, achievements, and strategic direction outlined in the annual report.</p>
+                            <div class="d-flex align-items-center justify-content-between mt-4">
+                                <span class="small ms-2">Board Secretariat</span>
+                                <p class="date-text"><i class="far fa-calendar-alt me-1"></i>Jan 1, 2025</p>
                             </div>
                         </div>
                     </div>
@@ -1663,7 +1845,23 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
         </div>
     </div>
+</div>
 
+<style>
+    .blog-card-single img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Optional: add hover effect */
+.blog-card-single img:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+</style>
     <!-- //Cooperative News Section -->
 
     <!-- Services Section -->
@@ -2903,12 +3101,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     <!-- Updates Column -->
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-updates">
-                            <h5 class="footer-title">Recent Updates</h5>
+                            <h5 class="footer-title">Resources</h5>
                             <div class="update-items mt-3">
                                 <div class="update-item mb-3">
                                     <div class="update-meta">
                                         <span class="update-category">Investment & Strategy Committee</span>
-                                        <span class="update-date">- June 5 -</span>
+
                                     </div>
                                     <a href="resources.html#land-plots" class="update-title">New Land Plots
                                         Available</a>
@@ -2916,7 +3114,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <div class="update-item">
                                     <div class="update-meta">
                                         <span class="update-category">Audit Committee</span>
-                                        <span class="update-date">- March 15 -</span>
+
                                     </div>
                                     <a href="resources.html#financial" class="update-title">Audited Financial
                                         Statements</a>
@@ -2924,7 +3122,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <div class="update-item">
                                     <div class="update-meta">
                                         <span class="update-category">Board Secretariat</span>
-                                        <span class="update-date">- Jan 1 -</span>
+
                                     </div>
                                     <a href="resources.html#publications" class="update-title">Annual Report
                                         Published</a>
@@ -2981,7 +3179,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             <img src="assets/images/payway.png" alt="Pay Way" width="60">
                             <img src="assets/images/airtel.png" alt="Airtel Money" width="60">
                             <img src="assets/images/mtn.png" alt="MTN Mobile Money" width="60">
-                            
+
                         </div>
                     </div>
 

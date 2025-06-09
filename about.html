@@ -1,5 +1,6 @@
-<!doctype html> 
+<!doctype html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -1155,11 +1156,16 @@
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact Us</a>
                         </li>
-                        <li class="nav-item ms-3">
-                            <a href="https://finhazi.com/login"
-                                class="btn btn-style btn-success rounded-pill px-3 py-1 border-2 fw-bold text-white">
+                        <li class="nav-item dropdown ms-3">
+                            <a class="btn btn-style btn-success rounded-pill px-3 py-1 border-2 fw-bold text-white dropdown-toggle"
+                                href="#" id="loginDropdown" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
                                 Login <i class="fas fa-sign-in-alt text-white"></i>
                             </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="loginDropdown">
+                                <li><a class="dropdown-item" href="https://finhazi.com/login">Member Login</a></li>
+                                <li><a class="dropdown-item" href="admin.html">Admin Login</a></li>
+                            </ul>
                         </li>
 
                     </ul>
@@ -1182,8 +1188,139 @@
     </header>
     <!-- //header -->
 
+    <style>
+        #loginDropdown+.dropdown-menu .dropdown-item {
+            font-size: 0.85rem !important;
+            color: #222 !important;
+            padding: 5px 0 !important;
+        }
 
+        [data-theme="dark"] #loginDropdown+.dropdown-menu .dropdown-item {
+            font-size: 0.85rem !important;
+            color: #e5e5e5 !important;
+        }
 
+        #loginDropdown+.dropdown-menu {
+            margin-top: 8px !important;
+            min-width: 140px !important;
+            max-width: 180px !important;
+            padding: 6px 0 !important;
+            border: 1px solid #e9ecef !important;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08) !important;
+            border-radius: 6px !important;
+            position: absolute !important;
+            top: 100% !important;
+            right: 0 !important;
+            left: auto !important;
+            z-index: 1000 !important;
+            background-color: white !important;
+        }
+
+        #loginDropdown+.dropdown-menu .dropdown-item {
+            padding: 5px 0 !important;
+            color: #222 !important;
+            font-size: 0.85rem !important;
+            font-weight: 600 !important;
+            transition: all 0.2s ease !important;
+            border: none !important;
+            background: none !important;
+            display: block !important;
+            border-radius: 4px !important;
+            margin: 0 2px !important;
+        }
+
+        #loginDropdown+.dropdown-menu .dropdown-item:hover {
+            background-color: #f8f9fa !important;
+            color: #28a745 !important;
+            padding-left: 10px !important;
+            border-radius: 4px !important;
+            margin: 0 2px !important;
+        }
+
+        [data-theme="dark"] #loginDropdown+.dropdown-menu {
+            background-color: #1a1a1a !important;
+            border: 1px solid #333333 !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        [data-theme="dark"] #loginDropdown+.dropdown-menu .dropdown-item {
+            color: #e5e5e5 !important;
+        }
+
+        [data-theme="dark"] #loginDropdown+.dropdown-menu .dropdown-item:hover {
+            background-color: #333333 !important;
+            color: #4ade80 !important;
+            padding-left: 10px !important;
+            border-radius: 4px !important;
+            margin: 0 2px !important;
+        }
+
+        @media (max-width: 768px) {
+            #loginDropdown+.dropdown-menu {
+                min-width: 100% !important;
+                margin-top: 5px !important;
+                padding: 12px !important;
+            }
+        }
+    </style>
+
+    <script>
+        // Login dropdown: behave like mega-dropdown
+        document.addEventListener('DOMContentLoaded', function () {
+            const loginDropdown = document.querySelector('.nav-item.dropdown.ms-3');
+            const loginDropdownToggle = document.getElementById('loginDropdown');
+            const loginDropdownMenu = loginDropdown.querySelector('.dropdown-menu');
+            const productsDropdown = document.getElementById('productsDropdown');
+            const productsDropdownToggle = document.getElementById('productsDropdownToggle');
+            let loginHoverTimeout;
+
+            // Show login dropdown on hover
+            loginDropdown.addEventListener('mouseenter', function () {
+                clearTimeout(loginHoverTimeout);
+                loginDropdownMenu.classList.add('show');
+                loginDropdownToggle.setAttribute('aria-expanded', 'true');
+            });
+            // Hide login dropdown on mouse leave with delay
+            loginDropdown.addEventListener('mouseleave', function () {
+                loginHoverTimeout = setTimeout(function () {
+                    loginDropdownMenu.classList.remove('show');
+                    loginDropdownToggle.setAttribute('aria-expanded', 'false');
+                }, 300);
+            });
+            // Toggle login dropdown on click
+            loginDropdownToggle.addEventListener('click', function (e) {
+                e.preventDefault();
+                if (loginDropdownMenu.classList.contains('show')) {
+                    loginDropdownMenu.classList.remove('show');
+                    loginDropdownToggle.setAttribute('aria-expanded', 'false');
+                } else {
+                    loginDropdownMenu.classList.add('show');
+                    loginDropdownToggle.setAttribute('aria-expanded', 'true');
+                }
+            });
+            // Close login dropdown when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!loginDropdown.contains(e.target)) {
+                    loginDropdownMenu.classList.remove('show');
+                    loginDropdownToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+            // Prevent Bootstrap's default dropdown behavior from interfering
+            loginDropdownToggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+            // Hide login dropdown if products dropdown is opened
+            productsDropdownToggle.addEventListener('click', function () {
+                loginDropdownMenu.classList.remove('show');
+                loginDropdownToggle.setAttribute('aria-expanded', 'false');
+            });
+            productsDropdown.addEventListener('mouseenter', function () {
+                loginDropdownMenu.classList.remove('show');
+                loginDropdownToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
+    
     <script>
         // Enhanced dropdown behavior
         document.addEventListener('DOMContentLoaded', function () {
@@ -1355,7 +1492,7 @@
 
     <!-- inner banner -->
     <section class="inner-banner py-5"
-        style="background-image: url('assets/images/staff/AGM 2024/A24I5118.jpg'); background-size: cover; background-position: center; position: relative;">
+        style="background-image: url('assets/images/header.jpeg'); background-position: center 10%; background-size: cover; position: relative;">
         <div class="overlay"
             style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6);"></div>
         <div class="w3l-breadcrumb py-lg-5" style="position: relative; z-index: 2;">
@@ -1373,6 +1510,7 @@
             </div>
         </div>
     </section>
+    
     <!-- //inner banner -->
 
     <!-- about section -->
@@ -1410,7 +1548,7 @@
                     </div>
                 </div>
                 <div class="col-lg-5 offset-lg-1 text-end mt-lg-0 mt-5 position-relative">
-                    <img src="assets/images/image.webp" alt="KCCA Cooperative Team" class="img-fluid radius-image">
+                    <img src="assets/images/staff/Chairman.png" alt="KCCA Cooperative Team" class="img-fluid radius-image">
                     <div class="imginfo__box">
                         <h6 class="imginfo__title">12+</h6>
                         <p>Years of service</p>
@@ -1597,17 +1735,18 @@
                     </div>
                 </div>
 
-                <!-- Inclusivity -->
-                <div class="col-lg-4 col-md-6 col-sm-10 mt-4">
-                    <div class="bottom-block">
-                        <a href="#values" class="d-block">
-                            <i class="fas fa-users"></i>
-                            <h3 class="mt-3 mb-2">Inclusivity</h3>
-                            <p class="">We are accessible and responsive to the community and ensure that diversity and
-                                support can be successfully and mutual benefit.</p>
-                        </a>
-                    </div>
-                </div>
+               <!-- Innovativeness and Continuous Improvement -->
+<div class="col-lg-4 col-md-6 col-sm-10 mt-4">
+    <div class="bottom-block">
+        <a href="#values" class="d-block">
+            <i class="fas fa-lightbulb"></i>
+            <h3 class="mt-3 mb-2">Innovativeness</h3>
+            <p class="">We translate new ideas into commercially viable products and services that create value, drive growth, inspire lasting impact, and foster a culture of continuous improvement.</p>
+
+        </a>
+    </div>
+</div>
+
 
                 <!-- Excellence -->
                 <div class="col-lg-4 col-md-6 col-sm-10 mt-4">
@@ -1648,7 +1787,7 @@
 
                 </div>
                 <div class="col-lg-6 about-2-secs-right mt-lg-4 mt-5">
-                    <img src="assets/images/about.jpg" alt="" class="img-fluid radius-image" />
+                    <img src="assets/images/img2/cooperative1.jpeg" alt="" class="img-fluid radius-image" />
                 </div>
             </div>
         </div>
@@ -1691,10 +1830,8 @@
                             <i class="fas fa-chalkboard-teacher"></i>
                         </div>
                         <h4><a href="index.html#assets-tab">Asset Financing</a></h4>
-                        <p>Expert guidance on investment opportunities and sustainable wealth creation strategies for
-                            our members. </p>
+                        <p>Expert guidance on smart investment opportunities and sustainable wealth creation strategies for our cooperative members.</p>
                         <a href="index.html#assets-tab" class="read">Get advice</a>
-
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mt-lg-0 mt-4">
@@ -1757,10 +1894,10 @@
                     <div class="team-card green-accent text-center">
                         <div class="team-card-content">
                             <div class="team-image mb-3">
-                                <img src="assets/images/staff/chairman1.png" alt="Joseph Vincent Kirimanyi Profile"
+                                <img src="assets/images/staff/Vice chairman.png" alt="Joseph Vincent Kirimanyi Profile"
                                     class="img-fluid rounded dark-mode-border" style="max-height: 150px;">
                             </div>
-                            <h4 class="mb-2 team-member-name">Joseph Vincent Kirimanyi</h4>
+                            <h4 class="mb-2 team-member-name">Edgar Bwamable</h4>
                             <p class="mb-3 team-member-position">Board Chairman</p>
                         </div>
                     </div>
@@ -1771,11 +1908,11 @@
                     <div class="team-card green-accent text-center">
                         <div class="team-card-content">
                             <div class="team-image mb-3">
-                                <img src="assets/images/staff/Vice chairman.png" alt="Edgar Bwamable Profile"
+                                <img src="assets/images/staff/Credit committe.png" alt="Edgar Bwamable Profile"
                                     class="img-fluid rounded dark-mode-border" style="max-height: 150px;">
                             </div>
-                            <h4 class="mb-2 team-member-name">Edgar Bwamable</h4>
-                            <p class="mb-3 team-member-position">Vice Chairman</p>
+                            <h4 class="mb-2 team-member-name">James Yonah Odoi</h4>
+                            <p class="mb-3 team-member-position">Vice Chairman & Chairperson Governance Committee</p>
                         </div>
                     </div>
                 </div>
@@ -1785,39 +1922,11 @@
                     <div class="team-card green-accent text-center">
                         <div class="team-card-content">
                             <div class="team-image mb-3">
-                                <img src="assets/images/staff/Board secretary.png" alt="Rogers Kibedi Profile"
+                                <img src="assets/images/staff/Board secretary.png" alt="Rogers Kalinda Profile"
                                     class="img-fluid rounded dark-mode-border" style="max-height: 150px;">
                             </div>
-                            <h4 class="mb-2 team-member-name">Rogers Kibedi</h4>
-                            <p class="mb-3 team-member-position">Board Secretary</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Additional Board Members -->
-
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="team-card green-accent text-center">
-                        <div class="team-card-content">
-                            <div class="team-image mb-3">
-                                <img src="assets/images/staff/Credit committe.png" alt="James Yonah Odoi Profile"
-                                    class="img-fluid rounded" style="max-height: 150px;">
-                            </div>
-                            <h4 class="mb-2 team-member-name">James Yonah Odoi</h4>
-                            <p class="mb-3 team-member-position">Board Member and Chairman Credit Committee</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="team-card green-accent text-center">
-                        <div class="team-card-content">
-                            <div class="team-image mb-3">
-                                <img src="assets/images/staff/Governance committe.png" alt="Proscovia Nakatte Profile"
-                                    class="img-fluid rounded" style="max-height: 150px;">
-                            </div>
-                            <h4 class="mb-2 team-member-name">Proscovia Nakatte</h4>
-                            <p class="mb-3 team-member-position">Chairperson, Governance Committee</p>
+                            <h4 class="mb-2 team-member-name">Rogers Kalinda</h4>
+                            <p class="mb-3 team-member-position">Board Secretary & Chairperson Investment Committee</p>
                         </div>
                     </div>
                 </div>
@@ -1830,21 +1939,7 @@
                                     class="img-fluid rounded" style="max-height: 150px;">
                             </div>
                             <h4 class="mb-2 team-member-name">Massy Kabuye</h4>
-                            <p class="mb-3 team-member-position">Board Treasurer & Chairperson Investment Committee</p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="team-card green-accent text-center">
-                        <div class="team-card-content">
-                            <div class="team-image mb-3">
-                                <img src="assets/images/staff/Board member.png" alt="Julius Muwumza Profile"
-                                    class="img-fluid rounded" style="max-height: 150px;">
-                            </div>
-                            <h4 class="mb-2 team-member-name">Julius Muwumza</h4>
-                            <p class="mb-3 team-member-position">Board Member</p>
+                            <p class="mb-3 team-member-position">Board Treasurer & Chairperson Credit Committee</p>
                         </div>
                     </div>
                 </div>
@@ -2373,12 +2468,12 @@
                     <!-- Updates Column -->
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-updates">
-                            <h5 class="footer-title">Recent Updates</h5>
+                            <h5 class="footer-title">Resources</h5>
                             <div class="update-items mt-3">
                                 <div class="update-item mb-3">
                                     <div class="update-meta">
                                         <span class="update-category">Investment & Strategy Committee</span>
-                                        <span class="update-date">- June 5 -</span>
+                                       
                                     </div>
                                     <a href="resources.html#land-plots" class="update-title">New Land Plots
                                         Available</a>
@@ -2386,7 +2481,7 @@
                                 <div class="update-item">
                                     <div class="update-meta">
                                         <span class="update-category">Audit Committee</span>
-                                        <span class="update-date">- March 15 -</span>
+                                        
                                     </div>
                                     <a href="resources.html#financial" class="update-title">Audited Financial
                                         Statements</a>
@@ -2394,7 +2489,7 @@
                                 <div class="update-item">
                                     <div class="update-meta">
                                         <span class="update-category">Board Secretariat</span>
-                                        <span class="update-date">- Jan 1 -</span>
+                                        
                                     </div>
                                     <a href="resources.html#publications" class="update-title">Annual Report
                                         Published</a>
@@ -2402,7 +2497,7 @@
                             </div>
                         </div>
                     </div>
-
+                    
                     <!-- Contact Column -->
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-contact">
